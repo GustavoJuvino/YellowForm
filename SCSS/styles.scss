@@ -1,0 +1,66 @@
+body,
+main,
+footer,
+p,
+h1,
+ul,
+li {
+  padding: 0px;
+  margin: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+// Typography
+// Regular 400, Medium 500, Bold 700
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+
+// Colors
+$main-color: #FDC430;
+$main-color2: #FBBC05;
+$black-color: #141313;
+$gray-color1: #282723;
+$gray-color2: #4A4942;
+$gray-color3: #9B9B97;
+
+$white-color: #FFFFFF;
+$green-color: #57C224;
+$red-color: #961111;
+
+// Typography
+// Nunito Regular 400, Medium 500, Bold 700
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap');
+
+// 48px, 40px, 36px
+@mixin headings($f-size){    
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: $f-size;
+    color: $white-color;
+}
+
+// Bold x2, Regular + Bold 
+@mixin texts($weight){
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    color: $white-color;
+    font-weight: $weight;
+}
+
+@mixin form-text{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: $white-color;
+    font-weight: 700;
+}
+
+@mixin button{
+    font-family: 'Nunito', sans-serif;
+    font-size: 32px;
+    color: $black-color;
+    font-weight: 500;
+}

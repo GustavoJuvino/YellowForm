@@ -1,0 +1,67 @@
+@import './styles.scss';
+
+
+body{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#main-left{
+    background-color: $main-color;
+    width: auto;
+    height: 100vh;
+    h1{
+        @include headings(36px);
+        color: $black-color;
+        margin-left: 50px;
+        margin-top: 65px;
+    }
+    p{
+        margin-left: 50px;
+    }
+    .main-img{
+        margin-left: 85px;
+        margin-top: 35px;
+    }
+}
+
+#login{
+    width: auto;
+    height: 100vh;
+    background-color: $gray-color1;
+    display: block;
+    .lg{
+        text-align: right;
+        margin-right: 70px;
+        @include texts(700);
+        img{
+            margin-left: 10px;
+        }
+    }
+    .form-texts{
+        margin-top: 190px;
+        margin-left: 288px;
+        h1{
+            @include headings(48px);
+        }
+        .f-password{
+            text-align: right;
+            margin-right: 80px;
+        }
+        .btn{
+            margin-top: 130px;
+            margin-left: 80px;
+        }
+        .f-register{
+            margin-top: 130px;
+        }
+    }
+    form{
+        .texts{
+            margin-top: 50px;
+        }
+        input{
+            margin-top: 10px;
+        }
+    }
+}
