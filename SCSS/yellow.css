@@ -60,20 +60,22 @@ body {
 
 #login .lg {
   text-align: right;
-  margin-right: 70px;
+  margin-right: 100px;
+  margin-top: 65px;
   font-family: 'Nunito', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   color: #FFFFFF;
   font-weight: 700;
 }
 
 #login .lg img {
+  margin-bottom: 2px;
   margin-left: 10px;
 }
 
 #login .form-texts {
-  margin-top: 190px;
-  margin-left: 288px;
+  margin-top: 70px;
+  margin-left: 30%;
 }
 
 #login .form-texts h1 {
@@ -85,23 +87,59 @@ body {
 
 #login .form-texts .f-password {
   text-align: right;
-  margin-right: 80px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-right: 100px;
+  margin-top: 40px;
 }
 
 #login .form-texts .btn {
-  margin-top: 130px;
-  margin-left: 80px;
+  margin-top: 40px;
+  margin-left: 5%;
+  width: 300px;
+  height: 62px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 32px;
+  color: #141313;
+  font-weight: 500;
+  background-color: #FBBC05;
+  border: none;
+  border-radius: 6px;
 }
 
-#login .form-texts .f-register {
-  margin-top: 130px;
+#login .form-texts form .texts {
+  margin-top: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
 }
 
-#login form .texts {
-  margin-top: 50px;
-}
-
-#login form input {
+#login .form-texts form input {
   margin-top: 10px;
+  width: 350px;
+  height: 45px;
+  border-radius: 6px;
+  border: solid 2px black;
+  background-color: #4A4942;
+}
+
+#login .f-register {
+  margin-top: 60px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+#login .f-register span {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 700;
+  color: #FBBC05;
 }
 /*# sourceMappingURL=yellow.css.map */

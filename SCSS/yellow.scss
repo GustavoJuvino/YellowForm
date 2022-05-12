@@ -32,36 +32,60 @@ body{
     display: block;
     .lg{
         text-align: right;
-        margin-right: 70px;
+        margin-right: 100px;
+        margin-top: 65px;
         @include texts(700);
         img{
+            margin-bottom: 2px;
             margin-left: 10px;
         }
     }
     .form-texts{
-        margin-top: 190px;
-        margin-left: 288px;
+        margin-top: 70px;
+        margin-left: 30%;
         h1{
             @include headings(48px);
         }
         .f-password{
             text-align: right;
-            margin-right: 80px;
+            @include texts(500);
+            margin-right: 100px;
+            margin-top: 40px;
         }
         .btn{
-            margin-top: 130px;
-            margin-left: 80px;
+            margin-top: 40px;
+            // margin-left: 30px;
+            margin-left: 5%;
+            width: 300px;
+            height: 62px;
+            @include button;
+            background-color: $main-color2;
+            border: none;
+            border-radius: 6px;
+            // margin-left: 80px;
         }
-        .f-register{
-            margin-top: 130px;
+        form{
+            .texts{
+                margin-top: 60px;
+                @include form-text;
+            }
+            input{
+                margin-top: 10px;
+                width: 350px;
+                height: 45px;
+                border-radius: 6px;
+                border: solid 2px black;
+                background-color: $gray-color2;
+            }
         }
     }
-    form{
-        .texts{
-            margin-top: 50px;
-        }
-        input{
-            margin-top: 10px;
+    .f-register{
+        margin-top: 60px;
+        text-align: center;
+        @include texts(500);
+        span{
+            @include texts(700);
+            color: $main-color2;
         }
     }
 }

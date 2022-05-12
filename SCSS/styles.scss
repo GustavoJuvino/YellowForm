@@ -43,10 +43,10 @@ $red-color: #961111;
     color: $white-color;
 }
 
-// Bold x2, Regular + Bold 
+// Bold, SemiBold, Regular + Bold 
 @mixin texts($weight){
     font-family: 'Nunito', sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     color: $white-color;
     font-weight: $weight;
 }
@@ -54,8 +54,8 @@ $red-color: #961111;
 @mixin form-text{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
-    color: $white-color;
-    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
 }
 
 @mixin button{
