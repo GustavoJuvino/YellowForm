@@ -1,6 +1,6 @@
 @import './styles.scss';
 
-
+// ----------------- LOGIN FORM -----------------
 body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -88,8 +88,6 @@ body{
             border: none;
             border-radius: 6px;
             box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
-            cursor: pointer;
-            transition: 0.9s;
         }
         form{
             .texts{
@@ -113,12 +111,116 @@ body{
                     border: 2px solid $white-color;
                 }
             }
+            input[type=password]{
+                background-color: $gray-color2 !important; 
+                background: url(../Imgs/hidden.svg);
+                background-repeat: no-repeat;
+                background-position: 94%;
+            }
         }
     }
     .f-register{
         margin-top: 60px;
         text-align: center;
         @include texts(500);
+        span{
+            cursor: pointer;
+            @include texts(700);
+            color: $white-color;
+            transition: 0.9s;
+            &:hover{
+                color: $main-color2;
+            }
+        }
+    }
+}
+
+// ----------------- REGISTER FORM -----------------
+#register{
+    width: auto;
+    height: 100vh;
+    background-color: $gray-color1;
+    display: block;
+
+    // Menu Floating -----
+    .l-menu{
+        @include texts(500);
+        color: $black-color;
+        width: 150px;
+        height: auto;
+        background-color: $main-color;
+        position: absolute;
+        right: 0px;
+        top: 100px;
+        border-radius: 2px;
+        margin-right: 100px;
+        border:  2px solid black;
+        p{
+            padding-bottom: 10px;
+            padding-left: 10px;
+            margin-top: 12px;
+            border-bottom: 2px solid black;
+            cursor: pointer;
+        }
+    }
+
+    .lg{
+        text-align: right;
+        margin-right: 100px;
+        margin-top: 40px;
+        @include texts(700);
+        img{
+            margin-bottom: 2px;
+            margin-left: 10px;
+        }
+    }
+    .registerForm{
+        margin-left: 30%;
+        h1{
+            @include headings(48px);
+        }
+    }
+    .btn{
+        outline: none;
+        margin-top: 40px;
+        margin-left: 5%;
+        width: 300px;
+        height: 62px;
+        @include button;
+        background-color: $main-color2;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
+        cursor: pointer;
+    }
+    form{
+        .texts{
+            padding-top: 30px;
+            @include form-text;
+        }
+        input{
+            margin-top: 10px;
+            outline: none;
+            margin-top: 10px;
+            padding-left: 15px;
+            width: 350px;
+            height: 45px;
+            border-radius: 6px;
+            border:  2px solid black;
+            background-color: $gray-color2;
+            color: white;
+            font-size: 20px;
+            transition: 0.90s;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
+            &:hover{
+                border: 2px solid $white-color;
+            }
+        }
+    }
+    .signIn{
+        @include texts(500);
+        margin-top: 40px;
+        margin-left: 5%;
         span{
             cursor: pointer;
             @include texts(700);
