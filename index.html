@@ -16,72 +16,56 @@
         <img class="main-img" src="./Imgs/main-img.svg" alt="main-img">
         <p><img src="./Imgs/seal.svg"></p>
     </section>
-
-    <!-- LOGIN -->
-    <section id="login" style="display: none;">
-        <div class="l-menu" style="display: none;">
-            <p>EN/UK</p>
-            <p>PT/BR</p>
-            <p>DE/GE</p>
-        </div>
-
-        <p class="lg">UK/EN<img src="./Imgs/ArrowDown.svg"></p>
-        
-        <div class="form-texts">
-
-            <h1>Login</h1>
-
-            <form action=''>
-                <div class="texts"><label for="UserEmail">Username or E-mail</label></div>
-                <input type="text">
-                <div class="texts"><label for="Password">Password</label></div>
-                <input type="password">
-            </form>
-
-            <p class="f-password">Forgot your password?</p>
-
-            <button class="btn">Sign In</button>
-        </div>
-
-        <p class="f-register">Don't have an existing account? <span>Register</span> right now!</p>
-    </section>
-
-
-    <!-- REGISTER -->
-    <section id="register">
-        <div class="l-menu" style="display: none;">
-            <p>EN/UK</p>
-            <p>PT/BR</p>
-            <p>DE/GE</p>
-        </div>
-
-        <p class="lg">UK/EN<img src="./Imgs/ArrowDown.svg"></p>
-
-        <div class="registerForm">
-            <h1>Create your<br>account</h1>
-
-            <form action=''>
-                <div class="texts" ><label for="Username">Username</label></div>
-                <input type="text">
-
-                <div class="texts" ><label for="Email">E-mail</label></div>
-                <input type="text">
-
-                <div class="texts" ><label for="PhoneNumber">Phone Number</label></div>
-                <input type="number">
-
-                <div class="texts" ><label for="Password">Password</label></div>
-                <input type="password">
-
-                <div class="texts" ><label for="ConfirmPass">Confirm Password</label></div>
-                <input type="password">
-            </form>
-            <button class="btn">Create Account</button>
-            <p class="signIn">Already have an account? <span>Sign In</span></p>
-        </div>
-
-
-    </section>
     
+    
+    <section id="main">
+        <p class="lg">UK/EN<img src="./Imgs/ArrowDown.svg"></p>
+        <div class="l-menu" style="display: none;">
+            <p>EN/UK</p>
+            <p>PT/BR</p>
+            <p>DE/GE</p>
+        </div>
+    
+        <!-- LOGIN -->
+        <section id="login">
+            <div class="form-texts">
+                <h1>Login</h1>
+                <form action=''>
+                    <div class="texts"><label for="UserEmail">Username or E-mail</label></div>
+                    <input type="text">
+                    <div class="texts"><label for="Password">Password</label></div>
+                    <input type="password">
+                </form>
+                <p class="f-password">Forgot your password?</p>
+                <button class="btn">Sign In</button>
+            </div>
+            <p class="f-register">Don't have an existing account? <span>Register</span> right now!</p>
+        </section>
+    
+        <!-- REGISTER -->
+        <section id="register" style="display: none;">
+            <div class="registerForm">
+                <h1>Create your<br>account</h1>
+                <form action=''>
+                    <div class="texts"><label for="Username">Username</label></div>
+                    <input type="text">
+    
+                    <div class="texts"><label for="Email">E-mail</label></div>
+                    <input type="text">
+    
+                    <div class="texts"><label for="PhoneNumber">Phone Number</label></div>
+                    <input type="number">
+    
+                    <div class="texts"><label for="Password">Password</label></div>
+                    <input type="password">
+    
+                    <div class="texts"><label for="ConfirmPass">Confirm Password</label></div>
+                    <input type="password">
+                </form>
+                <button class="btn">Create Account</button>
+                <p class="signIn">Already have an account? <span>Sign In</span></p>
+            </div>
+        </section>
+    </section>
 </body>
 </html>

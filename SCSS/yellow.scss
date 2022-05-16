@@ -25,7 +25,12 @@ body{
     }
 }
 
-#login{
+#main{
+    width: auto;
+    height: 100vh;
+    background-color: $gray-color1;
+    display: block;
+    // ----- Menu Floating -----
     .l-menu{
         @include texts(500);
         color: $black-color;
@@ -43,56 +48,33 @@ body{
             padding-left: 10px;
             margin-top: 12px;
             border-bottom: 2px solid black;
-            cursor: pointer;
         }
     }
-    width: auto;
-    height: 100vh;
-    background-color: $gray-color1;
-    display: block;
     .lg{
+        @include texts(700);
         text-align: right;
         margin-right: 100px;
         margin-top: 65px;
-        @include texts(700);
         img{
+            cursor: pointer;
             margin-bottom: 2px;
             margin-left: 10px;
         }
     }
+}
+
+// ------------ LOGIN FORM ------------
+#login{
     .form-texts{
         margin-top: 70px;
         margin-left: 30%;
         h1{
             @include headings(48px);
         }
-        .f-password{
-            text-align: right;
-            @include texts(500);
-            margin-right: 100px;
-            margin-top: 40px;
-            cursor: pointer;
-            transition: 0.9s;
-            &:hover{
-                color: $main-color2;
-            }
-        }
-        .btn{
-            outline: none;
-            margin-top: 40px;
-            margin-left: 5%;
-            width: 300px;
-            height: 62px;
-            @include button;
-            background-color: $main-color2;
-            border: none;
-            border-radius: 6px;
-            box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
-        }
         form{
             .texts{
-                margin-top: 60px;
                 @include form-text;
+                margin-top: 60px;
             }
             input{
                 outline: none;
@@ -111,18 +93,36 @@ body{
                     border: 2px solid $white-color;
                 }
             }
-            input[type=password]{
-                background-color: $gray-color2 !important; 
-                background: url(../Imgs/hidden.svg);
-                background-repeat: no-repeat;
-                background-position: 94%;
+        }
+        .f-password{
+            @include texts(500);
+            text-align: right;
+            margin-right: 100px;
+            margin-top: 40px;
+            cursor: pointer;
+            transition: 0.9s;
+            &:hover{
+                color: $main-color2;
             }
+        }
+        .btn{
+            @include button;
+            cursor: pointer;
+            outline: none;
+            margin-top: 40px;
+            margin-left: 5%;
+            width: 300px;
+            height: 62px;
+            background-color: $main-color2;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
         }
     }
     .f-register{
+        @include texts(500);
         margin-top: 60px;
         text-align: center;
-        @include texts(500);
         span{
             cursor: pointer;
             @include texts(700);
@@ -141,39 +141,6 @@ body{
     height: 100vh;
     background-color: $gray-color1;
     display: block;
-
-    // Menu Floating -----
-    .l-menu{
-        @include texts(500);
-        color: $black-color;
-        width: 150px;
-        height: auto;
-        background-color: $main-color;
-        position: absolute;
-        right: 0px;
-        top: 100px;
-        border-radius: 2px;
-        margin-right: 100px;
-        border:  2px solid black;
-        p{
-            padding-bottom: 10px;
-            padding-left: 10px;
-            margin-top: 12px;
-            border-bottom: 2px solid black;
-            cursor: pointer;
-        }
-    }
-
-    .lg{
-        text-align: right;
-        margin-right: 100px;
-        margin-top: 40px;
-        @include texts(700);
-        img{
-            margin-bottom: 2px;
-            margin-left: 10px;
-        }
-    }
     .registerForm{
         margin-left: 30%;
         h1{
@@ -181,12 +148,12 @@ body{
         }
     }
     .btn{
+        @include button;
         outline: none;
         margin-top: 40px;
         margin-left: 5%;
         width: 300px;
         height: 62px;
-        @include button;
         background-color: $main-color2;
         border: none;
         border-radius: 6px;
@@ -195,8 +162,8 @@ body{
     }
     form{
         .texts{
-            padding-top: 30px;
             @include form-text;
+            padding-top: 30px;
         }
         input{
             margin-top: 10px;
