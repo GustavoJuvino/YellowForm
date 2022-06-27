@@ -1,5 +1,9 @@
 @import './styles.scss';
 
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+
 // ----------------- LOGIN FORM -----------------
 body{
     display: grid;
@@ -27,9 +31,9 @@ body{
 
 #main{
     width: auto;
-    height: 100vh;
     background-color: $gray-color1;
     display: block;
+
     // ----- Menu Floating -----
     .l-menu{
         @include texts(500);
@@ -44,7 +48,7 @@ body{
         margin-right: 100px;
         border:  2px solid black;
         p{
-            padding-bottom: 10px;
+            padding-bottom: 120px;
             padding-left: 10px;
             margin-top: 12px;
             border-bottom: 2px solid black;
@@ -138,12 +142,12 @@ body{
 // ----------------- REGISTER FORM -----------------
 #register{
     width: auto;
-    height: 100vh;
     background-color: $gray-color1;
     display: block;
     .registerForm{
         margin-left: 30%;
         h1{
+            padding-top: 0px;
             @include headings(48px);
         }
     }

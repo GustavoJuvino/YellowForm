@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   display: -ms-grid;
   display: grid;
@@ -53,7 +57,6 @@ body {
 
 #main {
   width: auto;
-  height: 100vh;
   background-color: #282723;
   display: block;
 }
@@ -76,7 +79,7 @@ body {
 }
 
 #main .l-menu p {
-  padding-bottom: 10px;
+  padding-bottom: 120px;
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
@@ -200,7 +203,6 @@ body {
 
 #register {
   width: auto;
-  height: 100vh;
   background-color: #282723;
   display: block;
 }
@@ -210,6 +212,7 @@ body {
 }
 
 #register .registerForm h1 {
+  padding-top: 0px;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 48px;
