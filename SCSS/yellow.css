@@ -23,6 +23,10 @@ a {
   display: none;
 }
 
+[data-login], [data-register] {
+  display: none;
+}
+
 body {
   display: -ms-grid;
   display: grid;
@@ -101,19 +105,23 @@ body {
   margin-left: 10px;
 }
 
-#login .form-texts {
+.section-active {
+  display: block;
+}
+
+.section-active .form-texts {
   margin-top: 70px;
   margin-left: 30%;
 }
 
-#login .form-texts h1 {
+.section-active .form-texts h1 {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
 }
 
-#login .form-texts form .texts {
+.section-active .form-texts form .texts {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
@@ -121,7 +129,7 @@ body {
   margin-top: 60px;
 }
 
-#login .form-texts form input {
+.section-active .form-texts form input {
   outline: none;
   margin-top: 10px;
   padding-left: 15px;
@@ -138,11 +146,11 @@ body {
           box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
 
-#login .form-texts form input:hover {
+.section-active .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
 
-#login .form-texts .f-password {
+.section-active .form-texts .f-password {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -155,11 +163,11 @@ body {
   transition: 0.9s;
 }
 
-#login .form-texts .f-password:hover {
+.section-active .form-texts .f-password:hover {
   color: #FBBC05;
 }
 
-#login .form-texts .btn {
+.section-active .form-texts .btn {
   font-family: 'Nunito', sans-serif;
   font-size: 32px;
   color: #141313;
@@ -177,7 +185,7 @@ body {
           box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
 
-#login .f-register {
+.section-active .f-register {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -186,7 +194,7 @@ body {
   text-align: center;
 }
 
-#login .f-register span {
+.section-active .f-register span {
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -197,21 +205,21 @@ body {
   transition: 0.9s;
 }
 
-#login .f-register span:hover {
+.section-active .f-register span:hover {
   color: #FBBC05;
 }
 
-#register {
+[data-register] {
   width: auto;
   background-color: #282723;
   display: block;
 }
 
-#register .registerForm {
+[data-register] .registerForm {
   margin-left: 30%;
 }
 
-#register .registerForm h1 {
+[data-register] .registerForm h1 {
   padding-top: 0px;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
@@ -219,7 +227,7 @@ body {
   color: #FFFFFF;
 }
 
-#register .btn {
+[data-register] .btn {
   font-family: 'Nunito', sans-serif;
   font-size: 32px;
   color: #141313;
@@ -237,7 +245,7 @@ body {
   cursor: pointer;
 }
 
-#register form .texts {
+[data-register] form .texts {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
@@ -245,7 +253,7 @@ body {
   padding-top: 30px;
 }
 
-#register form input {
+[data-register] form input {
   margin-top: 10px;
   outline: none;
   margin-top: 10px;
@@ -263,11 +271,11 @@ body {
           box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
 
-#register form input:hover {
+[data-register] form input:hover {
   border: 2px solid #FFFFFF;
 }
 
-#register .signIn {
+[data-register] .signIn {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -276,7 +284,7 @@ body {
   margin-left: 5%;
 }
 
-#register .signIn span {
+[data-register] .signIn span {
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -287,7 +295,7 @@ body {
   transition: 0.9s;
 }
 
-#register .signIn span:hover {
+[data-register] .signIn span:hover {
   color: #FBBC05;
 }
 /*# sourceMappingURL=yellow.css.map */

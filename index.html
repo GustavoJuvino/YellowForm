@@ -27,7 +27,7 @@
         </div>
     
         <!-- LOGIN -->
-        <section id="login" style="display: none;">
+        <section data-login class="section-active">
             <div class="form-texts">
                 <h1>Login</h1>
                 <form action=''>
@@ -39,11 +39,11 @@
                 <p class="f-password">Forgot your password?</p>
                 <button class="btn">Sign In</button>
             </div>
-            <p class="f-register">Don't have an existing account? <span>Register</span> right now!</p>
+            <p class="f-register">Don't have an existing account? <span data-span="register">Register</span> right now!</p>
         </section>
     
         <!-- REGISTER -->
-        <section id="register">
+        <section data-register style="display: none;">
             <div class="registerForm">
                 <h1>Create your<br>account</h1>
                 <form action=''>
@@ -67,5 +67,6 @@
             </div>
         </section>
     </section>
+    <script src="./script.js"></script>
 </body>
 </html>
