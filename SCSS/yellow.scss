@@ -73,7 +73,7 @@ body{
 }
 
 // ------------ LOGIN FORM ------------
-.section-active {
+.login-active {
     display: block;
     .form-texts {
         margin-top: 70px;
@@ -155,7 +155,7 @@ body{
     }
 }
 // ----------------- REGISTER FORM -----------------
-[data-register]{
+.register-active{
     width: auto;
     background-color: $gray-color1;
     display: block;
