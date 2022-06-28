@@ -4,7 +4,7 @@
     display: none;
   }
 
-[data-login], [data-register]{
+[data-login], [data-register], .l-menu{
     display: none;
 }
 
@@ -40,34 +40,40 @@ body{
     display: block;
 
     // ----- Menu Floating -----
-    .l-menu{
-        @include texts(500);
-        color: $black-color;
-        width: 150px;
-        height: auto;
-        background-color: $main-color;
-        position: absolute;
-        right: 0px;
-        top: 100px;
-        border-radius: 2px;
-        margin-right: 100px;
-        border:  2px solid black;
-        p{
-            padding-bottom: 120px;
-            padding-left: 10px;
-            margin-top: 12px;
-            border-bottom: 2px solid black;
+    [data-menu]{
+        .lg{
+            @include texts(700);
+            text-align: right;
+            margin-right: 100px;
+            margin-top: 65px;
+            img{
+                cursor: pointer;
+                margin-bottom: 2px;
+                margin-left: 10px;
+            }
         }
     }
-    .lg{
-        @include texts(700);
-        text-align: right;
-        margin-right: 100px;
-        margin-top: 65px;
-        img{
-            cursor: pointer;
-            margin-bottom: 2px;
-            margin-left: 10px;
+    .menu-floating{
+        .l-menu{
+            display: block;
+            @include texts(500);
+            color: $black-color;
+            width: 150px;
+            height: auto;
+            background-color: $main-color;
+            position: absolute;
+            right: 0px;
+            top: 100px;
+            border-radius: 2px;
+            margin-right: 100px;
+            border:  2px solid black;
+            p{
+                padding-bottom: 20px;
+                padding-left: 10px;
+                margin-top: 12px;
+                border-bottom: 2px solid black;
+                cursor: pointer;
+            }
         }
     }
 }

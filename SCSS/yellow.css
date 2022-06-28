@@ -23,7 +23,7 @@ a {
   display: none;
 }
 
-[data-login], [data-register] {
+[data-login], [data-register], .l-menu {
   display: none;
 }
 
@@ -65,7 +65,24 @@ body {
   display: block;
 }
 
-#main .l-menu {
+#main [data-menu] .lg {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 700;
+  text-align: right;
+  margin-right: 100px;
+  margin-top: 65px;
+}
+
+#main [data-menu] .lg img {
+  cursor: pointer;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+
+#main .menu-floating .l-menu {
+  display: block;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -82,27 +99,12 @@ body {
   border: 2px solid black;
 }
 
-#main .l-menu p {
-  padding-bottom: 120px;
+#main .menu-floating .l-menu p {
+  padding-bottom: 20px;
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
-}
-
-#main .lg {
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  color: #FFFFFF;
-  font-weight: 700;
-  text-align: right;
-  margin-right: 100px;
-  margin-top: 65px;
-}
-
-#main .lg img {
   cursor: pointer;
-  margin-bottom: 2px;
-  margin-left: 10px;
 }
 
 .login-active {
