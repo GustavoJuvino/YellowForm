@@ -53,8 +53,13 @@ body{
             }
         }
     }
-    .menu-floating{
+    .floating-menu{
+        img{
+            animation: enterMenu .3s forwards;
+        }
+
         .l-menu{
+            animation: anime2 .5s forwards;
             display: block;
             @include texts(500);
             color: $black-color;
@@ -67,20 +72,57 @@ body{
             border-radius: 2px;
             margin-right: 100px;
             border:  2px solid black;
+            cursor: pointer;
+            z-index: 2;
+
             p{
                 padding-bottom: 20px;
                 padding-left: 10px;
                 margin-top: 12px;
                 border-bottom: 2px solid black;
-                cursor: pointer;
             }
         }
+    }
+
+    img{
+        animation: leaveMenu .3s forwards;
+    }
+}
+
+// Floating Menu Animation
+@keyframes enterMenu {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes leaveMenu {
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes anime2{
+    from{
+        opacity: 0;
+        transform: translate3d(0px, 50px, 0px);
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
     }
 }
 
 // ------------ LOGIN FORM ------------
 .login-active {
     display: block;
+    animation: anime1 .3s forwards;
     .form-texts {
         margin-top: 70px;
         margin-left: 30%;
@@ -121,7 +163,7 @@ body{
             margin-right: 100px;
             margin-top: 40px;
             cursor: pointer;
-            transition: 0.9s;
+            transition: 0.4s;
 
             &:hover {
                 color: $main-color2;
@@ -152,7 +194,7 @@ body{
             cursor: pointer;
             @include texts(700);
             color: $white-color;
-            transition: 0.9s;
+            transition: 0.4s;
 
             &:hover {
                 color: $main-color2;
@@ -160,11 +202,22 @@ body{
         }
     }
 }
+
+@keyframes anime1 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 // ----------------- REGISTER FORM -----------------
 .register-active{
     width: auto;
     background-color: $gray-color1;
     display: block;
+    animation: anime1 .3s forwards;
     .registerForm{
         margin-left: 30%;
         h1{
@@ -217,7 +270,7 @@ body{
             cursor: pointer;
             @include texts(700);
             color: $white-color;
-            transition: 0.9s;
+            transition: 0.4s;
             &:hover{
                 color: $main-color2;
             }

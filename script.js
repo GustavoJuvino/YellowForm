@@ -2,6 +2,7 @@
 
 const sectionLogin = document.querySelector("[data-login]");
 const sectionRegister = document.querySelector("[data-register]");
+
 const register = document.querySelector("[data-span='register']");
 const login = document.querySelector("[data-span='login']");
 
@@ -20,7 +21,4 @@ login.addEventListener("click", () =>{
 const menuArrow = document.querySelector(".ArrowDown");
 const menuFloat = document.querySelector("[data-menu]");
 
-
-menuArrow.addEventListener("click", () =>{
-    menuFloat.classList.toggle("menu-floating");
-})
+menuArrow.addEventListener("click", () => menuFloat.classList.toggle("floating-menu"));

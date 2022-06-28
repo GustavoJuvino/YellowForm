@@ -81,7 +81,14 @@ body {
   margin-left: 10px;
 }
 
-#main .menu-floating .l-menu {
+#main .floating-menu img {
+  -webkit-animation: enterMenu .3s forwards;
+          animation: enterMenu .3s forwards;
+}
+
+#main .floating-menu .l-menu {
+  -webkit-animation: anime2 .5s forwards;
+          animation: anime2 .5s forwards;
   display: block;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -97,18 +104,96 @@ body {
   border-radius: 2px;
   margin-right: 100px;
   border: 2px solid black;
+  cursor: pointer;
+  z-index: 2;
 }
 
-#main .menu-floating .l-menu p {
+#main .floating-menu .l-menu p {
   padding-bottom: 20px;
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
-  cursor: pointer;
+}
+
+#main img {
+  -webkit-animation: leaveMenu .3s forwards;
+          animation: leaveMenu .3s forwards;
+}
+
+@-webkit-keyframes enterMenu {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes enterMenu {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes leaveMenu {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes leaveMenu {
+  from {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes anime2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, 50px, 0px);
+            transform: translate3d(0px, 50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+@keyframes anime2 {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0px, 50px, 0px);
+            transform: translate3d(0px, 50px, 0px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px);
+  }
 }
 
 .login-active {
   display: block;
+  -webkit-animation: anime1 .3s forwards;
+          animation: anime1 .3s forwards;
 }
 
 .login-active .form-texts {
@@ -161,8 +246,8 @@ body {
   margin-right: 100px;
   margin-top: 40px;
   cursor: pointer;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .login-active .form-texts .f-password:hover {
@@ -203,18 +288,38 @@ body {
   color: #FFFFFF;
   font-weight: 700;
   color: #FFFFFF;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .login-active .f-register span:hover {
   color: #FBBC05;
 }
 
+@-webkit-keyframes anime1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes anime1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .register-active {
   width: auto;
   background-color: #282723;
   display: block;
+  -webkit-animation: anime1 .3s forwards;
+          animation: anime1 .3s forwards;
 }
 
 .register-active .registerForm {
@@ -293,8 +398,8 @@ body {
   color: #FFFFFF;
   font-weight: 700;
   color: #FFFFFF;
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .register-active .signIn span:hover {
