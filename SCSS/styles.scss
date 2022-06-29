@@ -64,3 +64,20 @@ $red-color: #961111;
     color: $black-color;
     font-weight: 500;
 }
+
+// BreakPoints
+
+$large-desktop: 1350px;   // 1st BP - Login / Register
+$medium-desktop: 1280px; // 2nd BP - Login / Register
+
+@mixin desktop-responsive($size){
+ @if $size == large {
+  @media screen and (max-width: #{$large-desktop}){
+    @content;
+  }
+ }@else if $size == medium {
+  @media screen and (max-width: #{$medium-desktop}){
+    @content;
+  }
+ }
+}

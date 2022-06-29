@@ -59,7 +59,7 @@ body{
         }
 
         .l-menu{
-            animation: anime2 .5s forwards;
+            animation: anime2 .3s forwards;
             display: block;
             @include texts(500);
             color: $black-color;
@@ -274,6 +274,39 @@ body{
             &:hover{
                 color: $main-color2;
             }
+        }
+    }
+}
+
+
+// Responsive
+
+.login-active {
+    @include desktop-responsive(large) {
+        .form-texts {
+            margin-left: 20px;
+
+            .f-password {
+                margin-right: 0px;
+            }
+
+            .btn{
+                margin-left: 18%;
+                margin-right: 0px;
+                @include desktop-responsive(medium){
+                    text-align: center;
+                    margin-left: 0%;
+                }
+            }
+
+        }
+    }
+}
+
+#main-left{
+    @include desktop-responsive(medium){
+        .main-img{
+            width: 500px;
         }
     }
 }

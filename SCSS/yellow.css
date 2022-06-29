@@ -87,8 +87,8 @@ body {
 }
 
 #main .floating-menu .l-menu {
-  -webkit-animation: anime2 .5s forwards;
-          animation: anime2 .5s forwards;
+  -webkit-animation: anime2 .3s forwards;
+          animation: anime2 .3s forwards;
   display: block;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -404,5 +404,31 @@ body {
 
 .register-active .signIn span:hover {
   color: #FBBC05;
+}
+
+@media screen and (max-width: 1350px) {
+  .login-active .form-texts {
+    margin-left: 20px;
+  }
+  .login-active .form-texts .f-password {
+    margin-right: 0px;
+  }
+  .login-active .form-texts .btn {
+    margin-left: 18%;
+    margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 1350px) and (max-width: 1280px) {
+  .login-active .form-texts .btn {
+    text-align: center;
+    margin-left: 0%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #main-left .main-img {
+    width: 500px;
+  }
 }
 /*# sourceMappingURL=yellow.css.map */
