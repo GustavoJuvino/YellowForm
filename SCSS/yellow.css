@@ -454,6 +454,10 @@ body {
 @media screen and (max-width: 1060px) {
   #main-left .main-img {
     width: 400px;
+    margin: 10px;
+  }
+  #main-left h1, #main-left p {
+    margin-left: 20px;
   }
 }
 
@@ -461,6 +465,12 @@ body {
   #main [data-menu] .lg {
     margin-right: 20px;
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  #main [data-menu] .l-menu {
+    margin-right: 0px;
   }
 }
 /*# sourceMappingURL=yellow.css.map */

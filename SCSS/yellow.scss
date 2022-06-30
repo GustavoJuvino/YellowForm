@@ -337,6 +337,10 @@ body{
     @include desktop-responsive(medium){
         .main-img{
             width: 400px;
+            margin: 10px;
+        }
+        h1, p{
+            margin-left: 20px;
         }
     }
 }
@@ -347,6 +351,11 @@ body{
             @include desktop-responsive(medium){
                 margin-right: 20px;
                 font-size: 18px;
+            }
+        }
+        .l-menu{
+            @include desktop-responsive(medium){
+                margin-right: 0px;
             }
         }
     }
