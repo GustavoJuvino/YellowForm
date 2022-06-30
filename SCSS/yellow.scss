@@ -302,10 +302,26 @@ body{
             h1{
                 font-size: 38px;
             }
-            .form{
+            form{
                 .texts{
-                    font-size: 10px;
+                    font-size: 16px;
                 }
+                input{
+                    width: 60%;
+                }
+            }
+            .f-password{
+                font-size: 16px;
+            }
+            .btn{
+                width: 200px;
+                margin-left: 26%;
+            }
+        }
+        .f-register{
+            font-size: 16px;
+            span{
+                font-size: 16px;
             }
         }
     }
@@ -317,7 +333,7 @@ body{
             width: 500px;
         }
     }
-    @include desktop-responsive(large){
+    @include desktop-responsive(medium){
         .main-img{
             width: 400px;
         }

@@ -423,8 +423,24 @@ body {
   .login-active .form-texts h1 {
     font-size: 38px;
   }
-  .login-active .form-texts .form .texts {
-    font-size: 10px;
+  .login-active .form-texts form .texts {
+    font-size: 16px;
+  }
+  .login-active .form-texts form input {
+    width: 60%;
+  }
+  .login-active .form-texts .f-password {
+    font-size: 16px;
+  }
+  .login-active .form-texts .btn {
+    width: 200px;
+    margin-left: 26%;
+  }
+  .login-active .f-register {
+    font-size: 16px;
+  }
+  .login-active .f-register span {
+    font-size: 16px;
   }
 }
 
@@ -434,7 +450,7 @@ body {
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1060px) {
   #main-left .main-img {
     width: 400px;
   }
