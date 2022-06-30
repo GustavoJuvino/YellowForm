@@ -427,7 +427,8 @@ body {
     font-size: 16px;
   }
   .login-active .form-texts form input {
-    width: 60%;
+    width: 300px;
+    font-size: 16px;
   }
   .login-active .form-texts .f-password {
     font-size: 16px;
