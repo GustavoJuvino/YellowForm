@@ -22,4 +22,6 @@ login.addEventListener("click", () =>{
 const menuArrow = document.querySelector(".ArrowDown");
 const menuFloat = document.querySelector("[data-menu]");
 
-menuArrow.addEventListener("click", () => menuFloat.classList.toggle("floating-menu"));
+const flMenu = "floating-menu";
+
+menuArrow.addEventListener("click", () => menuFloat.classList.toggle(flMenu));
