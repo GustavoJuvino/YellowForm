@@ -164,7 +164,6 @@ body{
             margin-top: 40px;
             cursor: pointer;
             transition: 0.4s;
-
             &:hover {
                 color: $main-color2;
             }
@@ -280,7 +279,6 @@ body{
 
 
 // Responsive
-
 .login-active {
     @include desktop-responsive(large) {
         .form-texts {
@@ -302,6 +300,7 @@ body{
             h1{
                 font-size: 38px;
             }
+
             form{
                 .texts{
                     font-size: 16px;
@@ -311,9 +310,11 @@ body{
                     font-size: 16px;
                 }
             }
+
             .f-password{
                 font-size: 16px;
             }
+
             .btn{
                 width: 200px;
                 margin-left: 26%;
@@ -321,9 +322,27 @@ body{
         }
         .f-register{
             font-size: 16px;
+
             span{
                 font-size: 16px;
             }
+        }
+    }
+    @include desktop-responsive(mobile){
+        width: 100vw;
+        height: 100vh;
+
+        .form-texts{
+            margin-left: 140px;
+            .btn{
+                margin-left: 0%;
+            }
+            .f-password{
+                margin-right: 30px;
+            }
+        }
+        .f-register{
+            margin-right: 16%;
         }
     }
 }
@@ -343,19 +362,26 @@ body{
             margin-left: 20px;
         }
     }
+    @include desktop-responsive(mobile){
+        display: none;
+    }
 }
 
 #main{
     [data-menu]{
-        .lg{
-            @include desktop-responsive(medium){
+        @include desktop-responsive(medium){
+            .lg{
                 margin-right: 20px;
                 font-size: 18px;
             }
-        }
-        .l-menu{
-            @include desktop-responsive(medium){
+
+            .l-menu{
                 margin-right: 0px;
+            }
+        }
+        @include desktop-responsive(mobile){
+            .lg{
+                margin-right: 50px;
             }
         }
     }

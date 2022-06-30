@@ -445,6 +445,25 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .login-active {
+    width: 100vw;
+    height: 100vh;
+  }
+  .login-active .form-texts {
+    margin-left: 140px;
+  }
+  .login-active .form-texts .btn {
+    margin-left: 0%;
+  }
+  .login-active .form-texts .f-password {
+    margin-right: 30px;
+  }
+  .login-active .f-register {
+    margin-right: 16%;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   #main-left .main-img {
     width: 500px;
@@ -461,16 +480,25 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  #main-left {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 1060px) {
   #main [data-menu] .lg {
     margin-right: 20px;
     font-size: 18px;
   }
-}
-
-@media screen and (max-width: 1060px) {
   #main [data-menu] .l-menu {
     margin-right: 0px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #main [data-menu] .lg {
+    margin-right: 50px;
   }
 }
 /*# sourceMappingURL=yellow.css.map */
