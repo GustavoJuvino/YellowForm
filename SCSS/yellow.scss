@@ -291,22 +291,46 @@ body{
             }
 
             .btn{
-                margin-left: 18%;
+                margin-left: 28%;
                 margin-right: 0px;
-                @include desktop-responsive(medium){
-                    text-align: center;
-                    margin-left: 0%;
-                }
             }
 
+        }
+    }
+    @include desktop-responsive(medium){
+        .form-texts{
+            h1{
+                font-size: 38px;
+            }
+            .form{
+                .texts{
+                    font-size: 10px;
+                }
+            }
         }
     }
 }
 
 #main-left{
-    @include desktop-responsive(medium){
+    @include desktop-responsive(large){
         .main-img{
             width: 500px;
+        }
+    }
+    @include desktop-responsive(large){
+        .main-img{
+            width: 400px;
+        }
+    }
+}
+
+#main{
+    [data-menu]{
+        .lg{
+            @include desktop-responsive(medium){
+                margin-right: 20px;
+                font-size: 18px;
+            }
         }
     }
 }

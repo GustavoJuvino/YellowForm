@@ -414,21 +414,36 @@ body {
     margin-right: 0px;
   }
   .login-active .form-texts .btn {
-    margin-left: 18%;
+    margin-left: 28%;
     margin-right: 0px;
   }
 }
 
-@media screen and (max-width: 1350px) and (max-width: 1280px) {
-  .login-active .form-texts .btn {
-    text-align: center;
-    margin-left: 0%;
+@media screen and (max-width: 1060px) {
+  .login-active .form-texts h1 {
+    font-size: 38px;
+  }
+  .login-active .form-texts .form .texts {
+    font-size: 10px;
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1350px) {
   #main-left .main-img {
     width: 500px;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #main-left .main-img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  #main [data-menu] .lg {
+    margin-right: 20px;
+    font-size: 18px;
   }
 }
 /*# sourceMappingURL=yellow.css.map */
