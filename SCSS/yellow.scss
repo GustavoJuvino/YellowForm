@@ -329,9 +329,6 @@ body{
         }
     }
     @include desktop-responsive(mobile){
-        width: 100vw;
-        height: 100vh;
-
         .form-texts{
             margin-left: 140px;
             .btn{
@@ -344,6 +341,13 @@ body{
         .f-register{
             margin-right: 16%;
         }
+    }
+}
+
+#main{
+    @include desktop-responsive(mobile){
+        width: 100vw;
+        height: 100vh;
     }
 }
 

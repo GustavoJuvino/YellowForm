@@ -446,10 +446,6 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  .login-active {
-    width: 100vw;
-    height: 100vh;
-  }
   .login-active .form-texts {
     margin-left: 140px;
   }
@@ -461,6 +457,13 @@ body {
   }
   .login-active .f-register {
     margin-right: 16%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #main {
+    width: 100vw;
+    height: 100vh;
   }
 }
 
