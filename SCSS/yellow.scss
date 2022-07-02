@@ -361,6 +361,14 @@ body{
         width: 100vw;
         height: 100vh;
     }
+    @include desktop-responsive(second-mobile){
+        height: 100vh;
+    }
+    @include desktop-responsive(third-mobile){
+        height: 100%;
+    }
+
+
 }
 
 #main-left{
