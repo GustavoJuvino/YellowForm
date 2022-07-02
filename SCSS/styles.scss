@@ -70,6 +70,7 @@ $red-color: #961111;
 $large-desktop: 1350px;      // 1st BP - Login / Register
 $medium-desktop: 1060px;    // 2nd BP - Login / Register
 $mobile: 800px;            // Mobile BreakPoint
+$second-mobile: 440px;    // Second Mobile BreakPoint
 
 
 @mixin desktop-responsive($size) {
@@ -87,6 +88,12 @@ $mobile: 800px;            // Mobile BreakPoint
 
   @else if $size ==mobile {
     @media screen and (max-width: #{$mobile}) {
+      @content;
+    }
+  }
+
+  @else if $size ==second-mobile {
+    @media screen and (max-width: #{$second-mobile}) {
       @content;
     }
   }

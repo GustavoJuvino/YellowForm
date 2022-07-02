@@ -446,8 +446,8 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-  .login-active .form-texts {
-    margin-left: 140px;
+  .login-active {
+    margin-left: 15%;
   }
   .login-active .form-texts .btn {
     margin-left: 0%;
@@ -456,7 +456,14 @@ body {
     margin-right: 30px;
   }
   .login-active .f-register {
-    margin-right: 16%;
+    margin-right: 0px;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .login-active {
+    margin-left: 0px;
   }
 }
 

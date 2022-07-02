@@ -329,8 +329,8 @@ body{
         }
     }
     @include desktop-responsive(mobile){
+        margin-left: 15%;
         .form-texts{
-            margin-left: 140px;
             .btn{
                 margin-left: 0%;
             }
@@ -339,8 +339,12 @@ body{
             }
         }
         .f-register{
-            margin-right: 16%;
+            margin-right: 0px;
+            text-align: start;
         }
+    }
+    @include desktop-responsive(second-mobile){
+        margin-left: 0px;
     }
 }
 
