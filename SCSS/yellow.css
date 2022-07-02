@@ -467,6 +467,12 @@ body {
   }
 }
 
+@media screen and (max-width: 344px) {
+  .login-active .form-texts form input {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 800px) {
   #main {
     width: 100vw;

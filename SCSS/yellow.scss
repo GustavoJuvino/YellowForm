@@ -9,7 +9,6 @@
 }
 
 
-//  LOGIN FORM 
 body{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -345,6 +344,15 @@ body{
     }
     @include desktop-responsive(second-mobile){
         margin-left: 0px;
+    }
+    @include desktop-responsive(third-mobile){
+        .form-texts{
+            form{
+                input{
+                    width: 90%;
+                }
+            }
+        }
     }
 }
 
