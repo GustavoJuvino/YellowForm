@@ -67,7 +67,7 @@ body{
             background-color: $main-color;
             position: absolute;
             right: 0px;
-            top: 100px;
+            top: 50px;
             border-radius: 2px;
             margin-right: 100px;
             border:  2px solid black;
@@ -329,7 +329,10 @@ body{
     }
     @include desktop-responsive(mobile){
         margin-left: 15%;
+
         .form-texts{
+            margin-top: 0px;
+
             .btn{
                 margin-left: 0%;
             }
@@ -344,52 +347,41 @@ body{
     }
     @include desktop-responsive(second-mobile){
         margin-left: 0px;
+        .f-register{
+            margin-top: 35px;
+        }
     }
     @include desktop-responsive(third-mobile){
         .form-texts{
+            .f-password {
+                font-size: 16px;
+            }
+            
             form{
+
                 input{
-                    width: 90%;
+                    width: 80%;
+                    height: 40px;
                 }
+            }
+
+            .btn{
+                width: 150px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+
+        .f-register{
+            font-size: 14px;
+
+            span{
+                font-size: 14px;
             }
         }
     }
 }
 
-#main{
-    @include desktop-responsive(mobile){
-        width: 100vw;
-        height: 100vh;
-    }
-    @include desktop-responsive(second-mobile){
-        height: 100vh;
-    }
-    @include desktop-responsive(third-mobile){
-        height: 100%;
-    }
-
-
-}
-
-#main-left{
-    @include desktop-responsive(large){
-        .main-img{
-            width: 500px;
-        }
-    }
-    @include desktop-responsive(medium){
-        .main-img{
-            width: 400px;
-            margin: 10px;
-        }
-        h1, p{
-            margin-left: 20px;
-        }
-    }
-    @include desktop-responsive(mobile){
-        display: none;
-    }
-}
 
 #main{
     [data-menu]{
@@ -408,5 +400,91 @@ body{
                 margin-right: 50px;
             }
         }
+    }
+}
+
+
+#main {
+    @include desktop-responsive(mobile) {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    @include desktop-responsive(second-mobile) {
+        height: 100vh;
+
+        [data-menu] {
+            .lg {
+                margin-right: 100px;
+                margin-top: 20px;
+
+                img {
+                    margin-bottom: 1px;
+                }
+            }
+        }
+
+        .floating-menu {
+            .l-menu {
+                width: 100px;
+                height: auto;
+                right: 40px;
+                top: 50px;
+                font-size: 18px;
+
+                p {
+                    padding-bottom: 15px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    @include desktop-responsive(third-mobile) {
+        height: 100vh;
+
+        [data-menu] {
+            .lg {
+                font-size: 16px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+        }
+
+        .floating-menu {
+            .l-menu {
+                width: 100px;
+                height: auto;
+                right: 5px;
+                top: 28px;
+                font-size: 18px;
+
+                p {
+                    padding-bottom: 15px;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+
+}
+#main-left{
+    @include desktop-responsive(large){
+        .main-img{
+            width: 500px;
+        }
+    }
+    @include desktop-responsive(medium){
+        .main-img{
+            width: 400px;
+            margin: 10px;
+        }
+        h1, p{
+            margin-left: 20px;
+        }
+    }
+    @include desktop-responsive(mobile){
+        display: none;
     }
 }
