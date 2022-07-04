@@ -495,18 +495,12 @@ body {
 }
 
 @media screen and (max-width: 1060px) {
-  #main [data-menu] .lg {
+  #main .lg {
     margin-right: 20px;
     font-size: 18px;
   }
-  #main [data-menu] .l-menu {
+  #main .l-menu {
     margin-right: 0px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  #main [data-menu] .lg {
-    margin-right: 50px;
   }
 }
 
@@ -514,6 +508,9 @@ body {
   #main {
     width: 100vw;
     height: 100vh;
+  }
+  #main .lg {
+    margin-right: 50px;
   }
 }
 
