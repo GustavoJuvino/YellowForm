@@ -36,20 +36,20 @@ body{
     }
 }
 
-#main{
+#main {
     width: auto;
     background-color: $gray-color1;
     display: block;
 
     // ----- Menu Floating -----
-    [data-menu]{
-        .lg{
+    [data-menu] {
+        .lg {
             @include texts(700);
             text-align: right;
             margin-right: 100px;
             margin-top: 65px;
 
-            img{
+            img {
                 cursor: pointer;
                 margin-bottom: 2px;
                 margin-left: 10px;
@@ -57,12 +57,12 @@ body{
         }
     }
 
-    .floating-menu{
-        img{
+    .floating-menu {
+        img {
             animation: enterMenu .3s forwards;
         }
 
-        .l-menu{
+        .l-menu {
             animation: anime2 .3s forwards;
             display: block;
             @include texts(500);
@@ -72,14 +72,14 @@ body{
             background-color: $main-color;
             position: absolute;
             right: 0px;
-            top: 50px;
+            top: 100px;
             border-radius: 2px;
             margin-right: 100px;
-            border:  2px solid black;
+            border: 2px solid black;
             cursor: pointer;
             z-index: 2;
 
-            p{
+            p {
                 padding-bottom: 20px;
                 padding-left: 10px;
                 margin-top: 12px;
@@ -88,11 +88,10 @@ body{
         }
     }
 
-    img{
+    img {
         animation: leaveMenu .3s forwards;
     }
 }
-
 // Floating Menu Animation
 @keyframes enterMenu {
     from{
@@ -169,6 +168,7 @@ body{
             margin-top: 40px;
             cursor: pointer;
             transition: 0.4s;
+
             &:hover {
                 color: $main-color2;
             }
@@ -409,8 +409,17 @@ body{
         width: 100vw;
         height: 100vh;
 
-        .lg{
-            margin-right: 50px;
+        [data-menu]{
+            .lg{
+                margin-right: 20px;
+            }
+        }
+
+        .floating-menu {
+            .l-menu {
+                margin-right: 18px;
+                top: 100px;
+            }
         }
     }
 
@@ -419,7 +428,6 @@ body{
 
         [data-menu] {
             .lg {
-                margin-right: 100px;
                 margin-top: 20px;
 
                 img {
@@ -432,7 +440,7 @@ body{
             .l-menu {
                 width: 100px;
                 height: auto;
-                right: 40px;
+                margin-right: 18px;
                 top: 50px;
                 font-size: 18px;
 
@@ -451,22 +459,14 @@ body{
             .lg {
                 font-size: 16px;
                 margin-right: 10px;
-                margin-top: 10px;
+                margin-top: 40px;
             }
         }
 
         .floating-menu {
             .l-menu {
-                width: 100px;
-                height: auto;
-                right: 5px;
-                top: 28px;
-                font-size: 18px;
-
-                p {
-                    padding-bottom: 15px;
-                    margin-top: 10px;
-                }
+                top: 62px;
+                margin-right: 8px;
             }
         }
     }
@@ -480,6 +480,7 @@ body{
         }
     }
     @include desktop-responsive(medium){
+        height: 100%;
         .main-img{
             width: 400px;
             margin: 10px;

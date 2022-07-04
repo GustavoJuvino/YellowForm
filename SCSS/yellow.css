@@ -100,7 +100,7 @@ body {
   background-color: #FDC430;
   position: absolute;
   right: 0px;
-  top: 50px;
+  top: 100px;
   border-radius: 2px;
   margin-right: 100px;
   border: 2px solid black;
@@ -509,8 +509,12 @@ body {
     width: 100vw;
     height: 100vh;
   }
-  #main .lg {
-    margin-right: 50px;
+  #main [data-menu] .lg {
+    margin-right: 20px;
+  }
+  #main .floating-menu .l-menu {
+    margin-right: 18px;
+    top: 100px;
   }
 }
 
@@ -519,7 +523,6 @@ body {
     height: 100vh;
   }
   #main [data-menu] .lg {
-    margin-right: 100px;
     margin-top: 20px;
   }
   #main [data-menu] .lg img {
@@ -528,7 +531,7 @@ body {
   #main .floating-menu .l-menu {
     width: 100px;
     height: auto;
-    right: 40px;
+    margin-right: 18px;
     top: 50px;
     font-size: 18px;
   }
@@ -545,18 +548,11 @@ body {
   #main [data-menu] .lg {
     font-size: 16px;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 40px;
   }
   #main .floating-menu .l-menu {
-    width: 100px;
-    height: auto;
-    right: 5px;
-    top: 28px;
-    font-size: 18px;
-  }
-  #main .floating-menu .l-menu p {
-    padding-bottom: 15px;
-    margin-top: 10px;
+    top: 62px;
+    margin-right: 8px;
   }
 }
 
@@ -567,6 +563,9 @@ body {
 }
 
 @media screen and (max-width: 1060px) {
+  #main-left {
+    height: 100%;
+  }
   #main-left .main-img {
     width: 400px;
     margin: 10px;
