@@ -67,7 +67,7 @@ body{
             display: block;
             @include texts(500);
             color: $black-color;
-            width: 150px;
+            width: 350px;
             height: auto;
             background-color: $main-color;
             position: absolute;
@@ -397,6 +397,23 @@ body{
     @include desktop-responsive(large) {
         .registerForm{
             margin-left: 10%;
+        }
+    }
+    @include desktop-responsive(medium){
+        form{
+            .texts{
+                font-size: 16px;
+            }
+            input{  
+                width: 70%;
+                font-size: 16px;
+            }
+        }
+
+        .registerForm{
+            h1{
+                font-size: 35px;
+            }
         }
     }
 }

@@ -95,7 +95,7 @@ body {
   color: #FFFFFF;
   font-weight: 500;
   color: #141313;
-  width: 150px;
+  width: 350px;
   height: auto;
   background-color: #FDC430;
   position: absolute;
@@ -497,6 +497,19 @@ body {
 @media screen and (max-width: 1350px) {
   .register-active .registerForm {
     margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .register-active form .texts {
+    font-size: 16px;
+  }
+  .register-active form input {
+    width: 70%;
+    font-size: 16px;
+  }
+  .register-active .registerForm h1 {
+    font-size: 35px;
   }
 }
 
