@@ -494,12 +494,21 @@ body {
   }
 }
 
-@media screen and (max-width: 1060px) {
-  #main .lg {
-    margin-right: 20px;
+@media screen and (max-width: 1350px) {
+  .register-active .registerForm {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  #main [data-menu] .lg {
+    margin-right: 40px;
     font-size: 18px;
   }
-  #main .l-menu {
+}
+
+@media screen and (max-width: 1060px) {
+  #main .floating-menu .l-menu {
     margin-right: 0px;
   }
 }
@@ -564,7 +573,7 @@ body {
 
 @media screen and (max-width: 1060px) {
   #main-left {
-    height: 100%;
+    height: 100vh;
   }
   #main-left .main-img {
     width: 400px;

@@ -393,15 +393,29 @@ body{
     }
 }
 
-#main {
-    @include desktop-responsive(medium){
-        .lg{
-            margin-right: 20px;
-            font-size: 18px;
+.register-active{
+    @include desktop-responsive(large) {
+        .registerForm{
+            margin-left: 10%;
         }
+    }
+}
 
-        .l-menu{
-            margin-right: 0px;
+#main {
+    @include desktop-responsive(large){
+        [data-menu]{
+            .lg{
+                margin-right: 40px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    @include desktop-responsive(medium){
+        .floating-menu{
+            .l-menu{
+                margin-right: 0px;
+            }
         }
     }
 
@@ -480,7 +494,7 @@ body{
         }
     }
     @include desktop-responsive(medium){
-        height: 100%;
+        height: 100vh;
         .main-img{
             width: 400px;
             margin: 10px;
