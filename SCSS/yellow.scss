@@ -358,6 +358,7 @@ body{
     }
     @include desktop-responsive(second-mobile){
         margin-left: 0px;
+
         .f-register{
             margin-top: 35px;
         }
@@ -399,6 +400,7 @@ body{
             margin-left: 10%;
         }
     }
+
     @include desktop-responsive(medium){
         form{
             .texts{
@@ -416,6 +418,73 @@ body{
             }
         }
     }
+
+    @include desktop-responsive(mobile){
+        margin-left: 5%;
+
+        .form-texts{
+            margin-top: 0px;
+
+            .btn{
+                margin-left: 0%;
+            }
+            .f-password{
+                margin-right: 30px;
+            }
+        }
+
+        form{
+            input{  
+                width: 300px;
+                font-size: 16px;
+            }
+        }
+    }
+
+    @include desktop-responsive(second-mobile){
+        margin-left: 0px;
+
+        form{
+            input{  
+                width: 74%;
+
+            }
+        }
+
+        .registerForm{
+            .btn{
+                width: 200px;
+                font-size: 22px;
+                margin-right: 12%;
+            }
+        }
+
+        .signIn{
+            padding-bottom: 40px;
+            font-size: 16px;
+            margin-top: 40px;
+            span{
+                font-size: 16px;
+            }
+        }
+    }
+
+    @include desktop-responsive(third-mobile){
+        .registerForm{
+            h1{
+                font-size: 22px;
+            }
+            .btn{
+                margin-left: 0%;
+            }
+        }
+
+        .signIn{
+            font-size: 14px;
+            padding-bottom: 80px;
+            margin-left: 0px;
+        }
+    }
 }
 
 #main {
@@ -425,7 +494,7 @@ body{
                 margin-right: 20px;
             }
         }
-        
+
         .floating-menu{
             .l-menu{
                 margin-right: 20px;

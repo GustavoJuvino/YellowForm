@@ -513,6 +513,61 @@ body {
   }
 }
 
+@media screen and (max-width: 800px) {
+  .register-active {
+    margin-left: 5%;
+  }
+  .register-active .form-texts {
+    margin-top: 0px;
+  }
+  .register-active .form-texts .btn {
+    margin-left: 0%;
+  }
+  .register-active .form-texts .f-password {
+    margin-right: 30px;
+  }
+  .register-active form input {
+    width: 300px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .register-active {
+    margin-left: 0px;
+  }
+  .register-active form input {
+    width: 74%;
+  }
+  .register-active .registerForm .btn {
+    width: 200px;
+    font-size: 22px;
+    margin-right: 12%;
+  }
+  .register-active .signIn {
+    padding-bottom: 40px;
+    font-size: 16px;
+    margin-top: 40px;
+  }
+  .register-active .signIn span {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .register-active .registerForm h1 {
+    font-size: 22px;
+  }
+  .register-active .registerForm .btn {
+    margin-left: 0%;
+  }
+  .register-active .signIn {
+    font-size: 14px;
+    padding-bottom: 80px;
+    margin-left: 0px;
+  }
+}
+
 @media screen and (max-width: 1600px) {
   #main [data-menu] .lg {
     margin-right: 20px;
