@@ -419,10 +419,23 @@ body{
 }
 
 #main {
+    @include float-menu(float){
+        [data-menu]{
+            .lg{
+                margin-right: 20px;
+            }
+        }
+        
+        .floating-menu{
+            .l-menu{
+                margin-right: 20px;
+            }
+        }
+    }
+
     @include desktop-responsive(large){
         [data-menu]{
             .lg{
-                margin-right: 40px;
                 font-size: 18px;
             }
         }

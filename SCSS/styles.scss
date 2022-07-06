@@ -66,9 +66,11 @@ $red-color: #961111;
 }
 
 // BreakPoints
+$floating-menu: 1600px;
 
 $large-desktop: 1350px;       // 1st BP - Login / Register
 $medium-desktop: 1060px;     // 2nd BP - Login / Register
+
 $mobile: 800px;             // Mobile BreakPoint
 $second-mobile: 440px;     // 2nd Mobile BreakPoint
 $third-mobile: 380px;     // 3rd Mobile BreakPoint
@@ -118,6 +120,14 @@ $laptop-height: 922px;
 @mixin laptop-responsive($size){
   @if $size== laptop{
     @media screen and (max-height: #{laptop-height}) {
+      @content;
+    }
+  }
+}
+
+@mixin float-menu($size){
+  @if $size== float{
+    @media screen and (max-width: #{$floating-menu}) {
       @content;
     }
   }

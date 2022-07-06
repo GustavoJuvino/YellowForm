@@ -513,9 +513,17 @@ body {
   }
 }
 
+@media screen and (max-width: 1600px) {
+  #main [data-menu] .lg {
+    margin-right: 20px;
+  }
+  #main .floating-menu .l-menu {
+    margin-right: 20px;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   #main [data-menu] .lg {
-    margin-right: 40px;
     font-size: 18px;
   }
 }
