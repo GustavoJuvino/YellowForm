@@ -27,15 +27,21 @@ const flMenu = "floating-menu";
 
 
 // Clicking Outside Floating Menu
-
-// function outsideMenu(){
-//     const allBody = document.querySelector("body");
-
-//     floatMenu.classList.toggle(flMenu)
-
-    
-//     allBody.addEventListener("click",)
-// }
+const body = document.querySelector("body");
 
 
-// arrowMenu.addEventListener("click", () => outsideMenu());
+arrowMenu.addEventListener("click", () => {
+    floatMenu.classList.toggle(flMenu)
+    body.classList.add("fl-actived")
+    outsideMenu();
+})
+
+function outsideMenu(element){
+    body.addEventListener("click", outsideClick)
+
+    function outsideClick(){
+        if(body.classList.contains("fl-actived")) {
+            floatMenu.classList.remove(flMenu)
+        }
+    }
+}
