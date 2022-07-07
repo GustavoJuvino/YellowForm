@@ -649,7 +649,7 @@ body {
 
 @media screen and (max-width: 1060px) {
   #main-left {
-    height: 100vh;
+    height: 100%;
   }
   #main-left .main-img {
     width: 400px;

@@ -304,6 +304,7 @@ body{
 
         }
     }
+
     @include desktop-responsive(medium){
         .form-texts{
             h1{
@@ -337,6 +338,7 @@ body{
             }
         }
     }
+
     @include desktop-responsive(mobile){
         margin-left: 15%;
 
@@ -356,6 +358,7 @@ body{
             text-align: start;
         }
     }
+
     @include desktop-responsive(second-mobile){
         margin-left: 0px;
 
@@ -363,6 +366,7 @@ body{
             margin-top: 35px;
         }
     }
+    
     @include desktop-responsive(third-mobile){
         .form-texts{
             .f-password {
@@ -592,8 +596,11 @@ body{
             width: 500px;
         }
     }
+
+
     @include desktop-responsive(medium){
-        height: 100vh;
+        height: 100%;
+        
         .main-img{
             width: 400px;
             margin: 10px;
@@ -602,6 +609,7 @@ body{
             margin-left: 20px;
         }
     }
+
     @include desktop-responsive(mobile){
         display: none;
     }
