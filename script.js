@@ -1,3 +1,4 @@
+
 // Login And Register Navigation
 
 const sectionLogin = document.querySelector("[data-login]");
@@ -19,9 +20,22 @@ login.addEventListener("click", () =>{
 })
 
 // Activating Float Language-Menu
-const menuArrow = document.querySelector(".ArrowDown");
-const menuFloat = document.querySelector("[data-menu]");
+const arrowMenu = document.querySelector(".ArrowDown");
+const floatMenu = document.querySelector("[data-menu]");
 
 const flMenu = "floating-menu";
 
-menuArrow.addEventListener("click", () => menuFloat.classList.toggle(flMenu));
+
+// Clicking Outside Floating Menu
+
+// function outsideMenu(){
+//     const allBody = document.querySelector("body");
+
+//     floatMenu.classList.toggle(flMenu)
+
+    
+//     allBody.addEventListener("click",)
+// }
+
+
+// arrowMenu.addEventListener("click", () => outsideMenu());
