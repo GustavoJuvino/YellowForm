@@ -39,15 +39,15 @@ function outsideMenu(){
     const html = document.documentElement;
 
     function outsideClick(){
-        html.addEventListener("click", (e) =>{
-            if(!e.target.classList.contains("t") && !e.target.classList.contains("ArrowDown")){
+        html.addEventListener("click", function removeMenu(element){
+            if(!element.target.classList.contains("t") && !element.target.classList.contains("ArrowDown")){
                 floatMenu.classList.remove(flMenu);
+                html.removeEventListener("click", removeMenu);
             }
             console.log("click");
         })
     }
     outsideClick()
-
 
 }
 
