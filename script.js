@@ -27,21 +27,19 @@ const flMenu = "floating-menu";
 
 
 // Clicking Outside Floating Menu
-const body = document.querySelector("body");
-
 
 arrowMenu.addEventListener("click", () => {
     floatMenu.classList.toggle(flMenu)
-    body.classList.add("fl-actived")
-    outsideMenu();
+    clickoutside()
 })
 
-function outsideMenu(element){
-    body.addEventListener("click", outsideClick)
 
-    function outsideClick(){
-        if(body.classList.contains("fl-actived")) {
+function clickoutside(){
+    document.onclick = (e) =>{
+        if(e.target !== arrowMenu && e.target !== floatMenu){
             floatMenu.classList.remove(flMenu)
         }
     }
+    
 }
+
