@@ -22,6 +22,7 @@ login.addEventListener("click", () =>{
 // Activating Float Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
+const teste = document.querySelector(".l-menu")
 
 const flMenu = "floating-menu";
 
@@ -30,16 +31,23 @@ const flMenu = "floating-menu";
 
 arrowMenu.addEventListener("click", () => {
     floatMenu.classList.toggle(flMenu)
-    clickoutside()
+    outsideMenu();
 })
 
+// FIRST METHOD
+function outsideMenu(){
+    const html = document.documentElement;
 
-function clickoutside(){
-    document.onclick = (e) =>{
-        if(e.target !== arrowMenu && e.target !== floatMenu){
-            floatMenu.classList.remove(flMenu)
-        }
+    function outsideClick(){
+        html.addEventListener("click", (e) =>{
+            if(!e.target.classList.contains("t") && !e.target.classList.contains("ArrowDown")){
+                floatMenu.classList.remove(flMenu);
+            }
+            console.log("click");
+        })
     }
-    
+    outsideClick()
+
+
 }
 
