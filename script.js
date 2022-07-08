@@ -19,7 +19,7 @@ login.addEventListener("click", () =>{
     sectionRegister.classList.remove(m[0]);
 })
 
-// Activating Float Language-Menu
+// Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
 const teste = document.querySelector(".l-menu")
@@ -27,27 +27,24 @@ const teste = document.querySelector(".l-menu")
 const flMenu = "floating-menu";
 
 
-// Clicking Outside Floating Menu
-
+// Clicking Outside -- Floating Menu
 arrowMenu.addEventListener("click", () => {
+    // Active the floating menu
     floatMenu.classList.toggle(flMenu)
     outsideMenu();
 })
 
-// FIRST METHOD
 function outsideMenu(){
     const html = document.documentElement;
+    html.addEventListener("click", function clickCheck(e) {
 
-    function outsideClick(){
-        html.addEventListener("click", function removeMenu(element){
-            if(!element.target.classList.contains("t") && !element.target.classList.contains("ArrowDown")){
-                floatMenu.classList.remove(flMenu);
-                html.removeEventListener("click", removeMenu);
-            }
-            console.log("click");
-        })
-    }
-    outsideClick()
+        // Check if the target was on the arrow or  was inside the menu.
+        if(!e.target.classList.contains("t") && !e.target.classList.contains("ArrowDown")){
+            floatMenu.classList.remove(flMenu);
 
+        // Remove the click event at the end.
+            html.removeEventListener("click", clickCheck);
+        }
+    })
 }
 
