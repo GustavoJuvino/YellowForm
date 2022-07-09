@@ -22,8 +22,6 @@ login.addEventListener("click", () =>{
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
-const teste = document.querySelector(".l-menu")
-
 const flMenu = "floating-menu";
 
 
@@ -39,7 +37,7 @@ function outsideMenu(){
     html.addEventListener("click", function clickCheck(e) {
 
         // Check if the target was on the arrow or  was inside the menu.
-        if(!e.target.classList.contains("t") && !e.target.classList.contains("ArrowDown")){
+        if(!e.target.classList.contains("l") && !e.target.classList.contains("ArrowDown")){
             floatMenu.classList.remove(flMenu);
 
         // Remove the click event at the end.
@@ -48,3 +46,7 @@ function outsideMenu(){
     })
 }
 
+
+
+// Changing the Language Page
+import languagePt from "./languages.js";
