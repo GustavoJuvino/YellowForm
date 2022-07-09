@@ -50,3 +50,29 @@ function outsideMenu(){
 
 // Changing the Language Page
 import languagePt from "./languages.js";
+
+const languages = ["[data-en]", "[data-pt]", "[data-de]"];
+
+const ptbr = document.querySelector(languages[1]);
+
+
+function clickLanguagePT(){
+
+    const arrayPT = [".f-password", ".btn", ".f-register"];
+    const elementsPT = ["label", "span", "p"];
+
+    const labelPT = document.getElementsByTagName(elementsPT[0]);
+    const paragraph = document.getElementsByTagName("p");
+    const classesPT = document.querySelectorAll(arrayPT);
+
+    // const spanPT = document.querySelector("[data-span='register']");
+    // spanPT.innerText = languagePt.span;
+
+    classesPT[0].innerText = languagePt.fPassword;
+    classesPT[1].innerText = languagePt.btn;
+    paragraph[6].innerHTML = languagePt.fregister;
+
+}
+
+
+ptbr.addEventListener("click", clickLanguagePT)

@@ -5,9 +5,9 @@ const languagePt = {
     user: "Usuário ou Email",
     password: "Senha",
     fPassword: "Esqueceu a sua senha?",
-    fregister: "Não tem uma conta existente? Agora mesmo!",
     span: "Registre-se",
-    button: "Entrar",
+    fregister: "Não tem uma conta existente? REGISTRE-SE Agora mesmo!",
+    btn: "Entrar",
     lng: "PT/BR",
 }
 
