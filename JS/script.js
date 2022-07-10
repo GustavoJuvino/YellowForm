@@ -48,16 +48,14 @@ function outsideMenu(){
 
 
 
-// Changing the Language Page
+// Changing the Language Page (Portuguese - Brazil)
 import languageBR from "./languages.js";
 
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
-
 const ptbr = document.querySelector(languages[1]);
 
-
 function clickLanguagebr(){
-
+    // Classes and Tags
     const arrayBR = [".p-initials", ".f-password", ".btn", ".p-register"];
     const elementsBR = ["label", "span"];
 
