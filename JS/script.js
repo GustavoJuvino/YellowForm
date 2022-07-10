@@ -62,7 +62,7 @@ function clickLanguagebr(){
     const labelBR = document.getElementsByTagName(elementsBR[0]);
     const spanBR = document.getElementsByTagName(elementsBR[1]);
     const classesBR = document.querySelectorAll(arrayBR);
-
+    
     // Username and Password
     labelBR[0].innerText = languageBR.user;
     labelBR[1].innerText = languageBR.password;
