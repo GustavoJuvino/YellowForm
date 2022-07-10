@@ -193,16 +193,15 @@ body{
         @include texts(500);
         margin-top: 60px;
         text-align: center;
+    }
+    span {
+        cursor: pointer;
+        @include texts(700);
+        color: $white-color;
+        transition: 0.4s;
 
-        span {
-            cursor: pointer;
-            @include texts(700);
-            color: $white-color;
-            transition: 0.4s;
-
-            &:hover {
-                color: $main-color2;
-            }
+        &:hover {
+            color: $main-color2;
         }
     }
 }
@@ -332,11 +331,12 @@ body{
         }
         .f-register{
             font-size: 16px;
-
-            span{
-                font-size: 16px;
-            }
+            margin-left: 20px;
         }
+        span{
+            font-size: 16px;
+        }  
+    
     }
 
     @include desktop-responsive(mobile){
@@ -390,10 +390,9 @@ body{
 
         .f-register{
             font-size: 14px;
-
-            span{
-                font-size: 14px;
-            }
+        }
+        span{
+            font-size: 14px;
         }
     }
 }
@@ -592,14 +591,14 @@ body{
 }
 #main-left{
     @include desktop-responsive(large){
+        height: 100vh;
         .main-img{
             width: 500px;
         }
     }
 
-
     @include desktop-responsive(medium){
-        height: 100%;
+        height: 100vh;
         
         .main-img{
             width: 400px;

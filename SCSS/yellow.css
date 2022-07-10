@@ -281,7 +281,7 @@ body {
   text-align: center;
 }
 
-.login-active .f-register span {
+.login-active span {
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -292,7 +292,7 @@ body {
   transition: 0.4s;
 }
 
-.login-active .f-register span:hover {
+.login-active span:hover {
   color: #FBBC05;
 }
 
@@ -439,8 +439,9 @@ body {
   }
   .login-active .f-register {
     font-size: 16px;
+    margin-left: 20px;
   }
-  .login-active .f-register span {
+  .login-active span {
     font-size: 16px;
   }
 }
@@ -489,7 +490,7 @@ body {
   .login-active .f-register {
     font-size: 14px;
   }
-  .login-active .f-register span {
+  .login-active span {
     font-size: 14px;
   }
 }
@@ -642,6 +643,9 @@ body {
 }
 
 @media screen and (max-width: 1350px) {
+  #main-left {
+    height: 100vh;
+  }
   #main-left .main-img {
     width: 500px;
   }
@@ -649,7 +653,7 @@ body {
 
 @media screen and (max-width: 1060px) {
   #main-left {
-    height: 100%;
+    height: 100vh;
   }
   #main-left .main-img {
     width: 400px;
