@@ -73,8 +73,6 @@ $mobile: 800px;             // Mobile BreakPoint
 $second-mobile: 440px;     // 2nd Mobile BreakPoint
 $third-mobile: 380px;     // 3rd Mobile BreakPoint
 
-
-
 @mixin desktop-responsive($size) {
   @if $size ==large {
     @media screen and (max-width: #{$large-desktop}) {
@@ -111,19 +109,24 @@ $third-mobile: 380px;     // 3rd Mobile BreakPoint
       @content;
     }
   }
-}
 
-$laptop-height: 922px;
-
-@mixin laptop-responsive($size){
-  @if $size==laptop {
-    @media screen and (max-height: #{laptop-height}) {
+  @else if $size ==laptop {
+    @media screen and (max-height: #{laptop-height}){
       @content;
     }
   }
 }
 
 $floating-menu: 1600px;
+$nesthub-height: 610px;
+
+@mixin nesthub-responsive ($size){
+  @if $size== nesthub {
+    @media screen and (max-height: #{$nesthub-height}){
+      @content;
+    }
+  }
+}
 
 @mixin float-menu($size){
   @if $size==float {

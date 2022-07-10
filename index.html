@@ -20,11 +20,13 @@
     
     <section id="main">
         <section data-menu>
-        <p class="lg">UK/EN<img class="ArrowDown" src="./Imgs/ArrowDown.svg"></p>
+        <div class="l-initials">
+            <p class="p-initials">UK/EN</p><img class="ArrowDown" src="./Imgs/ArrowDown.svg">
+        </div>
         <div class="l-menu">
-            <p class="t">EN/ UK</p>
-            <p class="t">PT/ BR</p>
-            <p class="t">DE/ GE</p>
+            <p data-en class="l">EN/ UK</p>
+            <p data-pt class="l">PT/ BR</p>
+            <p data-de class="l">DE/ GE</p>
         </div>
         </section>
     
@@ -41,7 +43,9 @@
                 <p class="f-password">Forgot your password?</p>
                 <button class="btn">Sign In</button>
             </div>
-            <p class="f-register">Don't have an existing account? <span data-span="register">Register</span> right now!</p>
+            <div class="f-register">
+                <p class="p-register">Don't have an existing account?</p><span data-span="register">Register right now!</span> 
+            </div>
         </section>
     
         <!-- REGISTER -->
@@ -69,6 +73,6 @@
             </div>
         </section>
     </section>
-    <script src="./script.js"></script>
+    <script type="module" src="./JS/script.js"></script>
 </body>
 </html>

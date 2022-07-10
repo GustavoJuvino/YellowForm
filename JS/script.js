@@ -22,8 +22,6 @@ login.addEventListener("click", () =>{
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
-const teste = document.querySelector(".l-menu")
-
 const flMenu = "floating-menu";
 
 
@@ -39,7 +37,7 @@ function outsideMenu(){
     html.addEventListener("click", function clickCheck(e) {
 
         // Check if the target was on the arrow or  was inside the menu.
-        if(!e.target.classList.contains("t") && !e.target.classList.contains("ArrowDown")){
+        if(!e.target.classList.contains("l") && !e.target.classList.contains("ArrowDown")){
             floatMenu.classList.remove(flMenu);
 
         // Remove the click event at the end.
@@ -48,3 +46,41 @@ function outsideMenu(){
     })
 }
 
+
+
+// Changing the Language Page (Portuguese - Brazil)
+import languageBR from "./languages.js";
+
+const languages = ["[data-en]", "[data-pt]", "[data-de]"];
+const ptbr = document.querySelector(languages[1]);
+
+function clickLanguagebr(){
+    // Classes and Tags
+    const arrayBR = [".p-initials", ".f-password", ".btn", ".p-register"];
+    const elementsBR = ["label", "span"];
+
+    const labelBR = document.getElementsByTagName(elementsBR[0]);
+    const spanBR = document.getElementsByTagName(elementsBR[1]);
+    const classesBR = document.querySelectorAll(arrayBR);
+    
+    // Username and Password
+    labelBR[0].innerText = languageBR.user;
+    labelBR[1].innerText = languageBR.password;
+
+    // Language initials / Form Password
+    classesBR[0].innerText = languageBR.lng;
+    classesBR[1].innerText = languageBR.fPassword;
+
+    // Button
+    classesBR[2].innerText = languageBR.btn;
+
+    // Form Register
+    classesBR[3].innerText = languageBR.fregister;
+
+    // Span 
+    spanBR[0].innerText = languageBR.span;
+
+}
+
+
+ptbr.addEventListener("click", clickLanguagebr)

@@ -43,17 +43,18 @@ body{
 
     // ----- Menu Floating -----
     [data-menu] {
-        .lg {
+        .l-initials {
+            display: flex;
+            justify-content: end;
             @include texts(700);
             text-align: right;
-            margin-right: 100px;
+            margin-right: 30px;
             margin-top: 65px;
-
-            img {
-                cursor: pointer;
-                margin-bottom: 2px;
-                margin-left: 10px;
-            }
+        }
+        .ArrowDown {
+            cursor: pointer;
+            margin-bottom: 2px;
+            margin-left: 10px;
         }
     }
 
@@ -193,16 +194,15 @@ body{
         @include texts(500);
         margin-top: 60px;
         text-align: center;
+    }
+    span {
+        cursor: pointer;
+        @include texts(700);
+        color: $white-color;
+        transition: 0.4s;
 
-        span {
-            cursor: pointer;
-            @include texts(700);
-            color: $white-color;
-            transition: 0.4s;
-
-            &:hover {
-                color: $main-color2;
-            }
+        &:hover {
+            color: $main-color2;
         }
     }
 }
@@ -332,11 +332,12 @@ body{
         }
         .f-register{
             font-size: 16px;
-
-            span{
-                font-size: 16px;
-            }
+            margin-left: 20px;
         }
+        span{
+            font-size: 16px;
+        }  
+    
     }
 
     @include desktop-responsive(mobile){
@@ -390,10 +391,9 @@ body{
 
         .f-register{
             font-size: 14px;
-
-            span{
-                font-size: 14px;
-            }
+        }
+        span{
+            font-size: 14px;
         }
     }
 }
@@ -494,7 +494,7 @@ body{
 #main {
     @include float-menu(float){
         [data-menu]{
-            .lg{
+            .l-initials{
                 margin-right: 20px;
             }
         }
@@ -508,7 +508,7 @@ body{
 
     @include desktop-responsive(large){
         [data-menu]{
-            .lg{
+            .l-initials{
                 font-size: 18px;
             }
         }
@@ -527,7 +527,7 @@ body{
         height: 100vh;
 
         [data-menu]{
-            .lg{
+            .l-initials{
                 margin-right: 20px;
             }
         }
@@ -544,7 +544,7 @@ body{
         height: 100vh;
 
         [data-menu] {
-            .lg {
+            .l-initials {
                 margin-top: 20px;
 
                 img {
@@ -573,7 +573,7 @@ body{
         height: 100vh;
 
         [data-menu] {
-            .lg {
+            .l-initials {
                 font-size: 16px;
                 margin-right: 10px;
                 margin-top: 40px;
@@ -592,14 +592,13 @@ body{
 }
 #main-left{
     @include desktop-responsive(large){
+        height: 100vh;
         .main-img{
             width: 500px;
         }
     }
 
-
     @include desktop-responsive(medium){
-        height: 100%;
         
         .main-img{
             width: 400px;
@@ -612,5 +611,9 @@ body{
 
     @include desktop-responsive(mobile){
         display: none;
+    }
+
+    @include nesthub-responsive(nesthub){
+        height: 100%;
     }
 }
