@@ -43,17 +43,18 @@ body{
 
     // ----- Menu Floating -----
     [data-menu] {
-        .lg {
+        .l-initials {
+            display: flex;
+            justify-content: end;
             @include texts(700);
             text-align: right;
-            margin-right: 100px;
+            margin-right: 30px;
             margin-top: 65px;
-
-            img {
-                cursor: pointer;
-                margin-bottom: 2px;
-                margin-left: 10px;
-            }
+        }
+        .ArrowDown {
+            cursor: pointer;
+            margin-bottom: 2px;
+            margin-left: 10px;
         }
     }
 
@@ -493,7 +494,7 @@ body{
 #main {
     @include float-menu(float){
         [data-menu]{
-            .lg{
+            .l-initials{
                 margin-right: 20px;
             }
         }
@@ -507,7 +508,7 @@ body{
 
     @include desktop-responsive(large){
         [data-menu]{
-            .lg{
+            .l-initials{
                 font-size: 18px;
             }
         }
@@ -526,7 +527,7 @@ body{
         height: 100vh;
 
         [data-menu]{
-            .lg{
+            .l-initials{
                 margin-right: 20px;
             }
         }
@@ -543,7 +544,7 @@ body{
         height: 100vh;
 
         [data-menu] {
-            .lg {
+            .l-initials {
                 margin-top: 20px;
 
                 img {
@@ -572,7 +573,7 @@ body{
         height: 100vh;
 
         [data-menu] {
-            .lg {
+            .l-initials {
                 font-size: 16px;
                 margin-right: 10px;
                 margin-top: 40px;

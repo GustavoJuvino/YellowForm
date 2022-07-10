@@ -49,30 +49,40 @@ function outsideMenu(){
 
 
 // Changing the Language Page
-import languagePt from "./languages.js";
+import languageBR from "./languages.js";
 
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 
 const ptbr = document.querySelector(languages[1]);
 
 
-function clickLanguagePT(){
+function clickLanguagebr(){
 
-    const arrayPT = [".f-password", ".btn", ".f-register"];
-    const elementsPT = ["label", "span", "p"];
+    const arrayBR = [".p-initials", ".f-password", ".btn", ".p-register"];
+    const elementsBR = ["label", "span"];
 
-    const labelPT = document.getElementsByTagName(elementsPT[0]);
-    const paragraph = document.getElementsByTagName("p");
-    const classesPT = document.querySelectorAll(arrayPT);
+    const labelBR = document.getElementsByTagName(elementsBR[0]);
+    const spanBR = document.getElementsByTagName(elementsBR[1]);
+    const classesBR = document.querySelectorAll(arrayBR);
 
-    // const spanPT = document.querySelector("[data-span='register']");
-    // spanPT.innerText = languagePt.span;
+    // Username and Password
+    labelBR[0].innerText = languageBR.user;
+    labelBR[1].innerText = languageBR.password;
 
-    classesPT[0].innerText = languagePt.fPassword;
-    classesPT[1].innerText = languagePt.btn;
-    paragraph[6].innerHTML = languagePt.fregister;
+    // Language initials / Form Password
+    classesBR[0].innerText = languageBR.lng;
+    classesBR[1].innerText = languageBR.fPassword;
+
+    // Button
+    classesBR[2].innerText = languageBR.btn;
+
+    // Form Register
+    classesBR[3].innerText = languageBR.fregister;
+
+    // Span 
+    spanBR[0].innerText = languageBR.span;
 
 }
 
 
-ptbr.addEventListener("click", clickLanguagePT)
+ptbr.addEventListener("click", clickLanguagebr)
