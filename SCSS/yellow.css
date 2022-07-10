@@ -652,9 +652,6 @@ body {
 }
 
 @media screen and (max-width: 1060px) {
-  #main-left {
-    height: 100vh;
-  }
   #main-left .main-img {
     width: 400px;
     margin: 10px;
@@ -667,6 +664,12 @@ body {
 @media screen and (max-width: 800px) {
   #main-left {
     display: none;
+  }
+}
+
+@media screen and (max-height: 610px) {
+  #main-left {
+    height: 100%;
   }
 }
 /*# sourceMappingURL=yellow.css.map */
