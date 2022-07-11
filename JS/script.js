@@ -58,7 +58,7 @@ const ptbr = document.querySelector(selectlanguages[1]);
 function clickLanguagebr(){
     // Classes and Tags
     const loginBR = [".p-initials", ".f-password", ".btn", ".p-register"];
-    const eBR = ["label", "span"];
+    const eBR = ["label", "span", "h1"];
 
     const labelBR = document.getElementsByTagName(eBR[0]);
     const spanBR = document.getElementsByTagName(eBR[1]);
@@ -74,14 +74,23 @@ function clickLanguagebr(){
     spanBR[0].innerText = ptBR.loginBR.span;
 
     // Register Form in PT-BR
-    // const  registerBR = [];
+    const btnRegister = document.querySelectorAll(".btn");
 
-    console.log(labelBR[2])
+    labelBR[2].innerText = ptBR.registerBR.user;
+    labelBR[4].innerText = ptBR.registerBR.phone;
+    labelBR[5].innerText = ptBR.loginBR.password;
+    labelBR[6].innerText = ptBR.registerBR.cpassword;
+    btnRegister[1].innerText = ptBR.registerBR.btn;
     
+    const h1BR = document.getElementsByTagName("h1");
+    h1BR[2].innerText = ptBR.registerBR.h1;
+    
+    const rBR = [".p-signIN", "[data-span='login']"]
+    const registerclassesBR = document.querySelectorAll(rBR);
+    registerclassesBR[0].innerText = ptBR.registerBR.flogin;
+    registerclassesBR[1].innerText = ptBR.registerBR.span;
+
+
 }
 
-
 ptbr.addEventListener("click", clickLanguagebr)
-
-
-

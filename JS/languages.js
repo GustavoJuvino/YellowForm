@@ -12,9 +12,13 @@ const ptBR = {
         lng: "PT/BR", 
     },
     registerBR: {
+        h1: "Crie a sua conta",
         user: "Usuário",
         phone: "Número de telefone",
         cpassword: "Confirme a senha",
+        btn: "Criar Conta",
+        flogin: "Já tem uma conta existente?",
+        span: "Faça o login aqui",
     }
 }
 
