@@ -53,6 +53,7 @@ function outsideMenu(){
 import {ptBR} from "./languages.js";
 
 const selectlanguages = ["[data-en]", "[data-pt]", "[data-de]"];
+const enUK =  document.querySelector(selectlanguages[0]);
 const ptbr = document.querySelector(selectlanguages[1]);
 
 function clickLanguagebr(){
@@ -93,4 +94,7 @@ function clickLanguagebr(){
 
 }
 
-ptbr.addEventListener("click", clickLanguagebr)
+ptbr.addEventListener("click", clickLanguagebr);
+enUK.addEventListener("click", () =>{
+    window.location.reload();
+});
