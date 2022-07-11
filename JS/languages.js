@@ -2,7 +2,7 @@
 
 
 const ptBR = {
-    loginBR : {
+    login: {
         user: "Usuário ou Email",
         password: "Senha",
         fPassword: "Esqueceu a sua senha?",
@@ -11,7 +11,7 @@ const ptBR = {
         btn: "Entrar",
         lng: "PT/BR", 
     },
-    registerBR: {
+    register: {
         h1: "Crie a sua conta",
         user: "Usuário",
         phone: "Número de telefone",
