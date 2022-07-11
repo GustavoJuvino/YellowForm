@@ -48,7 +48,7 @@ body{
             justify-content: end;
             @include texts(700);
             text-align: right;
-            margin-right: 30px;
+            margin-right: 40px;
             margin-top: 65px;
         }
         .ArrowDown {
@@ -75,7 +75,7 @@ body{
             right: 0px;
             top: 100px;
             border-radius: 2px;
-            margin-right: 100px;
+            margin-right: 40px;
             border: 2px solid black;
             cursor: pointer;
             z-index: 2;
