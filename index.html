@@ -31,7 +31,8 @@
         </section>
     
         <!-- LOGIN -->
-        <section data-login class="login-active">
+        <!-- class="login-active" -->
+        <section data-login>
             <div class="form-texts">
                 <h1>Login</h1>
                 <form action=''>
@@ -49,7 +50,7 @@
         </section>
     
         <!-- REGISTER -->
-        <section data-register>
+        <section data-register class="register-active">
             <div class="registerForm">
                 <h1>Create your<br>account</h1>
                 <form action=''>
@@ -69,7 +70,9 @@
                     <input type="password">
                 </form>
                 <button class="btn">Create Account</button>
-                <p class="signIn">Already have an account? <span data-span="login">Sign In</span></p>
+                <div class="signIn">
+                    <p>Already have an account?</p><span data-span="login">Sign In</span>
+                </div>
             </div>
         </section>
     </section>

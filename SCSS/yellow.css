@@ -389,15 +389,18 @@ body {
 }
 
 .register-active .signIn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 500;
   margin-top: 40px;
-  margin-left: 5%;
 }
 
-.register-active .signIn span {
+.register-active span {
+  margin-left: 6px;
   cursor: pointer;
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -408,7 +411,7 @@ body {
   transition: 0.4s;
 }
 
-.register-active .signIn span:hover {
+.register-active span:hover {
   color: #FBBC05;
 }
 
