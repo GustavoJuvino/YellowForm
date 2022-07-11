@@ -270,18 +270,19 @@ body{
         }
     }
     .signIn{
+        display: flex;
         @include texts(500);
         margin-top: 40px;
         margin-left: 5%;
-
-        span{
-            cursor: pointer;
-            @include texts(700);
-            color: $white-color;
-            transition: 0.4s;
-            &:hover{
-                color: $main-color2;
-            }
+    }
+    span{
+        margin-left: 6px;
+        cursor: pointer;
+        @include texts(700);
+        color: $white-color;
+        transition: 0.4s;
+        &:hover{
+            color: $main-color2;
         }
     }
 }

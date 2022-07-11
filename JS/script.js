@@ -49,38 +49,52 @@ function outsideMenu(){
 
 
 // Changing the Language Page (Portuguese - Brazil)
-import languageBR from "./languages.js";
 
-const languages = ["[data-en]", "[data-pt]", "[data-de]"];
-const ptbr = document.querySelector(languages[1]);
+import {ptBR} from "./languages.js";
+
+const selectlanguages = ["[data-en]", "[data-pt]", "[data-de]"];
+const enUK =  document.querySelector(selectlanguages[0]);
+const ptbr = document.querySelector(selectlanguages[1]);
 
 function clickLanguagebr(){
     // Classes and Tags
-    const arrayBR = [".p-initials", ".f-password", ".btn", ".p-register"];
-    const elementsBR = ["label", "span"];
+    const loginBR = [".p-initials", ".f-password", ".btn", ".p-register"];
+    const eBR = ["label", "span", "h1"];
 
-    const labelBR = document.getElementsByTagName(elementsBR[0]);
-    const spanBR = document.getElementsByTagName(elementsBR[1]);
-    const classesBR = document.querySelectorAll(arrayBR);
+    const labelBR = document.getElementsByTagName(eBR[0]);
+    const spanBR = document.getElementsByTagName(eBR[1]);
+    const classesBR = document.querySelectorAll(loginBR);
     
-    // Username and Password
-    labelBR[0].innerText = languageBR.user;
-    labelBR[1].innerText = languageBR.password;
+    // Login Form in PT-BR
+    labelBR[0].innerText = ptBR.loginBR.user;
+    labelBR[1].innerText = ptBR.loginBR.password;
+    classesBR[0].innerText = ptBR.loginBR.lng;
+    classesBR[1].innerText = ptBR.loginBR.fPassword;
+    classesBR[2].innerText = ptBR.loginBR.btn;
+    classesBR[3].innerText = ptBR.loginBR.fregister;
+    spanBR[0].innerText = ptBR.loginBR.span;
 
-    // Language initials / Form Password
-    classesBR[0].innerText = languageBR.lng;
-    classesBR[1].innerText = languageBR.fPassword;
+    // Register Form in PT-BR
+    const btnRegister = document.querySelectorAll(".btn");
 
-    // Button
-    classesBR[2].innerText = languageBR.btn;
+    labelBR[2].innerText = ptBR.registerBR.user;
+    labelBR[4].innerText = ptBR.registerBR.phone;
+    labelBR[5].innerText = ptBR.loginBR.password;
+    labelBR[6].innerText = ptBR.registerBR.cpassword;
+    btnRegister[1].innerText = ptBR.registerBR.btn;
+    
+    const h1BR = document.getElementsByTagName("h1");
+    h1BR[2].innerText = ptBR.registerBR.h1;
+    
+    const rBR = [".p-signIN", "[data-span='login']"]
+    const registerclassesBR = document.querySelectorAll(rBR);
+    registerclassesBR[0].innerText = ptBR.registerBR.flogin;
+    registerclassesBR[1].innerText = ptBR.registerBR.span;
 
-    // Form Register
-    classesBR[3].innerText = languageBR.fregister;
-
-    // Span 
-    spanBR[0].innerText = languageBR.span;
 
 }
 
-
-ptbr.addEventListener("click", clickLanguagebr)
+ptbr.addEventListener("click", clickLanguagebr);
+enUK.addEventListener("click", () =>{
+    window.location.reload();
+});
