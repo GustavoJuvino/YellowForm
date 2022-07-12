@@ -49,7 +49,7 @@ body{
             @include texts(700);
             text-align: right;
             margin-right: 40px;
-            margin-top: 65px;
+            margin-top: 50px;
         }
         .ArrowDown {
             cursor: pointer;
@@ -73,7 +73,7 @@ body{
             background-color: $main-color;
             position: absolute;
             right: 0px;
-            top: 100px;
+            top: 80px;
             border-radius: 2px;
             margin-right: 40px;
             border: 2px solid black;
@@ -226,7 +226,6 @@ body{
     .registerForm{
         margin-left: 30%;
         h1{
-            padding-top: 0px;
             @include headings(48px);
         }
     }

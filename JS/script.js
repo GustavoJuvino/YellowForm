@@ -72,31 +72,29 @@ function changeLanguageBR(){
         labelBR[1].innerText = ptBR.login.password;
     }
 
-    // Classes
+    // Classes from Login form
     loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
 
 
     // // Register Form in PT-BR
-    // const btnRegister = document.querySelectorAll(".btn");
+    function registerBR(...c){
+        const classes = document.querySelectorAll(c);
+        classes[1].innerText = ptBR.register.btn;
+        classes[2].innerText = ptBR.register.flogin;
+        classes[3].innerText = ptBR.register.span;
 
-    // labelBR[2].innerText = ptBR.register.user;
-    // labelBR[4].innerText = ptBR.register.phone;
-    // labelBR[5].innerText = ptBR.login.password;
-    // labelBR[6].innerText = ptBR.register.cpassword;
-    // btnRegister[1].innerText = ptBR.register.btn;
-    
-    // const h1BR = document.getElementsByTagName("h1");
-    // h1BR[2].innerText = ptBR.register.h1;
-    
-    // const rBR = [".p-signIN", "[data-span='login']"]
-    // const registerclassesBR = document.querySelectorAll(rBR);
-    // registerclassesBR[0].innerText = ptBR.register.flogin;
-    // registerclassesBR[1].innerText = ptBR.register.span;
+        const labelBR = document.getElementsByTagName("label");
+        labelBR[2].innerText= ptBR.register.user;
+        labelBR[4].innerText= ptBR.register.phone;
+        labelBR[5].innerText= ptBR.login.password;
+        labelBR[6].innerText= ptBR.register.cpassword;
 
-
+        const h1 = document.getElementsByTagName("h1");
+        h1[2].innerText = ptBR.register.h1;
+    }
+    // Classes from Register form
+    registerBR(".p-signIN","[data-span='login']", ".btn")
 }
 
 pt.addEventListener("click", changeLanguageBR);
-en.addEventListener("click", () =>{
-    window.location.reload();
-});
+en.addEventListener("click", () => window.location.reload());

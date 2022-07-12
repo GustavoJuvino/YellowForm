@@ -78,7 +78,7 @@ body {
   font-weight: 700;
   text-align: right;
   margin-right: 40px;
-  margin-top: 65px;
+  margin-top: 50px;
 }
 
 #main [data-menu] .ArrowDown {
@@ -106,7 +106,7 @@ body {
   background-color: #FDC430;
   position: absolute;
   right: 0px;
-  top: 100px;
+  top: 80px;
   border-radius: 2px;
   margin-right: 40px;
   border: 2px solid black;
@@ -333,7 +333,6 @@ body {
 }
 
 .register-active .registerForm h1 {
-  padding-top: 0px;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 48px;
