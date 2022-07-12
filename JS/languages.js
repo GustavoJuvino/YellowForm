@@ -22,6 +22,29 @@ const ptBR = {
     }
 }
 
-export {ptBR};
+const deGE = {
+    login:{
+        user: "Benutzer oder E-Mail",
+        password: "Passwort",
+        fPassword: "Haben Sie Ihr Passwort vergessen?",
+        btn: "Einloggen",
+        fRegister: "Sie haben kein bestehendes Konto?",
+        span: "Gleich anmelden",
+        lng: "DE/GE", 
+
+    },
+    register: {
+        h1: "Erstelle deinen Account",
+        user: "Benutzer",
+        phone: "Telefonnummer",
+        password: "Passwort",
+        cPassword: "Bestätigen Sie das Passwort",
+        btn: "Ein Konto erstellen",
+        fRegister: "Sie haben bereits ein bestehendes Konto?",
+        span: "Hier zugreifen"
+    },
+}
+
+export {ptBR, deGE};
 
 
