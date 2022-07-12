@@ -104,8 +104,18 @@ import {deGE} from "./languages.js";
 
 function changeLanguageDE(){
     function loginDE(...c){
+
+        // German Login Form
         const classes = document.querySelectorAll(c);
-        console.log(classes)
+        classes[0].innerText = deGE.login.lng;
+        classes[1].innerText = deGE.login.fPassword;
+        classes[2].innerText = deGE.login.btn;
+        classes[3].innerText = deGE.login.fRegister;
+        classes[4].innerText = deGE.login.span;
+
+        const labelDE = document.getElementsByTagName("label")
+        labelDE[0].innerText = deGE.login.user;
+        labelDE[1].innerText = deGE.login.password;
     }
 
     loginDE(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");

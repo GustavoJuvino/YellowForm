@@ -30,6 +30,7 @@ const deGE = {
         btn: "Einloggen",
         fRegister: "Sie haben kein bestehendes Konto?",
         span: "Gleich anmelden",
+        lng: "DE/GE", 
 
     },
 }
