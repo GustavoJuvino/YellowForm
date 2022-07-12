@@ -98,8 +98,10 @@ function changeLanguageBR(){
     // Classes from Register form
     registerBR(".p-signIN","[data-span='login']", ".btn")
 }
+
 pt.addEventListener("click", changeLanguageBR);
 
+// Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
 
 function changeLanguageDE(){
@@ -119,7 +121,33 @@ function changeLanguageDE(){
     }
 
     loginDE(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
-}
 
+    // German Register Form
+    function registerDE(...c){
+        // Classes
+        const classes = document.querySelectorAll(c);
+        classes[1].innerText = deGE.register.btn;
+        classes[2].innerText = deGE.register.fRegister;
+        classes[3].innerText = deGE.register.span;
+
+        // Tags
+        const labelDE = document.getElementsByTagName("label");
+        labelDE[2].innerText= deGE.register.user;
+        labelDE[4].innerText= deGE.register.phone;
+        labelDE[5].innerText= deGE.login.password;
+        labelDE[6].innerText= deGE.register.cPassword;
+        
+
+        const h1 = document.getElementsByTagName("h1");
+        h1[2].innerText = deGE.register.h1;
+
+
+        //Styles required
+        // classes[3].style.fontSize = "10px";
+    }
+
+    registerDE(".p-signIN","[data-span='login']", ".btn");
+
+}
 
 de.addEventListener("click", changeLanguageDE);

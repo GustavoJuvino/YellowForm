@@ -33,6 +33,16 @@ const deGE = {
         lng: "DE/GE", 
 
     },
+    register: {
+        h1: "Erstelle deinen Account",
+        user: "Benutzer",
+        phone: "Telefonnummer",
+        password: "Passwort",
+        cPassword: "Bestätigen Sie das Passwort",
+        btn: "Ein Konto erstellen",
+        fRegister: "Sie haben bereits ein bestehendes Konto?",
+        span: "Hier zugreifen"
+    },
 }
 
 export {ptBR, deGE};
