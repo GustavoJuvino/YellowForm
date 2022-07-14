@@ -57,7 +57,6 @@ const en =  document.querySelector(languages[0]);
 const pt = document.querySelector(languages[1]);
 const de = document.querySelector(languages[2]);
 
-en.addEventListener("click", () => window.location.reload());
 
 function changeLanguageBR(){
 
@@ -151,3 +150,14 @@ function changeLanguageDE(){
 }
 
 de.addEventListener("click", changeLanguageDE);
+
+
+function english(){
+    window.location.reload();
+    // const test = document.querySelector(".p-signIN");
+    // test.innerText = test.innerText;
+
+}
+
+
+en.addEventListener("click", () => english());
