@@ -57,6 +57,7 @@ const en =  document.querySelector(languages[0]);
 const pt = document.querySelector(languages[1]);
 const de = document.querySelector(languages[2]);
 
+en.addEventListener("click",() => window.location.reload() );
 
 function changeLanguageBR(){
 
@@ -72,13 +73,14 @@ function changeLanguageBR(){
         const labelBR = document.getElementsByTagName("label")
         labelBR[0].innerText = ptBR.login.user;
         labelBR[1].innerText = ptBR.login.password;
+
     }
 
-    // Classes from Login form
+    // // Classes from Login form
     loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
 
 
-    // // Register Form in PT-BR
+    // Register Form in PT-BR
     function registerBR(...c){
         const classes = document.querySelectorAll(c);
         classes[1].innerText = ptBR.register.btn;
@@ -98,7 +100,8 @@ function changeLanguageBR(){
     registerBR(".p-signIN","[data-span='login']", ".btn")
 }
 
-pt.addEventListener("click", changeLanguageBR);
+pt.addEventListener("click", changeLanguageBR)
+
 
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
@@ -152,18 +155,3 @@ function changeLanguageDE(){
 de.addEventListener("click", changeLanguageDE);
 
 
-function english(){
-    window.location.reload();
-    // const test = document.querySelector(".p-signIN");
-    // test.innerText = test.innerText;
-
-}
-
-
-en.addEventListener("click", () => english());
-
-function setValues() {
-    const properties = Object.keys(sessionStorage);
-    console.log(properties);
-}
-setValues()
