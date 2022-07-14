@@ -161,3 +161,9 @@ function english(){
 
 
 en.addEventListener("click", () => english());
+
+function setValues() {
+    const properties = Object.keys(sessionStorage);
+    console.log(properties);
+}
+setValues()
