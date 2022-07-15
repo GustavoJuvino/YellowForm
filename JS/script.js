@@ -103,6 +103,20 @@ function changeLanguageBR(){
 pt.addEventListener("click", changeLanguageBR)
 
 
+// TESTING
+const testing = document.querySelector(".p-initials");
+
+const set =  sessionStorage.setItem("lng", testing.innerText);
+
+const set2 = sessionStorage.setItem("lng2",ptBR.login.lng);
+
+const set3 = sessionStorage.setItem("lng3", deGE.login.lng);
+
+
+testing.innerText = sessionStorage.getItem("lng2");
+testing.innerText = sessionStorage.getItem("lng3");
+testing.innerText = sessionStorage.getItem("lng");
+
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
 
