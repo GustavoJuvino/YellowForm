@@ -76,7 +76,6 @@ function changeLanguageBR(){
 
     }
 
-    // // Classes from Login form
     loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
 
 
@@ -96,17 +95,20 @@ function changeLanguageBR(){
         const h1 = document.getElementsByTagName("h1");
         h1[2].innerText = ptBR.register.h1;
     }
-    // Classes from Register form
+
     registerBR(".p-signIN","[data-span='login']", ".btn")
 }
 
 
 pt.addEventListener("click", changeLanguageBR)
 
+
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
 
 function changeLanguageDE(){
+
+    // Login Register Form
     function loginDE(...c){
 
         // German Login Form
@@ -123,6 +125,7 @@ function changeLanguageDE(){
     }
 
     loginDE(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
+
 
     // German Register Form
     function registerDE(...c){
@@ -155,3 +158,22 @@ function changeLanguageDE(){
 de.addEventListener("click", changeLanguageDE);
 
 
+// Hidden / Show Button -> Passwords
+
+const hidden = document.querySelectorAll(".hidden");
+let input = document.querySelectorAll("input");
+
+var state = false;
+
+function toggle(){
+    if(state) {
+        input[1].setAttribute("type", "password")
+        state = false;
+    }
+    else{
+        input[1].setAttribute("type", "text")
+        state = true;
+    }
+}
+
+hidden[0].addEventListener("click", toggle)
