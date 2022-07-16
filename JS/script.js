@@ -100,8 +100,8 @@ function changeLanguageBR(){
     registerBR(".p-signIN","[data-span='login']", ".btn")
 }
 
-pt.addEventListener("click", changeLanguageBR)
 
+pt.addEventListener("click", changeLanguageBR)
 
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
