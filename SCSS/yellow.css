@@ -222,6 +222,12 @@ body {
   margin-top: 60px;
 }
 
+.login-active .form-texts form .texts .hidden {
+  position: absolute;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .login-active .form-texts form input {
   outline: none;
   margin-top: 10px;
@@ -365,6 +371,12 @@ body {
   padding-top: 30px;
 }
 
+.register-active form .texts .hidden {
+  position: absolute;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
 .register-active form input {
   margin-top: 10px;
   outline: none;
@@ -434,6 +446,10 @@ body {
   }
   .login-active .form-texts form .texts {
     font-size: 16px;
+  }
+  .login-active .form-texts form .texts .hidden {
+    width: 25px;
+    margin-left: 8px;
   }
   .login-active .form-texts form input {
     width: 300px;
@@ -513,6 +529,10 @@ body {
 @media screen and (max-width: 1060px) {
   .register-active form .texts {
     font-size: 16px;
+  }
+  .register-active form .texts .hidden {
+    margin-left: 8px;
+    width: 25px;
   }
   .register-active form input {
     width: 70%;

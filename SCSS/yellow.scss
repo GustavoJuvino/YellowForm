@@ -140,6 +140,11 @@ body{
             .texts {
                 @include form-text;
                 margin-top: 60px;
+                .hidden{
+                    position: absolute;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
             }
 
             input {
@@ -247,6 +252,11 @@ body{
         .texts{
             @include form-text;
             padding-top: 30px;
+            .hidden{
+                position: absolute;
+                margin-left: 10px;
+                cursor: pointer;
+            }
         }
 
         input{
@@ -314,6 +324,10 @@ body{
             form{
                 .texts{
                     font-size: 16px;
+                    .hidden{
+                        width: 25px;
+                        margin-left: 8px;
+                    }
                 }
                 input{
                     width: 300px;
@@ -409,6 +423,10 @@ body{
         form{
             .texts{
                 font-size: 16px;
+                .hidden{
+                    margin-left: 8px;
+                    width: 25px;
+                }
             }
             input{  
                 width: 70%;
