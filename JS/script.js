@@ -161,19 +161,40 @@ de.addEventListener("click", changeLanguageDE);
 // Hidden / Show Button -> Passwords
 
 const hidden = document.querySelectorAll(".hidden");
-let input = document.querySelectorAll("input");
+const allInputs = document.querySelectorAll("input");
+const i = [allInputs[1],allInputs[5],allInputs[6]]
 
 var state = false;
 
-function toggle(){
+hidden[0].addEventListener("click", () => {
     if(state) {
-        input[1].setAttribute("type", "password")
+        i[0].setAttribute("type", "password");
         state = false;
     }
     else{
-        input[1].setAttribute("type", "text")
+        i[0].setAttribute("type", "text")
         state = true;
     }
-}
+})
 
-hidden[0].addEventListener("click", toggle)
+hidden[1].addEventListener("click", () => {
+    if(state) {
+        i[1].setAttribute("type", "password");
+        state = false;
+    }
+    else{
+        i[1].setAttribute("type", "text")
+        state = true;
+    }
+})
+
+hidden[2].addEventListener("click", () => {
+    if(state) {
+        i[2].setAttribute("type", "password");
+        state = false;
+    }
+    else{
+        i[2].setAttribute("type", "text")
+        state = true;
+    }
+})
