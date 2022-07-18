@@ -162,22 +162,11 @@ de.addEventListener("click", changeLanguageDE);
 
 const hidden = document.querySelectorAll(".hidden");
 const allInputs = document.querySelectorAll("input");
-const i = [allInputs[1],allInputs[5],allInputs[6]]
+const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 var state = false;
 
 hidden[0].addEventListener("click", () => {
-    if(state) {
-        i[0].setAttribute("type", "password");
-        state = false;
-    }
-    else{
-        i[0].setAttribute("type", "text")
-        state = true;
-    }
-})
-
-hidden[1].addEventListener("click", () => {
     if(state) {
         i[1].setAttribute("type", "password");
         state = false;
@@ -188,7 +177,7 @@ hidden[1].addEventListener("click", () => {
     }
 })
 
-hidden[2].addEventListener("click", () => {
+hidden[1].addEventListener("click", () => {
     if(state) {
         i[2].setAttribute("type", "password");
         state = false;
@@ -198,3 +187,29 @@ hidden[2].addEventListener("click", () => {
         state = true;
     }
 })
+
+hidden[2].addEventListener("click", () => {
+    if(state) {
+        i[3].setAttribute("type", "password");
+        state = false;
+    }
+    else{
+        i[3].setAttribute("type", "text")
+        state = true;
+    }
+})
+
+// Checking inputs in login form
+// Sign In button
+const loginBtn = document.querySelector(".btn");
+
+function checkingInput(){
+    if(!i[0].checkValidity() || !i[1].checkValidity()){
+        console.log("error")
+    }
+
+}
+ 
+i[0].addEventListener("change", () => checkingInput())
+i[1].addEventListener("change", () => checkingInput())
+loginBtn.addEventListener("click", () => checkingInput())
