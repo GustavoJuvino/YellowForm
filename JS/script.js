@@ -204,12 +204,30 @@ hidden[2].addEventListener("click", () => {
 const loginBtn = document.querySelector(".btn");
 
 function checkingInput(){
-    if(!i[0].checkValidity() || !i[1].checkValidity()){
-        console.log("error")
-    }
+    setTimeout(() => {
+        console.log("test")
+    }, 2000)
+
+    // if(!i[0].checkValidity() || !i[1].checkValidity()){
+    //     console.log("error")
+    // } else{
+    //     console.log("success!")
+    // }
 
 }
  
 // i[0].addEventListener("change", () => checkingInput())
 // i[1].addEventListener("change", () => checkingInput())
 loginBtn.addEventListener("click", () => checkingInput())
+
+
+// const promessa = new Promise(function(resolve, reject) {
+//     let condicao = true;
+//     if (condicao) {
+//         resolve("READY");
+//     } else {
+//         reject("error :(");
+//     }
+// })
+
+// console.log(promessa)

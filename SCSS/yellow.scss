@@ -193,6 +193,32 @@ body{
             border-radius: 6px;
             box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
         }
+
+        .loading{
+            display: none;
+            width: 62px;
+            height: 62px;
+            margin-left: 28.5%;
+            margin-top: 40px;
+            border-radius: 100%;
+            border: 1px solid black;
+            animation: ring 1s linear infinite;
+        }
+
+        @keyframes ring{
+            0%{
+                transform: rotate(0deg);
+                box-shadow: 1px 4px 2px yellow;
+            }
+            50%{
+                transform: rotate(180deg);
+                box-shadow: 1px 4px 2px yellow;
+            }
+            100%{
+                transform: rotate(360deg);
+                box-shadow: 1px 4px 2px yellow;
+            }
+        }
     }
 
     .f-register {

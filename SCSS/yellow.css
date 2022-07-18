@@ -284,6 +284,60 @@ body {
           box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
 
+.login-active .form-texts .loading {
+  display: none;
+  width: 62px;
+  height: 62px;
+  margin-left: 28.5%;
+  margin-top: 40px;
+  border-radius: 100%;
+  border: 1px solid black;
+  -webkit-animation: ring 1s linear infinite;
+          animation: ring 1s linear infinite;
+}
+
+@-webkit-keyframes ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+}
+
+@keyframes ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-box-shadow: 1px 4px 2px yellow;
+            box-shadow: 1px 4px 2px yellow;
+  }
+}
+
 .login-active .f-register {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
