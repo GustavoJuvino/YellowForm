@@ -210,6 +210,6 @@ function checkingInput(){
 
 }
  
-i[0].addEventListener("change", () => checkingInput())
-i[1].addEventListener("change", () => checkingInput())
+// i[0].addEventListener("change", () => checkingInput())
+// i[1].addEventListener("change", () => checkingInput())
 loginBtn.addEventListener("click", () => checkingInput())
