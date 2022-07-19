@@ -162,22 +162,11 @@ de.addEventListener("click", changeLanguageDE);
 
 const hidden = document.querySelectorAll(".hidden");
 const allInputs = document.querySelectorAll("input");
-const i = [allInputs[1],allInputs[5],allInputs[6]]
+const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 var state = false;
 
 hidden[0].addEventListener("click", () => {
-    if(state) {
-        i[0].setAttribute("type", "password");
-        state = false;
-    }
-    else{
-        i[0].setAttribute("type", "text")
-        state = true;
-    }
-})
-
-hidden[1].addEventListener("click", () => {
     if(state) {
         i[1].setAttribute("type", "password");
         state = false;
@@ -188,7 +177,7 @@ hidden[1].addEventListener("click", () => {
     }
 })
 
-hidden[2].addEventListener("click", () => {
+hidden[1].addEventListener("click", () => {
     if(state) {
         i[2].setAttribute("type", "password");
         state = false;
@@ -198,3 +187,54 @@ hidden[2].addEventListener("click", () => {
         state = true;
     }
 })
+
+hidden[2].addEventListener("click", () => {
+    if(state) {
+        i[3].setAttribute("type", "password");
+        state = false;
+    }
+    else{
+        i[3].setAttribute("type", "text")
+        state = true;
+    }
+})
+
+// Checking inputs in login form
+// Sign In button
+const loginBtn = document.querySelector(".btn");
+const loading = document.querySelector("[data-loading]");
+
+function checkingInput(){
+    const errors = ["[data-error='1']", "[data-error='2']"];
+    const e = document.querySelectorAll(errors);
+
+    loading.classList.add("loading")
+    loginBtn.classList.add("hidden-button")
+
+    setTimeout(() => {
+        loading.classList.remove("loading")
+        loginBtn.classList.remove("hidden-button")
+        
+        if(!i[0].checkValidity()){
+            e[0].classList.add("error-actived");
+            e[1].classList.remove("error-actived");
+            e[0].innerText = i[0].validationMessage;
+            console.log("error1");
+
+        } else if( !i[1].checkValidity() ){
+            e[1].classList.add("error-actived");
+            e[0].classList.remove("error-actived");
+            e[1].innerText = i[1].validationMessage;
+            console.log("error2");
+
+        }else {
+            e[1].classList.remove("error-actived");
+            e[0].classList.remove("error-actived");
+            console.log("sucsess")
+        }
+
+    }, 1400)
+}
+ 
+loginBtn.addEventListener("click", () => checkingInput())
+
