@@ -215,9 +215,7 @@ function checkingInput(){
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
         
-        if(!i[0].checkValidity() && !i[0].checkValidity()){
-            e[0].classList.add("error-actived");
-            e[1].classList.add("error-actived");
+        if(!i[0].checkValidity()){
             e[0].classList.add("error-actived");
             e[1].classList.remove("error-actived");
             e[0].innerText = i[0].validationMessage;
@@ -238,7 +236,5 @@ function checkingInput(){
     }, 1400)
 }
  
-// i[0].addEventListener("change", () => checkingInput())
-// i[1].addEventListener("change", () => checkingInput())
 loginBtn.addEventListener("click", () => checkingInput())
 
