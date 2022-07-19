@@ -249,6 +249,26 @@ body {
   border: 2px solid #FFFFFF;
 }
 
+.login-active .form-texts form [data-error] {
+  display: none;
+}
+
+.login-active .form-texts form .error-actived {
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-top: 2px;
+  padding-left: 15px;
+  display: block;
+  width: 355px;
+  height: 30px;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: red;
+}
+
 .login-active .form-texts .f-password {
   font-family: 'Nunito', sans-serif;
   font-size: 20px;
@@ -264,6 +284,10 @@ body {
 
 .login-active .form-texts .f-password:hover {
   color: #FBBC05;
+}
+
+.login-active .form-texts .hidden-button {
+  display: none;
 }
 
 .login-active .form-texts .btn {
@@ -284,11 +308,15 @@ body {
           box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
 
-.login-active .form-texts .loading {
+.login-active .form-texts [data-loading] {
   display: none;
+}
+
+.login-active .form-texts .loading {
+  display: block;
   width: 62px;
   height: 62px;
-  margin-left: 28.5%;
+  margin-left: 32.5%;
   margin-top: 40px;
   border-radius: 100%;
   border: 1px solid black;

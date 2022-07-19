@@ -202,32 +202,43 @@ hidden[2].addEventListener("click", () => {
 // Checking inputs in login form
 // Sign In button
 const loginBtn = document.querySelector(".btn");
+const loading = document.querySelector("[data-loading]");
 
 function checkingInput(){
+    const errors = ["[data-error='1']", "[data-error='2']"];
+    const e = document.querySelectorAll(errors);
+
+    loading.classList.add("loading")
+    loginBtn.classList.add("hidden-button")
+
     setTimeout(() => {
-        console.log("test")
-    }, 2000)
+        loading.classList.remove("loading")
+        loginBtn.classList.remove("hidden-button")
+        
+        if(!i[0].checkValidity() && !i[0].checkValidity()){
+            e[0].classList.add("error-actived");
+            e[1].classList.add("error-actived");
+            e[0].classList.add("error-actived");
+            e[1].classList.remove("error-actived");
+            e[0].innerText = i[0].validationMessage;
+            console.log("error1");
 
-    // if(!i[0].checkValidity() || !i[1].checkValidity()){
-    //     console.log("error")
-    // } else{
-    //     console.log("success!")
-    // }
+        } else if( !i[1].checkValidity() ){
+            e[1].classList.add("error-actived");
+            e[0].classList.remove("error-actived");
+            e[1].innerText = i[1].validationMessage;
+            console.log("error2");
 
+        }else {
+            e[1].classList.remove("error-actived");
+            e[0].classList.remove("error-actived");
+            console.log("sucsess")
+        }
+
+    }, 1400)
 }
  
 // i[0].addEventListener("change", () => checkingInput())
 // i[1].addEventListener("change", () => checkingInput())
 loginBtn.addEventListener("click", () => checkingInput())
 
-
-// const promessa = new Promise(function(resolve, reject) {
-//     let condicao = true;
-//     if (condicao) {
-//         resolve("READY");
-//     } else {
-//         reject("error :(");
-//     }
-// })
-
-// console.log(promessa)
