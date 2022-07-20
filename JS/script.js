@@ -207,6 +207,8 @@ const loading = document.querySelector("[data-loading]");
 function checkingInput(){
     const errors = ["[data-error='1']", "[data-error='2']"];
     const e = document.querySelectorAll(errors);
+    const sucsess = document.querySelector("[data-success]");
+    console.log(sucsess);
 
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
@@ -230,6 +232,8 @@ function checkingInput(){
         }else {
             e[1].classList.remove("error-actived");
             e[0].classList.remove("error-actived");
+            sucsess.classList.add("success-actived");
+            loginBtn.classList.add("hidden-button")
             console.log("sucsess")
         }
 

@@ -166,6 +166,7 @@ body{
                     border: 2px solid $white-color;
                 }
             }
+
             [data-error]{
                 display: none;
             }
@@ -180,6 +181,18 @@ body{
                 border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
                 background-color: red;
+                animation: animaError 0.5s forwards;
+            }
+
+            @keyframes animaError {
+                from{
+                    opacity: 0;
+                    transform: translate3d(0px, -20px, 0px,);
+                }
+                to{
+                    opacity: 1;
+                    transform: translate3d(0px, 0px, 0px,);
+                }
             }
         }
 
@@ -210,6 +223,18 @@ body{
             border: none;
             border-radius: 6px;
             box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
+        }
+
+        [data-success]{
+            display: none;
+        }
+
+        .success-actived{
+            display: block;
+            @include form-text;
+            font-size: 28px;
+            margin-left: 18.5%;
+            color: #30b842;
         }
 
         [data-loading] {

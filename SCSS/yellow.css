@@ -225,6 +225,28 @@ body {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
   background-color: red;
+  -webkit-animation: animaError 0.5s forwards;
+          animation: animaError 0.5s forwards;
+}
+@-webkit-keyframes animaError {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, -20px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+@keyframes animaError {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, -20px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
 }
 .login-active .form-texts .f-password {
   font-family: "Nunito", sans-serif;
@@ -258,6 +280,19 @@ body {
   border: none;
   border-radius: 6px;
   box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
+}
+.login-active .form-texts [data-success] {
+  display: none;
+}
+.login-active .form-texts .success-actived {
+  display: block;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 28px;
+  margin-left: 18.5%;
+  color: #30b842;
 }
 .login-active .form-texts [data-loading] {
   display: none;
