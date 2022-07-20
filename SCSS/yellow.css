@@ -28,10 +28,8 @@ a {
 }
 
 body {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #main-left {
@@ -39,9 +37,8 @@ body {
   width: auto;
   height: 100vh;
 }
-
 #main-left h1 {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 36px;
   color: #FFFFFF;
@@ -49,11 +46,9 @@ body {
   margin-left: 50px;
   margin-top: 65px;
 }
-
 #main-left p {
   margin-left: 50px;
 }
-
 #main-left .main-img {
   margin-left: 85px;
   margin-top: 35px;
@@ -64,15 +59,10 @@ body {
   background-color: #282723;
   display: block;
 }
-
 #main [data-menu] .l-initials {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
-  font-family: 'Nunito', sans-serif;
+  justify-content: end;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 700;
@@ -80,23 +70,20 @@ body {
   margin-right: 40px;
   margin-top: 50px;
 }
-
 #main [data-menu] .ArrowDown {
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 10px;
 }
-
 #main .floating-menu img {
-  -webkit-animation: enterMenu .3s forwards;
-          animation: enterMenu .3s forwards;
+  -webkit-animation: enterMenu 0.3s forwards;
+          animation: enterMenu 0.3s forwards;
 }
-
 #main .floating-menu .l-menu {
-  -webkit-animation: anime2 .3s forwards;
-          animation: anime2 .3s forwards;
+  -webkit-animation: anime2 0.3s forwards;
+          animation: anime2 0.3s forwards;
   display: block;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 500;
@@ -113,121 +100,97 @@ body {
   cursor: pointer;
   z-index: 2;
 }
-
 #main .floating-menu .l-menu p {
   padding-bottom: 20px;
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
 }
-
 #main img {
-  -webkit-animation: leaveMenu .3s forwards;
-          animation: leaveMenu .3s forwards;
+  -webkit-animation: leaveMenu 0.3s forwards;
+          animation: leaveMenu 0.3s forwards;
 }
 
 @-webkit-keyframes enterMenu {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 
 @keyframes enterMenu {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
-
 @-webkit-keyframes leaveMenu {
   from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @keyframes leaveMenu {
   from {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+    transform: rotate(180deg);
   }
   to {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
-
 @-webkit-keyframes anime2 {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0px, 50px, 0px);
-            transform: translate3d(0px, 50px, 0px);
+    transform: translate3d(0px, 50px, 0px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-            transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
   }
 }
-
 @keyframes anime2 {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0px, 50px, 0px);
-            transform: translate3d(0px, 50px, 0px);
+    transform: translate3d(0px, 50px, 0px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translate3d(0px, 0px, 0px);
-            transform: translate3d(0px, 0px, 0px);
+    transform: translate3d(0px, 0px, 0px);
   }
 }
-
 .login-active {
   display: block;
-  -webkit-animation: anime1 .3s forwards;
-          animation: anime1 .3s forwards;
+  -webkit-animation: anime1 0.3s forwards;
+          animation: anime1 0.3s forwards;
 }
-
 .login-active .form-texts {
   margin-top: 70px;
   margin-left: 30%;
 }
-
 .login-active .form-texts h1 {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
 }
-
 .login-active .form-texts form .texts {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   margin-top: 60px;
 }
-
 .login-active .form-texts form .texts .hidden {
   position: absolute;
   margin-left: 10px;
   cursor: pointer;
 }
-
 .login-active .form-texts form input {
   outline: none;
   margin-top: 10px;
@@ -239,22 +202,17 @@ body {
   background-color: #4A4942;
   color: white;
   font-size: 20px;
-  -webkit-transition: 0.90s;
-  transition: 0.90s;
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
-          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
+  transition: 0.9s;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
-
 .login-active .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
-
 .login-active .form-texts form [data-error] {
   display: none;
 }
-
 .login-active .form-texts form .error-actived {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
@@ -268,9 +226,8 @@ body {
   border-top-right-radius: 0px;
   background-color: red;
 }
-
 .login-active .form-texts .f-password {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 500;
@@ -278,20 +235,16 @@ body {
   margin-right: 100px;
   margin-top: 40px;
   cursor: pointer;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .login-active .form-texts .f-password:hover {
   color: #FBBC05;
 }
-
 .login-active .form-texts .hidden-button {
   display: none;
 }
-
 .login-active .form-texts .btn {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 32px;
   color: #141313;
   font-weight: 500;
@@ -304,88 +257,67 @@ body {
   background-color: #FBBC05;
   border: none;
   border-radius: 6px;
-  -webkit-box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
-          box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
+  box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
-
 .login-active .form-texts [data-loading] {
   display: none;
 }
-
 .login-active .form-texts .loading {
   display: block;
   width: 62px;
   height: 62px;
-  margin-left: 32.5%;
+  margin-left: 23.5%;
   margin-top: 40px;
   border-radius: 100%;
   border: 1px solid black;
   -webkit-animation: ring 1s linear infinite;
           animation: ring 1s linear infinite;
 }
-
 @-webkit-keyframes ring {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(0deg);
+    box-shadow: 1px 4px 2px yellow;
   }
   50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(180deg);
+    box-shadow: 1px 4px 2px yellow;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(360deg);
+    box-shadow: 1px 4px 2px yellow;
   }
 }
-
 @keyframes ring {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(0deg);
+    box-shadow: 1px 4px 2px yellow;
   }
   50% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(180deg);
+    box-shadow: 1px 4px 2px yellow;
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-    -webkit-box-shadow: 1px 4px 2px yellow;
-            box-shadow: 1px 4px 2px yellow;
+    transform: rotate(360deg);
+    box-shadow: 1px 4px 2px yellow;
   }
 }
-
 .login-active .f-register {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 500;
   margin-top: 60px;
   text-align: center;
 }
-
 .login-active span {
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 700;
   color: #FFFFFF;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .login-active span:hover {
   color: #FBBC05;
 }
@@ -407,28 +339,24 @@ body {
     opacity: 1;
   }
 }
-
 .register-active {
   width: auto;
   background-color: #282723;
   display: block;
-  -webkit-animation: anime1 .3s forwards;
-          animation: anime1 .3s forwards;
+  -webkit-animation: anime1 0.3s forwards;
+          animation: anime1 0.3s forwards;
 }
-
 .register-active .registerForm {
   margin-left: 30%;
 }
-
 .register-active .registerForm h1 {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
 }
-
 .register-active .btn {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 32px;
   color: #141313;
   font-weight: 500;
@@ -440,25 +368,21 @@ body {
   background-color: #FBBC05;
   border: none;
   border-radius: 6px;
-  -webkit-box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
-          box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
+  box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
   cursor: pointer;
 }
-
 .register-active form .texts {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   padding-top: 30px;
 }
-
 .register-active form .texts .hidden {
   position: absolute;
   margin-left: 10px;
   cursor: pointer;
 }
-
 .register-active form input {
   margin-top: 10px;
   outline: none;
@@ -471,40 +395,31 @@ body {
   background-color: #4A4942;
   color: white;
   font-size: 20px;
-  -webkit-transition: 0.90s;
-  transition: 0.90s;
-  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
-          box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
+  transition: 0.9s;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
-
 .register-active form input:hover {
   border: 2px solid #FFFFFF;
 }
-
 .register-active .signIn {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 500;
   margin-top: 40px;
   margin-left: 5%;
 }
-
 .register-active span {
   margin-left: 6px;
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
   font-weight: 700;
   color: #FFFFFF;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-
 .register-active span:hover {
   color: #FBBC05;
 }
@@ -521,7 +436,6 @@ body {
     margin-right: 0px;
   }
 }
-
 @media screen and (max-width: 1060px) {
   .login-active .form-texts h1 {
     font-size: 38px;
@@ -534,6 +448,10 @@ body {
     margin-left: 8px;
   }
   .login-active .form-texts form input {
+    width: 300px;
+    font-size: 16px;
+  }
+  .login-active .form-texts form .error-actived {
     width: 300px;
     font-size: 16px;
   }
@@ -552,7 +470,6 @@ body {
     font-size: 16px;
   }
 }
-
 @media screen and (max-width: 800px) {
   .login-active {
     margin-left: 15%;
@@ -571,7 +488,6 @@ body {
     text-align: start;
   }
 }
-
 @media screen and (max-width: 440px) {
   .login-active {
     margin-left: 0px;
@@ -580,7 +496,6 @@ body {
     margin-top: 35px;
   }
 }
-
 @media screen and (max-width: 380px) {
   .login-active .form-texts .f-password {
     font-size: 16px;
@@ -588,6 +503,9 @@ body {
   .login-active .form-texts form input {
     width: 80%;
     height: 40px;
+  }
+  .login-active .form-texts form .error-actived {
+    width: 80%;
   }
   .login-active .form-texts .btn {
     width: 150px;
@@ -607,7 +525,6 @@ body {
     margin-left: 10%;
   }
 }
-
 @media screen and (max-width: 1060px) {
   .register-active form .texts {
     font-size: 16px;
@@ -624,7 +541,6 @@ body {
     font-size: 35px;
   }
 }
-
 @media screen and (max-width: 800px) {
   .register-active {
     margin-left: 5%;
@@ -643,7 +559,6 @@ body {
     font-size: 16px;
   }
 }
-
 @media screen and (max-width: 440px) {
   .register-active {
     margin-left: 0px;
@@ -665,7 +580,6 @@ body {
     font-size: 16px;
   }
 }
-
 @media screen and (max-width: 380px) {
   .register-active .registerForm h1 {
     font-size: 22px;
@@ -688,19 +602,16 @@ body {
     margin-right: 20px;
   }
 }
-
 @media screen and (max-width: 1350px) {
   #main [data-menu] .l-initials {
     font-size: 18px;
   }
 }
-
 @media screen and (max-width: 1060px) {
   #main .floating-menu .l-menu {
     margin-right: 0px;
   }
 }
-
 @media screen and (max-width: 800px) {
   #main {
     width: 100vw;
@@ -714,7 +625,6 @@ body {
     top: 100px;
   }
 }
-
 @media screen and (max-width: 440px) {
   #main {
     height: 100vh;
@@ -737,7 +647,6 @@ body {
     margin-top: 10px;
   }
 }
-
 @media screen and (max-width: 380px) {
   #main {
     height: 100vh;
@@ -761,7 +670,6 @@ body {
     width: 500px;
   }
 }
-
 @media screen and (max-width: 1060px) {
   #main-left .main-img {
     width: 400px;
@@ -771,16 +679,13 @@ body {
     margin-left: 20px;
   }
 }
-
 @media screen and (max-width: 800px) {
   #main-left {
     display: none;
   }
 }
-
 @media screen and (max-height: 610px) {
   #main-left {
     height: 100%;
   }
-}
-/*# sourceMappingURL=yellow.css.map */
+}/*# sourceMappingURL=yellow.css.map */

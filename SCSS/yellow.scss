@@ -220,7 +220,7 @@ body{
             display: block;
             width: 62px;
             height: 62px;
-            margin-left: 32.5%;
+            margin-left: 23.5%;
             margin-top: 40px;
             border-radius: 100%;
             border: 1px solid black;
@@ -384,6 +384,10 @@ body{
                     width: 300px;
                     font-size: 16px;
                 }
+                .error-actived{
+                    width: 300px;
+                    font-size: 16px;
+                }
             }
 
             .f-password{
@@ -444,6 +448,10 @@ body{
                 input{
                     width: 80%;
                     height: 40px;
+                }
+
+                .error-actived{
+                    width: 80%;
                 }
             }
 
