@@ -97,14 +97,24 @@ function changeLanguageBR(){
     }
 
     registerBR(".p-signIN","[data-span='login']", ".btn")
+
+    // Input Error or Succsess
+    e[0].innerText = i[0].setCustomValidity("Teste BR");
 }
 
+function testbr(){
+    console.log("sss")
+}
 
-pt.addEventListener("click", changeLanguageBR)
+pt.addEventListener("click", changeLanguageBR, testbr());
 
 
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
+
+const errors = ["[data-error='1']", "[data-error='2']"];
+const e = document.querySelectorAll(errors);
+const sucsess = document.querySelector("[data-success]");
 
 function changeLanguageDE(){
 
@@ -205,14 +215,11 @@ const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
 
 function checkingInput(){
-    const errors = ["[data-error='1']", "[data-error='2']"];
-    const e = document.querySelectorAll(errors);
-    const sucsess = document.querySelector("[data-success]");
-    console.log(sucsess);
-
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
+    const msgError = "Fill this field";
+    
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
