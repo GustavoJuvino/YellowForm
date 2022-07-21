@@ -216,6 +216,7 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
+  font-size: 18px;
   margin-top: 2px;
   padding-left: 15px;
   display: block;
@@ -541,6 +542,7 @@ body {
   }
   .login-active .form-texts form .error-actived {
     width: 80%;
+    font-size: 14px;
   }
   .login-active .form-texts .btn {
     width: 150px;
