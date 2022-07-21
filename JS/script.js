@@ -60,7 +60,6 @@ const de = document.querySelector(languages[2]);
 en.addEventListener("click",() => window.location.reload() );
 
 function changeLanguageBR(){
-
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
@@ -98,23 +97,15 @@ function changeLanguageBR(){
 
     registerBR(".p-signIN","[data-span='login']", ".btn")
 
-    // Input Error or Succsess
-    e[0].innerText = i[0].setCustomValidity("Teste BR");
+    i[0].classList.add("test-pt")
 }
 
-function testbr(){
-    console.log("sss")
-}
 
-pt.addEventListener("click", changeLanguageBR, testbr());
+pt.addEventListener("click", changeLanguageBR);
 
 
 // Changing the Language Page (German - Deutschland)
 import {deGE} from "./languages.js";
-
-const errors = ["[data-error='1']", "[data-error='2']"];
-const e = document.querySelectorAll(errors);
-const sucsess = document.querySelector("[data-success]");
 
 function changeLanguageDE(){
 
@@ -163,6 +154,7 @@ function changeLanguageDE(){
 
     registerDE(".p-signIN","[data-span='login']", ".btn");
 
+    i[0].classList.add("test-de")
 }
 
 de.addEventListener("click", changeLanguageDE);
@@ -218,31 +210,60 @@ function checkingInput(){
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
-    const msgError = "Fill this field";
-    
+
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
         
-        if(!i[0].checkValidity()){
+        const errors = ["[data-error='1']", "[data-error='2']"];
+        const e = document.querySelectorAll(errors);
+        const sucsess = document.querySelector("[data-success]");
+
+
+        if(i[0].classList.contains('test-pt')){
+            e[0].innerText = i[0].setCustomValidity("Campo requerido");
+            e[0].innerText = i[0].validationMessage;
+        }
+
+        // else if(i[0].classList.contains('test-de')){
+
+        // }
+        
+        else if(!i[0].checkValidity()){
             e[0].classList.add("error-actived");
             e[1].classList.remove("error-actived");
-            e[0].innerText = i[0].validationMessage;
-            console.log("error1");
+            e[0].innerText = "Enter your username or email";
 
         } else if( !i[1].checkValidity() ){
             e[1].classList.add("error-actived");
             e[0].classList.remove("error-actived");
-            e[1].innerText = i[1].validationMessage;
-            console.log("error2");
+            e[1].innerText = "Enter your password";
 
         }else {
             e[1].classList.remove("error-actived");
             e[0].classList.remove("error-actived");
             sucsess.classList.add("success-actived");
             loginBtn.classList.add("hidden-button")
-            console.log("sucsess")
         }
+
+        // if(!i[0].checkValidity()){
+        //     e[0].classList.add("error-actived");
+        //     e[1].classList.remove("error-actived");
+        //     e[0].innerText = i[0].setCustomValidity("Enter your username or email");
+        //     e[0].innerText = i[0].validationMessage;
+
+        // } else if( !i[1].checkValidity() ){
+        //     e[1].classList.add("error-actived");
+        //     e[0].classList.remove("error-actived");
+        //     e[1].innerText = i[1].setCustomValidity("Enter your password");
+        //     e[1].innerText = i[1].validationMessage;
+
+        // }else {
+        //     e[1].classList.remove("error-actived");
+        //     e[0].classList.remove("error-actived");
+        //     sucsess.classList.add("success-actived");
+        //     loginBtn.classList.add("hidden-button")
+        // }
 
     }, 1400)
 }

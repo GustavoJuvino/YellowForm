@@ -172,6 +172,7 @@ body{
             }
             .error-actived{
                 @include form-text;
+                font-size: 18px;
                 margin-top: 2px;
                 padding-left: 15px;
                 display: block;
@@ -477,6 +478,7 @@ body{
 
                 .error-actived{
                     width: 80%;
+                    font-size: 14px;
                 }
             }
 
