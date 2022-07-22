@@ -98,6 +98,7 @@ function changeLanguageBR(){
     registerBR(".p-signIN","[data-span='login']", ".btn")
 
     i[0].classList.add("test-pt")
+    i[0].classList.remove('test-de');
 }
 
 
@@ -147,14 +148,13 @@ function changeLanguageDE(){
         const h1 = document.getElementsByTagName("h1");
         h1[2].innerText = deGE.register.h1;
 
-
-        //Styles required
-        // classes[3].style.fontSize = "10px";
     }
 
     registerDE(".p-signIN","[data-span='login']", ".btn");
 
+    // Inputs errors or succsess
     i[0].classList.add("test-de")
+    i[0].classList.remove('test-pt');
 }
 
 de.addEventListener("click", changeLanguageDE);
@@ -219,51 +219,39 @@ function checkingInput(){
         const e = document.querySelectorAll(errors);
         const sucsess = document.querySelector("[data-success]");
 
+        function input(text, text2) {
+            if(i[0].value === "") {
+                e[0].classList.add("error-actived");
+                e[1].classList.remove("error-actived");
 
-        if(i[0].classList.contains('test-pt')){
-            e[0].innerText = i[0].setCustomValidity("Campo requerido");
-            e[0].innerText = i[0].validationMessage;
+                e[0].innerText = i[0].setCustomValidity(text);
+                e[0].innerText = i[0].validationMessage;
+
+            } else if(i[1].value === "") {
+                e[1].classList.add("error-actived");
+                e[0].classList.remove("error-actived")
+
+                e[1].innerText = i[1].setCustomValidity(text2);
+                e[1].innerText = i[1].validationMessage;
+            } else {
+                e[1].classList.remove("error-actived");
+                e[0].classList.remove("error-actived")
+                sucsess.classList.add("success-actived");
+                loginBtn.classList.add("hidden-button")
+            }
         }
 
-        // else if(i[0].classList.contains('test-de')){
+        if(i[0].classList.contains('input-EN')){
+            input("Enter your username or email", "Enter your password");
+        } 
 
-        // }
-        
-        else if(!i[0].checkValidity()){
-            e[0].classList.add("error-actived");
-            e[1].classList.remove("error-actived");
-            e[0].innerText = "Enter your username or email";
-
-        } else if( !i[1].checkValidity() ){
-            e[1].classList.add("error-actived");
-            e[0].classList.remove("error-actived");
-            e[1].innerText = "Enter your password";
-
-        }else {
-            e[1].classList.remove("error-actived");
-            e[0].classList.remove("error-actived");
-            sucsess.classList.add("success-actived");
-            loginBtn.classList.add("hidden-button")
+        if(i[0].classList.contains('test-pt')){ 
+            input("Preencha este campo", "Senha por favor");
         }
 
-        // if(!i[0].checkValidity()){
-        //     e[0].classList.add("error-actived");
-        //     e[1].classList.remove("error-actived");
-        //     e[0].innerText = i[0].setCustomValidity("Enter your username or email");
-        //     e[0].innerText = i[0].validationMessage;
-
-        // } else if( !i[1].checkValidity() ){
-        //     e[1].classList.add("error-actived");
-        //     e[0].classList.remove("error-actived");
-        //     e[1].innerText = i[1].setCustomValidity("Enter your password");
-        //     e[1].innerText = i[1].validationMessage;
-
-        // }else {
-        //     e[1].classList.remove("error-actived");
-        //     e[0].classList.remove("error-actived");
-        //     sucsess.classList.add("success-actived");
-        //     loginBtn.classList.add("hidden-button")
-        // }
+        if(i[0].classList.contains('test-de')){
+            input("BROT");
+        }
 
     }, 1400)
 }
