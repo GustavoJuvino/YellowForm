@@ -219,23 +219,24 @@ function checkingInput(){
         const e = document.querySelectorAll(errors);
         const sucsess = document.querySelector("[data-success]");
 
-        function input(text, text2) {
+        function input(t1, t2, t3) {
             if(i[0].value === "") {
                 e[0].classList.add("error-actived");
                 e[1].classList.remove("error-actived");
 
-                e[0].innerText = i[0].setCustomValidity(text);
+                e[0].innerText = i[0].setCustomValidity(t1);
                 e[0].innerText = i[0].validationMessage;
 
             } else if(i[1].value === "") {
                 e[1].classList.add("error-actived");
                 e[0].classList.remove("error-actived")
 
-                e[1].innerText = i[1].setCustomValidity(text2);
+                e[1].innerText = i[1].setCustomValidity(t2);
                 e[1].innerText = i[1].validationMessage;
             } else {
                 e[1].classList.remove("error-actived");
                 e[0].classList.remove("error-actived")
+
                 sucsess.classList.add("success-actived");
                 loginBtn.classList.add("hidden-button")
             }
@@ -246,11 +247,13 @@ function checkingInput(){
         } 
 
         if(i[0].classList.contains('test-pt')){ 
-            input("Preencha este campo", "Senha por favor");
+            input("Preencha este campo", "Entre com sua senha");
+            sucsess.innerText = "Acessado :)";
         }
 
         if(i[0].classList.contains('test-de')){
-            input("BROT");
+            input("Füllen Sie dieses Feld aus", "Passwort bitte");
+            sucsess.innerText = "Zugegriffen :)";
         }
 
     }, 1400)
