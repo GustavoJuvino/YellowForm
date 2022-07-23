@@ -24,19 +24,12 @@ const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
 const flMenu = "floating-menu";
 
-
 // Clicking Outside -- Floating Menu
-arrowMenu.addEventListener("click", () => {
-    // Active the floating menu
-    floatMenu.classList.toggle(flMenu)
-    outsideMenu();
-})
-
 function outsideMenu(){
     const html = document.documentElement;
     html.addEventListener("click", function clickCheck(e) {
 
-        // Check if the target was on the arrow or  was inside the menu.
+        // Check if the target was on the arrow or was inside the menu.
         if(!e.target.classList.contains("l") && !e.target.classList.contains("ArrowDown")){
             floatMenu.classList.remove(flMenu);
 
@@ -46,20 +39,29 @@ function outsideMenu(){
     })
 }
 
+// Active the floating menu and the OutsideMenu
+arrowMenu.addEventListener("click", () => {
+    floatMenu.classList.toggle(flMenu)
+    outsideMenu();
+})
 
 
-// Changing the Language Page (Portuguese - Brazil)
-import {ptBR} from "./languages.js";
-
+// Changing the language page
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 
 const en =  document.querySelector(languages[0]);
 const pt = document.querySelector(languages[1]);
 const de = document.querySelector(languages[2]);
 
+// Default page = English language
 en.addEventListener("click",() => window.location.reload() );
 
+
+// (Portuguese - Brazil)
+import {ptBR} from "./languages.js";
+
 function changeLanguageBR(){
+
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
@@ -97,20 +99,20 @@ function changeLanguageBR(){
 
     registerBR(".p-signIN","[data-span='login']", ".btn")
 
-    i[0].classList.add("test-pt")
-    i[0].classList.remove('test-de');
+    // Added Portuguese language in input messages errors.
+    i[0].classList.add("pt")
+    i[0].classList.remove('de');
 }
-
 
 pt.addEventListener("click", changeLanguageBR);
 
 
-// Changing the Language Page (German - Deutschland)
+// (German - Deutschland)
 import {deGE} from "./languages.js";
 
 function changeLanguageDE(){
 
-    // Login Register Form
+    // German Login Form
     function loginDE(...c){
 
         // German Login Form
@@ -152,9 +154,9 @@ function changeLanguageDE(){
 
     registerDE(".p-signIN","[data-span='login']", ".btn");
 
-    // Inputs errors or succsess
-    i[0].classList.add("test-de")
-    i[0].classList.remove('test-pt');
+    // Added German language in input messages errors.
+    i[0].classList.add("de")
+    i[0].classList.remove('pt');
 }
 
 de.addEventListener("click", changeLanguageDE);
@@ -201,6 +203,7 @@ hidden[2].addEventListener("click", () => {
     }
 })
 
+
 // Checking inputs in login form
 // Sign In button
 const loginBtn = document.querySelector(".btn");
@@ -210,16 +213,19 @@ function checkingInput(){
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
-
+    
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
         
+        // Error Messages and Succsess messages
         const errors = ["[data-error='1']", "[data-error='2']"];
         const e = document.querySelectorAll(errors);
         const sucsess = document.querySelector("[data-success]");
 
-        function input(t1, t2, t3) {
+        function input(t1, t2) {
+
+            // Username or Email Input
             if(i[0].value === "") {
                 e[0].classList.add("error-actived");
                 e[1].classList.remove("error-actived");
@@ -227,12 +233,15 @@ function checkingInput(){
                 e[0].innerText = i[0].setCustomValidity(t1);
                 e[0].innerText = i[0].validationMessage;
 
+            // Password Input
             } else if(i[1].value === "") {
                 e[1].classList.add("error-actived");
                 e[0].classList.remove("error-actived")
 
                 e[1].innerText = i[1].setCustomValidity(t2);
                 e[1].innerText = i[1].validationMessage;
+            
+            // Succsess Message
             } else {
                 e[1].classList.remove("error-actived");
                 e[0].classList.remove("error-actived")
@@ -242,16 +251,19 @@ function checkingInput(){
             }
         }
 
+        // English Error Messages
         if(i[0].classList.contains('input-EN')){
             input("Enter your username or email", "Enter your password");
         } 
 
-        if(i[0].classList.contains('test-pt')){ 
+        // Portuguese Error Messages
+        if(i[0].classList.contains('pt')){ 
             input("Preencha este campo", "Entre com sua senha");
             sucsess.innerText = "Acessado :)";
         }
 
-        if(i[0].classList.contains('test-de')){
+        // Portuguese Error Messages
+        if(i[0].classList.contains('de')){
             input("Füllen Sie dieses Feld aus", "Passwort bitte");
             sucsess.innerText = "Zugegriffen :)";
         }
