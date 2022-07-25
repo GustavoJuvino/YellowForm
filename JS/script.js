@@ -102,6 +102,9 @@ function changeLanguageBR(){
     // Added Portuguese language in input messages errors.
     i[0].classList.add("pt")
     i[0].classList.remove('de');
+
+    // Brazil Phone Number style
+    allInputs[4].placeholder = "+ XX XX XXXX-XXXX";
 }
 
 pt.addEventListener("click", changeLanguageBR);
@@ -157,6 +160,9 @@ function changeLanguageDE(){
     // Added German language in input messages errors.
     i[0].classList.add("de")
     i[0].classList.remove('pt');
+
+    // German Phone Number style
+    allInputs[4].placeholder = "+ XX XXX XXXXXX";
 }
 
 de.addEventListener("click", changeLanguageDE);
@@ -167,6 +173,7 @@ de.addEventListener("click", changeLanguageDE);
 const hidden = document.querySelectorAll(".hidden");
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+
 
 var state = false;
 
@@ -273,3 +280,5 @@ function checkingInput(){
  
 loginBtn.addEventListener("click", () => checkingInput())
 
+
+// Register Form
