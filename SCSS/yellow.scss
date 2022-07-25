@@ -629,7 +629,6 @@ body{
     @include desktop-responsive(mobile) {
         width: 100vw;
         height: 100vh;
-
         [data-menu]{
             .l-initials{
                 margin-right: 20px;
@@ -699,6 +698,9 @@ body{
         height: 100vh;
         .main-img{
             width: 500px;
+        }
+        .seal{
+            display: none;
         }
     }
 

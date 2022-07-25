@@ -706,6 +706,9 @@ body {
   #main-left .main-img {
     width: 500px;
   }
+  #main-left .seal {
+    display: none;
+  }
 }
 @media screen and (max-width: 1060px) {
   #main-left .main-img {
