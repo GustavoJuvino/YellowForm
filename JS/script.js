@@ -216,6 +216,12 @@ hidden[2].addEventListener("click", () => {
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
 
+
+ // Error Messages and Succsess messages
+const errors = ["[data-error='1']", "[data-error='2']"];
+const e = document.querySelectorAll(errors);
+const sucsess = document.querySelector("[data-success]");
+
 function checkingInput(){
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
@@ -224,11 +230,6 @@ function checkingInput(){
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
-        
-        // Error Messages and Succsess messages
-        const errors = ["[data-error='1']", "[data-error='2']"];
-        const e = document.querySelectorAll(errors);
-        const sucsess = document.querySelector("[data-success]");
 
         function input(t1, t2) {
 
@@ -282,3 +283,36 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 // Register Form
+
+// Error Messages
+const eMsg = [
+    "Enter with your username",
+    "Enter with your email",
+    "Enter a valid phone number",
+    "Passwords do not match"
+]
+
+// Inputs from register form
+const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
+
+
+// function registerTest(i){
+//     if(i.value == "" || i.value == " "){
+        
+//     }
+// }
+
+// if(i[0].value === "") {
+//     e[0].classList.add("error-actived");
+//     e[1].classList.remove("error-actived");
+
+registerInputs.forEach((i) => {
+    i.addEventListener("change", () => registerTest(i))
+})
+
+
+
+// function barMoons(index){
+//     allBars.forEach((bar) => bar.classList.remove(barDestination));
+//     allBars[index].classList.add(barDestination);
+// }

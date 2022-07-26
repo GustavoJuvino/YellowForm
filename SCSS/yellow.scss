@@ -354,6 +354,35 @@ body{
                 border: 2px solid $white-color;
             }
         }
+
+        [data-error="register"]{
+            display: none;
+        }
+        .error-actived{
+            @include form-text;
+            font-size: 14px;
+            margin-top: 2px;
+            padding-left: 15px;
+            display: block;
+            width: 355px;
+            height: 30px;
+            border-radius: 6px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            background-color: red;
+            animation: animaError 0.5s forwards;
+        }
+
+        @keyframes animaError {
+            from{
+                opacity: 0;
+                transform: translate3d(0px, -20px, 0px,);
+            }
+            to{
+                opacity: 1;
+                transform: translate3d(0px, 0px, 0px,);
+            }
+        }
     }
     .signIn{
         display: flex;

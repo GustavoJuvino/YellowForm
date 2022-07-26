@@ -437,6 +437,37 @@ body {
 .register-active form input:hover {
   border: 2px solid #FFFFFF;
 }
+.register-active form [data-error=register] {
+  display: none;
+}
+.register-active form .error-actived {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 2px;
+  padding-left: 15px;
+  display: block;
+  width: 355px;
+  height: 30px;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  background-color: red;
+  -webkit-animation: animaError 0.5s forwards;
+          animation: animaError 0.5s forwards;
+}
+@keyframes animaError {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, -20px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
 .register-active .signIn {
   display: flex;
   font-family: "Nunito", sans-serif;
