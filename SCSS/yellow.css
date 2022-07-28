@@ -208,6 +208,9 @@ body {
 .login-active .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
+.login-active .form-texts form .error {
+  border: 2px solid red;
+}
 .login-active .form-texts form [data-error] {
   display: none;
 }
@@ -216,18 +219,32 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
+  position: absolute;
   font-size: 18px;
-  margin-top: 2px;
-  padding-left: 15px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   display: block;
-  width: 355px;
-  height: 30px;
+  width: 330px;
+  height: 28px;
   border-radius: 6px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  background-color: red;
+  background-color: #FBBC05;
+  color: black;
+  font-weight: bold;
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
+}
+.login-active .form-texts form .error-actived::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #FDC430;
 }
 @-webkit-keyframes animaError {
   from {
@@ -436,6 +453,51 @@ body {
 }
 .register-active form input:hover {
   border: 2px solid #FFFFFF;
+}
+.register-active form [data-error=register] {
+  display: none;
+}
+.register-active form .error-actived {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  position: absolute;
+  font-size: 18px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  display: block;
+  width: 330px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: #FBBC05;
+  color: black;
+  font-weight: bold;
+  -webkit-animation: animaError 0.5s forwards;
+          animation: animaError 0.5s forwards;
+}
+.register-active form .error-actived::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #FDC430;
+}
+@keyframes animaError {
+  from {
+    opacity: 0;
+    transform: translate3d(0px, -20px, 0px);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
 }
 .register-active .signIn {
   display: flex;

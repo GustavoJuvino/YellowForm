@@ -102,6 +102,9 @@ function changeLanguageBR(){
     // Added Portuguese language in input messages errors.
     i[0].classList.add("pt")
     i[0].classList.remove('de');
+
+    // Brazil Phone Number style
+    allInputs[4].placeholder = "+ XX XX XXXX-XXXX";
 }
 
 pt.addEventListener("click", changeLanguageBR);
@@ -157,6 +160,9 @@ function changeLanguageDE(){
     // Added German language in input messages errors.
     i[0].classList.add("de")
     i[0].classList.remove('pt');
+
+    // German Phone Number style
+    allInputs[4].placeholder = "+ XX XXX XXXXXX";
 }
 
 de.addEventListener("click", changeLanguageDE);
@@ -167,6 +173,7 @@ de.addEventListener("click", changeLanguageDE);
 const hidden = document.querySelectorAll(".hidden");
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+
 
 var state = false;
 
@@ -209,7 +216,15 @@ hidden[2].addEventListener("click", () => {
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
 
+
+ // Error Messages and Succsess messages
+const errors = ["[data-error='1']", "[data-error='2']"];
+const e = document.querySelectorAll(errors);
+const sucsess = document.querySelector("[data-success]");
+
+
 function checkingInput(){
+    // Loading Icon
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
@@ -217,34 +232,38 @@ function checkingInput(){
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
-        
-        // Error Messages and Succsess messages
-        const errors = ["[data-error='1']", "[data-error='2']"];
-        const e = document.querySelectorAll(errors);
-        const sucsess = document.querySelector("[data-success]");
 
         function input(t1, t2) {
 
             // Username or Email Input
             if(i[0].value === "") {
-                e[0].classList.add("error-actived");
+                e[0].classList.add("error-actived")
                 e[1].classList.remove("error-actived");
+
+                i[0].classList.add('error')
+                i[1].classList.remove('error')
 
                 e[0].innerText = i[0].setCustomValidity(t1);
                 e[0].innerText = i[0].validationMessage;
 
             // Password Input
             } else if(i[1].value === "") {
-                e[1].classList.add("error-actived");
-                e[0].classList.remove("error-actived")
+                e[1].classList.add("error-actived")
+                e[0].classList.remove("error-actived");
+
+                i[0].classList.remove('error');
+                i[1].classList.add('error');
 
                 e[1].innerText = i[1].setCustomValidity(t2);
                 e[1].innerText = i[1].validationMessage;
             
             // Succsess Message
             } else {
-                e[1].classList.remove("error-actived");
-                e[0].classList.remove("error-actived")
+                e[1].classList.remove("error-actived")
+                e[0].classList.remove("error-actived");
+
+                i[0].classList.remove('error');
+                i[1].classList.remove('error');
 
                 sucsess.classList.add("success-actived");
                 loginBtn.classList.add("hidden-button")
@@ -252,8 +271,8 @@ function checkingInput(){
         }
 
         // English Error Messages
-        if(i[0].classList.contains('input-EN')){
-            input("Enter your username or email", "Enter your password");
+        if(i[0].hasAttribute('data-input')){
+            input("! Enter your username or email", "! Enter your password");
         } 
 
         // Portuguese Error Messages
@@ -273,3 +292,38 @@ function checkingInput(){
  
 loginBtn.addEventListener("click", () => checkingInput())
 
+
+// Register Form
+
+// Error Messages
+const eMsg = [
+    "Enter with your username",
+    "Enter with your email",
+    "Enter a valid phone number",
+    "Passwords do not match"
+]
+
+// Inputs from register form
+const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
+
+// Errors
+const eReg = document.querySelectorAll("[data-error='register']");
+
+function registerTest(i){
+
+}
+
+// if(i[0].value === "") {
+//     e[0].classList.add("error-actived");
+//     e[1].classList.remove("error-actived");
+
+registerInputs.forEach((i) => {
+    i.addEventListener("change", () => registerTest(i))
+})
+
+
+
+// function barMoons(index){
+//     allBars.forEach((bar) => bar.classList.remove(barDestination));
+//     allBars[index].classList.add(barDestination);
+// }
