@@ -261,7 +261,7 @@ function checkingInput(){
 
         // English Error Messages
         if(i[0].classList.contains('input-EN')){
-            input("Enter your username or email", "Enter your password");
+            input("Enter your username or email", "! Enter your password");
         } 
 
         // Portuguese Error Messages
@@ -295,7 +295,7 @@ const eMsg = [
 // Inputs from register form
 const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
 
-
+ 
 // function registerTest(i){
 //     if(i.value == "" || i.value == " "){
         

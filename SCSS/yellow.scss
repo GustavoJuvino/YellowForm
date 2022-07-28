@@ -172,8 +172,9 @@ body{
             }
             .error-actived{
                 @include form-text;
+                position: absolute;
                 font-size: 18px;
-                margin-top: 2px;
+                margin-top: 10px;
                 padding-left: 15px;
                 display: block;
                 width: 355px;
@@ -181,7 +182,8 @@ body{
                 border-radius: 6px;
                 border-top-left-radius: 0px;
                 border-top-right-radius: 0px;
-                background-color: red;
+                background-color: $main-color2;
+                color: black;
                 animation: animaError 0.5s forwards;
             }
 
@@ -369,7 +371,7 @@ body{
             border-radius: 6px;
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
-            background-color: red;
+            background-color: $main-color2;
             animation: animaError 0.5s forwards;
         }
 

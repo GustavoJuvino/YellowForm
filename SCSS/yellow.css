@@ -216,8 +216,9 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
+  position: absolute;
   font-size: 18px;
-  margin-top: 2px;
+  margin-top: 10px;
   padding-left: 15px;
   display: block;
   width: 355px;
@@ -225,7 +226,8 @@ body {
   border-radius: 6px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  background-color: red;
+  background-color: #FBBC05;
+  color: black;
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
 }
@@ -454,7 +456,7 @@ body {
   border-radius: 6px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  background-color: red;
+  background-color: #FBBC05;
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
 }
