@@ -222,6 +222,7 @@ const errors = ["[data-error='1']", "[data-error='2']"];
 const e = document.querySelectorAll(errors);
 const sucsess = document.querySelector("[data-success]");
 
+
 function checkingInput(){
     // Loading Icon
     loading.classList.add("loading")
@@ -263,7 +264,7 @@ function checkingInput(){
 
                 i[0].classList.remove('error');
                 i[1].classList.remove('error');
-                
+
                 sucsess.classList.add("success-actived");
                 loginBtn.classList.add("hidden-button")
             }
@@ -305,12 +306,12 @@ const eMsg = [
 // Inputs from register form
 const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
 
- 
-// function registerTest(i){
-//     if(i.value == "" || i.value == " "){
-        
-//     }
-// }
+// Errors
+const eReg = document.querySelectorAll("[data-error='register']");
+
+function registerTest(i){
+
+}
 
 // if(i[0].value === "") {
 //     e[0].classList.add("error-actived");

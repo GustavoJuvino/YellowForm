@@ -462,18 +462,32 @@ body {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
-  font-size: 14px;
-  margin-top: 2px;
-  padding-left: 15px;
+  position: absolute;
+  font-size: 18px;
+  margin-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   display: block;
-  width: 355px;
-  height: 30px;
+  width: 330px;
+  height: 28px;
   border-radius: 6px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
   background-color: #FBBC05;
+  color: black;
+  font-weight: bold;
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
+}
+.register-active form .error-actived::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #FDC430;
 }
 @keyframes animaError {
   from {
