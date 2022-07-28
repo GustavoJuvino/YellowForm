@@ -208,6 +208,9 @@ body {
 .login-active .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
+.login-active .form-texts form .error {
+  border: 2px solid red;
+}
 .login-active .form-texts form [data-error] {
   display: none;
 }
@@ -219,17 +222,29 @@ body {
   position: absolute;
   font-size: 18px;
   margin-top: 10px;
-  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  padding-left: 20px;
   display: block;
-  width: 355px;
-  height: 30px;
+  width: 330px;
+  height: 28px;
   border-radius: 6px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
   background-color: #FBBC05;
   color: black;
+  font-weight: bold;
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
+}
+.login-active .form-texts form .error-actived::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -8px;
+  width: 0px;
+  height: 0px;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #FDC430;
 }
 @-webkit-keyframes animaError {
   from {

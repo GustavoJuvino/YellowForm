@@ -223,6 +223,7 @@ const e = document.querySelectorAll(errors);
 const sucsess = document.querySelector("[data-success]");
 
 function checkingInput(){
+    // Loading Icon
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
@@ -235,33 +236,42 @@ function checkingInput(){
 
             // Username or Email Input
             if(i[0].value === "") {
-                e[0].classList.add("error-actived");
+                e[0].classList.add("error-actived")
                 e[1].classList.remove("error-actived");
+
+                i[0].classList.add('error')
+                i[1].classList.remove('error')
 
                 e[0].innerText = i[0].setCustomValidity(t1);
                 e[0].innerText = i[0].validationMessage;
 
             // Password Input
             } else if(i[1].value === "") {
-                e[1].classList.add("error-actived");
-                e[0].classList.remove("error-actived")
+                e[1].classList.add("error-actived")
+                e[0].classList.remove("error-actived");
+
+                i[0].classList.remove('error');
+                i[1].classList.add('error');
 
                 e[1].innerText = i[1].setCustomValidity(t2);
                 e[1].innerText = i[1].validationMessage;
             
             // Succsess Message
             } else {
-                e[1].classList.remove("error-actived");
-                e[0].classList.remove("error-actived")
+                e[1].classList.remove("error-actived")
+                e[0].classList.remove("error-actived");
 
+                i[0].classList.remove('error');
+                i[1].classList.remove('error');
+                
                 sucsess.classList.add("success-actived");
                 loginBtn.classList.add("hidden-button")
             }
         }
 
         // English Error Messages
-        if(i[0].classList.contains('input-EN')){
-            input("Enter your username or email", "! Enter your password");
+        if(i[0].hasAttribute('data-input')){
+            input("! Enter your username or email", "! Enter your password");
         } 
 
         // Portuguese Error Messages
