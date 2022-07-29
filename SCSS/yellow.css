@@ -303,6 +303,7 @@ body {
   display: none;
 }
 .login-active .form-texts .success-actived {
+  margin-top: 40px;
   display: block;
   font-family: "Nunito", sans-serif;
   font-size: 20px;
