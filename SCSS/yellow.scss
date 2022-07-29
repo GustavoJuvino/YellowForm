@@ -380,6 +380,7 @@ body{
         .error-actived{
             @include form-text;
             position: absolute;
+            z-index: 2;
             font-size: 18px;
             margin-top: 10px;
             padding-top: 15px;

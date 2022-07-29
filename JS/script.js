@@ -320,26 +320,29 @@ const eMsg = [
 ]
 
 // Inputs from register form
-const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
+const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
 
 // Errors
 const eReg = document.querySelectorAll("[data-error='register']");
 
-function registerTest(i){
+
+function registerTest(input, index){
+    registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
+
+
+    if(registerInp[0].value === "" || registerInp[0].value === " "){
+        registerInp[0].nextElementSibling.classList.add("error-actived");
+        input.setCustomValidity(eMsg[0]);
+        registerInp[0].nextElementSibling.innerText = input.validationMessage;
+
+        
+    } else { 
+        console.log("sucsess");
+    }
 
 }
 
-// if(i[0].value === "") {
-//     e[0].classList.add("error-actived");
-//     e[1].classList.remove("error-actived");
 
-registerInputs.forEach((i) => {
-    i.addEventListener("change", () => registerTest(i))
+registerInp.forEach((input, index) => {
+    input.addEventListener("change", () => registerTest(input, index))
 })
-
-
-
-// function barMoons(index){
-//     allBars.forEach((bar) => bar.classList.remove(barDestination));
-//     allBars[index].classList.add(barDestination);
-// }
