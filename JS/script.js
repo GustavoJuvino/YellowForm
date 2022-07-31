@@ -218,10 +218,10 @@ const loading = document.querySelector("[data-loading]");
 
 
  // Error Messages and Succsess messages
-const errors = ["[data-error='1']", "[data-error='2']"];
-const e = document.querySelectorAll(errors);
+const e = document.querySelector("[data-error]");
 const sucsess = document.querySelector("[data-success]");
 
+const loginInputs = [allInputs[0], allInputs[1]];
 
 function checkingInput(){
     // Loading Icon
@@ -233,37 +233,50 @@ function checkingInput(){
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
 
+        const tst = {
+            remove: i[0].classList.remove('error'),
+            2: "eae",
+        }
+
+        // Add Error class
+        const addI = (input) => input.classList.add("error");
+
+        // Remove Error class
+        const removeI = (input) => input.classList.remove("error");
+
+
+
         function input(t1, t2) {
 
             // Username or Email Input
-            if(i[0].value === "") {
-                e[0].classList.add("error-actived")
-                e[1].classList.remove("error-actived");
+            if(i[0].value === "" || i[0].value === " ") {
+                i[0].nextElementSibling.classList.add("error-actived")
+                i[1].nextElementSibling.classList.remove("error-actived")
 
-                i[0].classList.add('error')
-                i[1].classList.remove('error')
 
-                e[0].innerText = i[0].setCustomValidity(t1);
-                e[0].innerText = i[0].validationMessage;
+                addI(i[0]);
+                removeI(i[1]);
 
-            // Password Input
-            } else if(i[1].value === "") {
-                e[1].classList.add("error-actived")
-                e[0].classList.remove("error-actived");
+                e.innerText = i[0].setCustomValidity(t1);
+                e.innerText = i[0].validationMessage;
 
-                i[0].classList.remove('error');
-                i[1].classList.add('error');
+            // // Password Input
+            } else if(i[1].value === "" || i[1].value === " ") {
+                i[1].nextElementSibling.classList.add("error-actived")
+                i[0].nextElementSibling.classList.remove("error-actived")
 
-                e[1].innerText = i[1].setCustomValidity(t2);
-                e[1].innerText = i[1].validationMessage;
+                addI(i[1]);
+                removeI(i[0]);
+
+                i[1].nextElementSibling.innerText = i[1].setCustomValidity(t2);
+                i[1].nextElementSibling.innerText = i[1].validationMessage;
             
-            // Succsess Message
+            // // Succsess Message
             } else {
-                e[1].classList.remove("error-actived")
-                e[0].classList.remove("error-actived");
-
-                i[0].classList.remove('error');
-                i[1].classList.remove('error');
+                e.classList.remove("error-actived")
+                
+                removeI(i[0]);
+                removeI(i[1]);
 
                 sucsess.classList.add("success-actived");
                 loginBtn.classList.add("hidden-button")
@@ -277,20 +290,23 @@ function checkingInput(){
 
         // Portuguese Error Messages
         if(i[0].classList.contains('pt')){ 
-            input("Preencha este campo", "Entre com sua senha");
+            input("! Preencha este campo", "! Entre com sua senha");
             sucsess.innerText = "Acessado :)";
         }
 
         // Portuguese Error Messages
         if(i[0].classList.contains('de')){
-            input("Füllen Sie dieses Feld aus", "Passwort bitte");
+            input("! Füllen Sie dieses Feld aus", "! Passwort bitte");
             sucsess.innerText = "Zugegriffen :)";
         }
 
     }, 1400)
 }
- 
+
+
 loginBtn.addEventListener("click", () => checkingInput())
+
+
 
 
 // Register Form
@@ -304,26 +320,38 @@ const eMsg = [
 ]
 
 // Inputs from register form
-const registerInputs = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
+const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
 
 // Errors
 const eReg = document.querySelectorAll("[data-error='register']");
 
-function registerTest(i){
+function addError(inp){
+    inp.nextElementSibling.classList.add("error-actived");
+}
+
+function inputErrors(index){
+    const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
+
+
+    if(registerInp[index].value === ""){
+        registerInp[index].nextElementSibling.classList.add("error-actived");
+    } else {
+        removeError;
+    }
+
+    // if(registerInp[3].value.indexOf("@")){
+    //     addError(registerInp[3 ])
+    //     console.log("error")
+    // } else {
+    //     removeError;
+    // }
+    // Array.from(eReg).map((e) => console.log(e))
+    
 
 }
 
-// if(i[0].value === "") {
-//     e[0].classList.add("error-actived");
-//     e[1].classList.remove("error-actived");
 
-registerInputs.forEach((i) => {
-    i.addEventListener("change", () => registerTest(i))
+
+registerInp.forEach((input, index) => {
+    input.addEventListener("change", () => inputErrors(index))
 })
-
-
-
-// function barMoons(index){
-//     allBars.forEach((bar) => bar.classList.remove(barDestination));
-//     allBars[index].classList.add(barDestination);
-// }

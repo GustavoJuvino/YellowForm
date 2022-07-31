@@ -303,6 +303,7 @@ body {
   display: none;
 }
 .login-active .form-texts .success-actived {
+  margin-top: 40px;
   display: block;
   font-family: "Nunito", sans-serif;
   font-size: 20px;
@@ -463,6 +464,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   position: absolute;
+  z-index: 2;
   font-size: 18px;
   margin-top: 10px;
   padding-top: 15px;
