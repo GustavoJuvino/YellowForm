@@ -249,7 +249,7 @@ function checkingInput(){
         function input(t1, t2) {
 
             // Username or Email Input
-            if(i[0].value === "") {
+            if(i[0].value === "" || i[0].value === " ") {
                 i[0].nextElementSibling.classList.add("error-actived")
                 i[1].nextElementSibling.classList.remove("error-actived")
 
@@ -261,7 +261,7 @@ function checkingInput(){
                 e.innerText = i[0].validationMessage;
 
             // // Password Input
-            } else if(i[1].value === "") {
+            } else if(i[1].value === "" || i[1].value === " ") {
                 i[1].nextElementSibling.classList.add("error-actived")
                 i[0].nextElementSibling.classList.remove("error-actived")
 
@@ -325,24 +325,33 @@ const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInpu
 // Errors
 const eReg = document.querySelectorAll("[data-error='register']");
 
+function addError(inp){
+    inp.nextElementSibling.classList.add("error-actived");
+}
 
-function registerTest(input, index){
-    registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
+function inputErrors(index){
+    const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
 
 
-    if(registerInp[0].value === "" || registerInp[0].value === " "){
-        registerInp[0].nextElementSibling.classList.add("error-actived");
-        input.setCustomValidity(eMsg[0]);
-        registerInp[0].nextElementSibling.innerText = input.validationMessage;
-
-        
-    } else { 
-        console.log("sucsess");
+    if(registerInp[index].value === ""){
+        registerInp[index].nextElementSibling.classList.add("error-actived");
+    } else {
+        removeError;
     }
+
+    // if(registerInp[3].value.indexOf("@")){
+    //     addError(registerInp[3 ])
+    //     console.log("error")
+    // } else {
+    //     removeError;
+    // }
+    // Array.from(eReg).map((e) => console.log(e))
+    
 
 }
 
 
+
 registerInp.forEach((input, index) => {
-    input.addEventListener("change", () => registerTest(input, index))
+    input.addEventListener("change", () => inputErrors(index))
 })
