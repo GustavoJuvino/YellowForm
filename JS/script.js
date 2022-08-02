@@ -309,7 +309,7 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 
-// Register Form
+// Register Form --------
 
 // Error Messages
 const eMsg = [
@@ -325,9 +325,12 @@ const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInpu
 // Errors
 const eReg = document.querySelectorAll("[data-error='register']");
 
+// Add Error
 function addError(inp){
-    inp.nextElementSibling.classList.add("error-actived");
+    // inp.nextElementSibling.classList.add("error-actived");
+    inp.nextElementSibling.innerText = validationMessage;
 }
+
 
 function inputErrors(index){
     const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
@@ -339,19 +342,72 @@ function inputErrors(index){
         removeError;
     }
 
-    // if(registerInp[3].value.indexOf("@")){
-    //     addError(registerInp[3 ])
-    //     console.log("error")
+
+    const domins = ["gmail","outlook"];
+
+    const emails = {
+        1: "@"+ domins[0] +".com",
+        2: "dasdadas"
+    }
+
+    const checkEmail = registerInp[1].value;
+
+    if(checkEmail.indexOf(emails[1]) == -1){
+        console.log("errorrr");
+    } else {
+        console.log("sucsesss")
+    }
+
+
+    // if(registerInp[1].value.indexOf("@" && "gmail") !== -1){
+    //     console.log("yes contain");
     // } else {
-    //     removeError;
+    //     console.log("Nop")
     // }
-    // Array.from(eReg).map((e) => console.log(e))
-    
+
 
 }
-
 
 
 registerInp.forEach((input, index) => {
     input.addEventListener("change", () => inputErrors(index))
 })
+
+
+// const testrgx = /\u0040/g;
+
+// const textt = "JavaScript?-";
+
+// const newTextt2 = textt.replace(testrgx, "0");
+
+// var str = "aloha@gmail.com";
+// if(str.indexOf("@" && ".com") !== -1){
+// 	console.log("yes contain");
+// } else {
+//     console.log("Nop")
+// }
+
+
+// const emInp = ["gmail", "outlook", "hotmail", "yahoo"]
+// const emailstest = "arroba"
+// const emails = emInp.includes(emailstest)
+
+// console.log(emails)
+
+const domins = ["gmail","outlook"];
+
+const emails = {
+    1: "@"+ domins[0] +".com",
+    2: "dasdadas"
+}
+
+console.log(emails[1])
+
+const checkEmail = "aloha@gmail.com";
+ 
+
+if(checkEmail.indexOf(emails[1]) == -1){
+    console.log("errorrr");
+} else {
+    console.log("sucsesss")
+}
