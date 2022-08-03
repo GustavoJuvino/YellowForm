@@ -342,17 +342,19 @@ function inputErrors(index){
         removeError;
     }
 
-
     const domins = ["gmail","outlook"];
+    
+    const testtting = domins.forEach((d) => `@${d}.com`);
+    
 
     const emails = {
-        1: "@"+ domins[0] +".com",
-        2: "dasdadas"
+        1: `@${domins[1]}.com`,
+        2: `@${domins[0]}.com`,
     }
 
     const checkEmail = registerInp[1].value;
 
-    if(checkEmail.indexOf(emails[1]) == -1){
+    if(checkEmail.indexOf(emails[1] || emails[2]) == -1){
         console.log("errorrr");
     } else {
         console.log("sucsesss")
@@ -372,6 +374,8 @@ function inputErrors(index){
 registerInp.forEach((input, index) => {
     input.addEventListener("change", () => inputErrors(index))
 })
+
+
 
 
 // const testrgx = /\u0040/g;
@@ -394,20 +398,20 @@ registerInp.forEach((input, index) => {
 
 // console.log(emails)
 
-const domins = ["gmail","outlook"];
+// const domins = ["gmail","outlook"];
 
-const emails = {
-    1: "@"+ domins[0] +".com",
-    2: "dasdadas"
-}
+// const emails = {
+//     1: "@"+ domins[0] +".com",
+//     2: "dasdadas"
+// }
 
-console.log(emails[1])
+// console.log(emails[1])
 
-const checkEmail = "aloha@gmail.com";
+// const checkEmail = "aloha@gmail.com";
  
 
-if(checkEmail.indexOf(emails[1]) == -1){
-    console.log("errorrr");
-} else {
-    console.log("sucsesss")
-}
+// if(checkEmail.indexOf(emails[1]) == -1){
+//     console.log("errorrr");
+// } else {
+//     console.log("sucsesss")
+// }
