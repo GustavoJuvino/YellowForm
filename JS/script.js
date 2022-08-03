@@ -212,6 +212,7 @@ hidden[2].addEventListener("click", () => {
 
 
 // Checking inputs in login form
+
 // Sign In button
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
@@ -232,11 +233,6 @@ function checkingInput(){
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
-
-        const tst = {
-            remove: i[0].classList.remove('error'),
-            2: "eae",
-        }
 
         // Add Error class
         const addI = (input) => input.classList.add("error");
@@ -344,18 +340,24 @@ function inputErrors(index){
 
     const domins = ["gmail","outlook"];
     
-    const testtting = domins.forEach((d) => `@${d}.com`);
-    
-
     const emails = {
-        1: `@${domins[1]}.com`,
-        2: `@${domins[0]}.com`,
+        1: `@${domins[0]}.com`,
+        2: `@${domins[1]}.com`,
     }
 
     const checkEmail = registerInp[1].value;
 
-    if(checkEmail.indexOf(emails[1] || emails[2]) == -1){
-        console.log("errorrr");
+    if(checkEmail.indexOf("#")== -1){
+        registerInp[index].nextElementSibling.classList.add("error-actived");
+    
+    }
+    else{
+        console.log("sucsesss g")
+    }
+
+
+    if(checkEmail.indexOf("@") == -1){
+        console.log("errorrr arroba");
     } else {
         console.log("sucsesss")
     }
