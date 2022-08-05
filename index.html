@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="EN">
 
 <head>
     <meta charset="UTF-8">
@@ -32,27 +32,39 @@
 
         <!-- LOGIN -->
         <!-- class="login-active" -->
-        <section data-login>
+
+        <section data-login class="login-active">
             <div class="form-texts">
                 <h1>Login</h1>
                 <form action=''>
-                    <div class="texts"><label for="UserEmail">Username or E-mail</label></div>
+
+                <!-- The label's English texts are in an object inside the script.js line 66-->
+                    <div class="texts">
+                        <label for="UserEmail"></label>
+                    </div>
+
                     <input type="text" data-input="EN" required>
 
-                    <!-- error -->
                     <div data-error=></div>
 
-                    <div class="texts"><label for="Password">Password</label><img class="hidden" src="./Imgs/hidden.svg"></div>
+                    <div class="texts">
+                        <label for="Password"></label>
+                        <img class="hidden" src="./Imgs/hidden.svg">
+                    </div>
+
                     <input type="password" data-input="EN" required>
 
                     <!-- error -->
                     <div data-error></div>
+
                 </form>
+
                 <p class="f-password">Forgot your password?</p>
                 <button class="btn">Sign In</button>
                 <div data-loading></div>
                 <div data-success>Successful :)</div>
             </div>
+            
             <div class="f-register">
                 <p class="p-register">Don't have an existing account?</p><span data-span="register">Register right now!</span>
             </div>
@@ -60,7 +72,7 @@
 
         <!-- REGISTER -->
         <!-- class="register-active" -->
-        <section data-register class="register-active">
+        <section data-register>
             <div class="registerForm">
                 <h1>Create your<br>account</h1>
                 <form action=''>
@@ -71,10 +83,10 @@
                     <div data-error="register">! Enter with your username</div>
 
                     <div class="texts"><label for="Email">E-mail</label></div>
-                    <input type="email" placeholder="user@gmail.com" required>
+                    <input type="email" placeholder="user@gmail.com" required title="Lütfen işaretli yerleri doldurunuz">
 
                     <!-- error -->
-                    <div data-error="register">! Enter with your email</div>
+                    <div data-error="register"></div>
 
 
                     <div class="texts"><label for="PhoneNumber">Phone Number</label></div>
@@ -104,6 +116,7 @@
         </section>
     </section>
     <script type="module" src="./JS/script.js"></script>
+    <!-- <script type="module" src="./JS/ptBR.js"></script> -->
 </body>
 
 </html>
