@@ -57,11 +57,11 @@ const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // English
-const originalTexts = document.querySelector(".texts").innerText
 
 
 
-const labels = document.getElementsByTagName("label")
+const labels =  document.getElementsByTagName("label")
+
 
 const enUK = {
     // Login
@@ -75,33 +75,23 @@ const enUK = {
         lng: "DE/ GE", 
 
     },
-    // Register
-    r: {
-        h1: "Erstelle deinen Account",
-        user: "Benutzer",
-        phone: "Telefonnummer",
-        password: "Passwort",
-        cPassword: "Bestätigen Sie das Passwort",
-        btn: "Ein Konto erstellen",
-        fRegister: "Sie haben bereits ein bestehendes Konto?",
-        span: "Hier zugreifen"
-    },
 }
 
-labels[0].innerText = enUK.l.user;
-labels[1].innerText = enUK.l.pass;
+
+
+const testL = [labels[0], labels[1]];
+const testV = ["Userrr", "Passswoord"];
+
+function logTest(){
+    testL.forEach((t) => t.innerText = testV.shift());
+}
 
 
 const allC = [".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']"];
 const c = document.querySelectorAll(allC);
-console.log(c)
 
 
-function changeLanguageEN(){
-}
-
-
-en.addEventListener("click", () => changeLanguageEN())
+en.addEventListener("click", () => logTest())
 
 
 

@@ -31,7 +31,6 @@ function changeLanguageBR(){
         const labelBR = document.getElementsByTagName("label")
         labelBR[0].innerText = ptBR.login.user;
         labelBR[1].innerText = ptBR.login.password;
-
     }
 
     loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
