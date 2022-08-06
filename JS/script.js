@@ -53,126 +53,51 @@ const en =  document.querySelector(languages[0]);
 const pt = document.querySelector(languages[1]);
 const de = document.querySelector(languages[2]);
 
-// Default page = English language
-en.addEventListener("click",() => window.location.reload() );
+const allInputs = document.querySelectorAll("input");
+const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+
+// English
 
 
-// (Portuguese - Brazil)
-import {ptBR} from "./languages.js";
 
-function changeLanguageBR(){
-
-    // Login Form in PT-BR
-    function loginBR(...c){
-        const classes = document.querySelectorAll(c);
-        classes[0].innerText = ptBR.login.lng;
-        classes[1].innerText = ptBR.login.fPassword;
-        classes[2].innerText = ptBR.login.btn;
-        classes[3].innerText = ptBR.login.fregister;
-        classes[4].innerText = ptBR.login.span;
-
-        const labelBR = document.getElementsByTagName("label")
-        labelBR[0].innerText = ptBR.login.user;
-        labelBR[1].innerText = ptBR.login.password;
-
-    }
-
-    loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
+const labels =  document.getElementsByTagName("label")
 
 
-    // Register Form in PT-BR
-    function registerBR(...c){
-        const classes = document.querySelectorAll(c);
-        classes[1].innerText = ptBR.register.btn;
-        classes[2].innerText = ptBR.register.flogin;
-        classes[3].innerText = ptBR.register.span;
+const enUK = {
+    // Login
+    l:{
+        user: "Username or Email",
+        pass: "Password",
+        fPassword: "Haben Sie Ihr Passwort vergessen?",
+        btn: "Einloggen",
+        fRegister: "Sie haben kein bestehendes Konto?",
+        span: "Gleich anmelden",
+        lng: "DE/ GE", 
 
-        const labelBR = document.getElementsByTagName("label");
-        labelBR[2].innerText= ptBR.register.user;
-        labelBR[4].innerText= ptBR.register.phone;
-        labelBR[5].innerText= ptBR.login.password;
-        labelBR[6].innerText= ptBR.register.cpassword;
-
-        const h1 = document.getElementsByTagName("h1");
-        h1[2].innerText = ptBR.register.h1;
-    }
-
-    registerBR(".p-signIN","[data-span='login']", ".btn")
-
-    // Added Portuguese language in input messages errors.
-    i[0].classList.add("pt")
-    i[0].classList.remove('de');
-
-    // Brazil Phone Number style
-    allInputs[4].placeholder = "+ XX XX XXXX-XXXX";
+    },
 }
 
-pt.addEventListener("click", changeLanguageBR);
 
 
-// (German - Deutschland)
-import {deGE} from "./languages.js";
+const testL = [labels[0], labels[1]];
+const testV = ["Userrr", "Passswoord"];
 
-function changeLanguageDE(){
-
-    // German Login Form
-    function loginDE(...c){
-
-        // German Login Form
-        const classes = document.querySelectorAll(c);
-        classes[0].innerText = deGE.login.lng;
-        classes[1].innerText = deGE.login.fPassword;
-        classes[2].innerText = deGE.login.btn;
-        classes[3].innerText = deGE.login.fRegister;
-        classes[4].innerText = deGE.login.span;
-
-        const labelDE = document.getElementsByTagName("label")
-        labelDE[0].innerText = deGE.login.user;
-        labelDE[1].innerText = deGE.login.password;
-    }
-
-    loginDE(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
-
-
-    // German Register Form
-    function registerDE(...c){
-        // Classes
-        const classes = document.querySelectorAll(c);
-        classes[1].innerText = deGE.register.btn;
-        classes[2].innerText = deGE.register.fRegister;
-        classes[3].innerText = deGE.register.span;
-
-        // Tags
-        const labelDE = document.getElementsByTagName("label");
-        labelDE[2].innerText= deGE.register.user;
-        labelDE[4].innerText= deGE.register.phone;
-        labelDE[5].innerText= deGE.login.password;
-        labelDE[6].innerText= deGE.register.cPassword;
-        
-
-        const h1 = document.getElementsByTagName("h1");
-        h1[2].innerText = deGE.register.h1;
-
-    }
-
-    registerDE(".p-signIN","[data-span='login']", ".btn");
-
-    // Added German language in input messages errors.
-    i[0].classList.add("de")
-    i[0].classList.remove('pt');
-
-    // German Phone Number style
-    allInputs[4].placeholder = "+ XX XXX XXXXXX";
+function logTest(){
+    testL.forEach((t) => t.innerText = testV.shift());
 }
 
-de.addEventListener("click", changeLanguageDE);
+
+const allC = [".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']"];
+const c = document.querySelectorAll(allC);
+
+
+en.addEventListener("click", () => logTest())
+
 
 
 // Hidden / Show Button -> Passwords
 
 const hidden = document.querySelectorAll(".hidden");
-const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 
 var state = false;
@@ -212,6 +137,7 @@ hidden[2].addEventListener("click", () => {
 
 
 // Checking inputs in login form
+
 // Sign In button
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
@@ -232,11 +158,6 @@ function checkingInput(){
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
-
-        const tst = {
-            remove: i[0].classList.remove('error'),
-            2: "eae",
-        }
 
         // Add Error class
         const addI = (input) => input.classList.add("error");
@@ -309,7 +230,7 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 
-// Register Form
+// Register Form --------
 
 // Error Messages
 const eMsg = [
@@ -325,9 +246,12 @@ const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInpu
 // Errors
 const eReg = document.querySelectorAll("[data-error='register']");
 
+// Add Error
 function addError(inp){
-    inp.nextElementSibling.classList.add("error-actived");
+    // inp.nextElementSibling.classList.add("error-actived");
+    inp.nextElementSibling.innerText = validationMessage;
 }
+
 
 function inputErrors(index){
     const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
@@ -339,19 +263,46 @@ function inputErrors(index){
         removeError;
     }
 
-    // if(registerInp[3].value.indexOf("@")){
-    //     addError(registerInp[3 ])
-    //     console.log("error")
-    // } else {
-    //     removeError;
-    // }
-    // Array.from(eReg).map((e) => console.log(e))
+    const domins = ["gmail","outlook"];
     
+    const emails = {
+        1: `@${domins[0]}.com`,
+        2: `@${domins[1]}.com`,
+    }
+
+    const checkEmail = registerInp[1].value;
+
+    if(checkEmail.indexOf("#")== -1){
+        registerInp[1].nextElementSibling.classList.add("error-actived");
+        registerInp[1].nextElementSibling.innerText = registerInp[1].validationMessage
+    
+    }
+    else{
+        console.log("sucsesss g")
+    }
+
+
+    if(checkEmail.indexOf("@") == -1){
+        console.log("errorrr arroba");
+    } else {
+        console.log("sucsesss")
+    }
+
+
+    // if(registerInp[1].value.indexOf("@" && "gmail") !== -1){
+    //     console.log("yes contain");
+    // } else {
+    //     console.log("Nop")
+    // }
+
 
 }
-
 
 
 registerInp.forEach((input, index) => {
     input.addEventListener("change", () => inputErrors(index))
 })
+
+console.log(registerInp[1].validationMessage)
+
+
