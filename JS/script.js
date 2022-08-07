@@ -59,10 +59,6 @@ const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 // English
 
 
-
-const labels =  document.getElementsByTagName("label")
-
-
 const enUK = {
     // Login
     l:{
@@ -77,21 +73,21 @@ const enUK = {
     },
 }
 
+const labels =  document.getElementsByTagName("label")
 
 
-const testL = [labels[0], labels[1]];
-const testV = ["Userrr", "Passswoord"];
+const testV = ["Userrr", "Passswoord","eng","bread","capuccino","cake"];
 
-function logTest(){
-    testL.forEach((t) => t.innerText = testV.shift());
+function logTest(...p){
+    const prpties = Array.from(document.querySelectorAll(p));
+    const testL = [labels[0], labels[1]];
+
+    testL.concat(prpties).forEach((t) => t.innerText = testV.shift());
 }
 
 
-const allC = [".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']"];
-const c = document.querySelectorAll(allC);
 
-
-en.addEventListener("click", () => logTest())
+en.addEventListener("click", () => logTest(".p-initials", ".p-register", ".f-password", ".btn","[data-span='register']"))
 
 
 
