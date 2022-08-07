@@ -57,37 +57,30 @@ const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // English
-
-
 const enUK = {
     // Login
-    l:{
-        user: "Username or Email",
-        pass: "Password",
-        fPassword: "Haben Sie Ihr Passwort vergessen?",
-        btn: "Einloggen",
-        fRegister: "Sie haben kein bestehendes Konto?",
-        span: "Gleich anmelden",
-        lng: "DE/ GE", 
-
-    },
+    user: "Username or Email",
+    pass: "Password",
+    lng: "EN/ UK", 
+    fPassword: "Forgot your password?",
+    btn: "Sign In",
+    fRegister: "Don't have an existing account?",
+    span: "Register right now!",
 }
 
 const labels =  document.getElementsByTagName("label")
 
-
-const testV = ["Userrr", "Passswoord","eng","bread","capuccino","cake"];
-
+// Changing Language page in ENGLISH/UK
 function logTest(...p){
     const prpties = Array.from(document.querySelectorAll(p));
     const testL = [labels[0], labels[1]];
+    const arrUK = Object.values(enUK)
+    console.log(testL.concat(prpties))
 
-    testL.concat(prpties).forEach((t) => t.innerText = testV.shift());
+    testL.concat(prpties).forEach((t) => t.innerText = arrUK.shift());
 }
 
-
-
-en.addEventListener("click", () => logTest(".p-initials", ".p-register", ".f-password", ".btn","[data-span='register']"))
+en.addEventListener("click", () => logTest(".p-initials", ".f-password", ".btn",".p-register","[data-span='register']"))
 
 
 
