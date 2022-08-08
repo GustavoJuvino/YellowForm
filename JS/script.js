@@ -146,19 +146,15 @@ function checkingInput(){
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
 
-        // lgnInputs[0].value === "" ? console.log(lgnInputs[0].validationMessage)
-
         function lgnError(inpt){
             inpt.nextElementSibling.classList.add("error-actived");
             inpt.nextElementSibling.innerText = inpt.validationMessage;
         }
 
         lgnInputs.forEach((inpt) => {
-            if(!inpt.checkValidity()){
-                lgnError(inpt);
-            } else{
-                inpt.nextElementSibling.classList.remove("error-actived");
-            }
+
+            // Checking if the inputs are true or not
+            !inpt.checkValidity() ? lgnError(inpt) : inpt.nextElementSibling.classList.remove("error-actived");
 
             // If both of the inputs are true, then show sucsess message
             lgnInputs[0].checkValidity() && lgnInputs[1].checkValidity() ? 
