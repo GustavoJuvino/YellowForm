@@ -66,6 +66,7 @@ const enUK = {
     btn: "Sign In",
     fRegister: "Don't have an existing account?",
     span: "Register right now!",
+    sucss: "Successful :)"
 }
 
 const labels =  document.getElementsByTagName("label")
@@ -73,22 +74,19 @@ const labels =  document.getElementsByTagName("label")
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
     const prpties = Array.from(document.querySelectorAll(p));
-    const testL = [labels[0], labels[1]];
+    const lgnLabels = [labels[0], labels[1]];
     const arrUK = Object.values(enUK)
-    console.log(testL.concat(prpties))
 
-    testL.concat(prpties).forEach((t) => t.innerText = arrUK.shift());
+    lgnLabels.concat(prpties).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => logTest(".p-initials", ".f-password", ".btn",".p-register","[data-span='register']"))
+en.addEventListener("click", () => 
+logTest(".p-initials", ".f-password", ".btn",".p-register","[data-span='register']", "[data-sucsess]"));
 
 
 
 // Hidden / Show Button -> Passwords
-
 const hidden = document.querySelectorAll(".hidden");
-
-
 var state = false;
 
 hidden[0].addEventListener("click", () => {
@@ -136,7 +134,7 @@ const loading = document.querySelector("[data-loading]");
 const e = document.querySelector("[data-error]");
 const sucsess = document.querySelector("[data-success]");
 
-const loginInputs = [allInputs[0], allInputs[1]];
+const lgnInputs = [allInputs[0], allInputs[1]];
 
 function checkingInput(){
     // Loading Icon
@@ -148,69 +146,26 @@ function checkingInput(){
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
 
-        // Add Error class
-        const addI = (input) => input.classList.add("error");
+        // lgnInputs[0].value === "" ? console.log(lgnInputs[0].validationMessage)
 
-        // Remove Error class
-        const removeI = (input) => input.classList.remove("error");
+        function lgnError(inpt){
+            inpt.nextElementSibling.classList.add("error-actived");
+            inpt.nextElementSibling.innerText = inpt.validationMessage;
+        }
 
-
-
-        function input(t1, t2) {
-
-            // Username or Email Input
-            if(i[0].value === "" || i[0].value === " ") {
-                i[0].nextElementSibling.classList.add("error-actived")
-                i[1].nextElementSibling.classList.remove("error-actived")
-
-
-                addI(i[0]);
-                removeI(i[1]);
-
-                e.innerText = i[0].setCustomValidity(t1);
-                e.innerText = i[0].validationMessage;
-
-            // // Password Input
-            } else if(i[1].value === "" || i[1].value === " ") {
-                i[1].nextElementSibling.classList.add("error-actived")
-                i[0].nextElementSibling.classList.remove("error-actived")
-
-                addI(i[1]);
-                removeI(i[0]);
-
-                i[1].nextElementSibling.innerText = i[1].setCustomValidity(t2);
-                i[1].nextElementSibling.innerText = i[1].validationMessage;
-            
-            // // Succsess Message
-            } else {
-                e.classList.remove("error-actived")
-                
-                removeI(i[0]);
-                removeI(i[1]);
-
-                sucsess.classList.add("success-actived");
-                loginBtn.classList.add("hidden-button")
+        lgnInputs.forEach((inpt) => {
+            if(!inpt.checkValidity()){
+                lgnError(inpt);
+            } else{
+                inpt.nextElementSibling.classList.remove("error-actived");
             }
-        }
 
-        // English Error Messages
-        if(i[0].hasAttribute('data-input')){
-            input("! Enter your username or email", "! Enter your password");
-        } 
+            // If both of the inputs are true, then show sucsess message
+            lgnInputs[0].checkValidity() && lgnInputs[1].checkValidity() ? 
+            sucsess.classList.add("success-actived") : null
+        });
 
-        // Portuguese Error Messages
-        if(i[0].classList.contains('pt')){ 
-            input("! Preencha este campo", "! Entre com sua senha");
-            sucsess.innerText = "Acessado :)";
-        }
-
-        // Portuguese Error Messages
-        if(i[0].classList.contains('de')){
-            input("! Füllen Sie dieses Feld aus", "! Passwort bitte");
-            sucsess.innerText = "Zugegriffen :)";
-        }
-
-    }, 1400)
+    }, 1000)
 }
 
 
