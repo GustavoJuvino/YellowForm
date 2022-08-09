@@ -73,15 +73,17 @@ const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
-    const prpties = Array.from(document.querySelectorAll(p));
+    const tags = Array.from(document.querySelectorAll(p));
     const lgnLabels = [labels[0], labels[1]];
     const arrUK = Object.values(enUK)
+    tags[0].classList.add("EN")
+    tags[0].classList.remove("PT")
 
-    lgnLabels.concat(prpties).forEach((t) => t.innerText = arrUK.shift());
+    lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
 en.addEventListener("click", () => 
-logTest(".p-initials", ".f-password", ".btn",".p-register","[data-span='register']", "[data-sucsess]"));
+logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']", "[data-sucsess]"));
 
 
 
@@ -89,38 +91,38 @@ logTest(".p-initials", ".f-password", ".btn",".p-register","[data-span='register
 const hidden = document.querySelectorAll(".hidden");
 var state = false;
 
-hidden[0].addEventListener("click", () => {
-    if(state) {
-        i[1].setAttribute("type", "password");
-        state = false;
-    }
-    else{
-        i[1].setAttribute("type", "text")
-        state = true;
-    }
-})
+    hidden[0].addEventListener("click", () => {
+        if(state) {
+            i[1].setAttribute("type", "password");
+            state = false;
+        }
+        else{
+            i[1].setAttribute("type", "text")
+            state = true;
+        }
+    })
 
-hidden[1].addEventListener("click", () => {
-    if(state) {
-        i[2].setAttribute("type", "password");
-        state = false;
-    }
-    else{
-        i[2].setAttribute("type", "text")
-        state = true;
-    }
-})
+    hidden[1].addEventListener("click", () => {
+        if(state) {
+            i[2].setAttribute("type", "password");
+            state = false;
+        }
+        else{
+            i[2].setAttribute("type", "text")
+            state = true;
+        }
+    })
 
-hidden[2].addEventListener("click", () => {
-    if(state) {
-        i[3].setAttribute("type", "password");
-        state = false;
-    }
-    else{
-        i[3].setAttribute("type", "text")
-        state = true;
-    }
-})
+    hidden[2].addEventListener("click", () => {
+        if(state) {
+            i[3].setAttribute("type", "password");
+            state = false;
+        }
+        else{
+            i[3].setAttribute("type", "text")
+            state = true;
+        }
+    })
 
 
 // Checking inputs in login form
@@ -135,13 +137,13 @@ const e = document.querySelector("[data-error]");
 const sucsess = document.querySelector("[data-success]");
 
 const lgnInputs = [allInputs[0], allInputs[1]];
+const initals = document.querySelector("[data-initials]");
 
 function checkingInput(){
     // Loading Icon
     loading.classList.add("loading")
     loginBtn.classList.add("hidden-button")
 
-    
     setTimeout(() => {
         loading.classList.remove("loading")
         loginBtn.classList.remove("hidden-button")
@@ -163,7 +165,6 @@ function checkingInput(){
 
     }, 1000)
 }
-
 
 loginBtn.addEventListener("click", () => checkingInput())
 

@@ -22,6 +22,9 @@ function changeLanguageBR(){
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
+        classes[0].classList.remove("EN");
+        classes[0].classList.add("PT");
+
         classes[0].innerText = ptBR.login.lng;
         classes[1].innerText = ptBR.login.fPassword;
         classes[2].innerText = ptBR.login.btn;
@@ -31,9 +34,11 @@ function changeLanguageBR(){
         const labelBR = document.getElementsByTagName("label")
         labelBR[0].innerText = ptBR.login.user;
         labelBR[1].innerText = ptBR.login.password;
+        
+
     }
 
-    loginBR(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
+    loginBR("[data-initials]", ".f-password", ".btn", ".p-register", "[data-span='register']");
 
 
     // Register Form in PT-BR
