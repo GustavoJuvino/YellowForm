@@ -22,6 +22,7 @@ function changeLanguageBR(){
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
+        classes[0].classList.remove("DE");
         classes[0].classList.remove("EN");
         classes[0].classList.add("PT");
 

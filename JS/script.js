@@ -151,6 +151,19 @@ function checkingInput(){
         function lgnError(inpt){
             inpt.nextElementSibling.classList.add("error-actived");
             inpt.nextElementSibling.innerText = inpt.validationMessage;
+
+            if(initals.classList.contains("EN")){
+                inpt.nextElementSibling.innerText = "Please fill out this field.";
+            } 
+            else if(initals.classList.contains("PT")) {
+                inpt.nextElementSibling.innerText = "Campo Requerido";
+            }
+            else if(initals.classList.contains("DE")) {
+                inpt.nextElementSibling.innerText = "Campo Requerido";
+            }
+            else {
+                return null;
+            }
         }
 
         lgnInputs.forEach((inpt) => {

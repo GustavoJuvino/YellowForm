@@ -3,6 +3,6 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "liveServer.settings.donotVerifyTags": true,
     "workbench.colorTheme": "Tokyo Night Storm",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "window.zoomLevel": 1,
   }
