@@ -7,24 +7,18 @@ const pt = document.querySelector(languages[1]);
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
-var userLang = navigator.language || navigator.userLanguage; 
-console.log("The language is: " + userLang);
-
-
-if(userLang === "pt-BR"){
-    changeLanguageBR()
-} else{
-    console.log("nao")
-}
+// Navigator user language
+var userLang = navigator.language || navigator.userLanguage;
+if(userLang === "pt" || userLang === "pt-BR") changeLanguageBR()
 
 function changeLanguageBR(){
 
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
+        classes[0].classList.add("PT");
         classes[0].classList.remove("DE");
         classes[0].classList.remove("EN");
-        classes[0].classList.add("PT");
 
         classes[0].innerText = ptBR.login.lng;
         classes[1].innerText = ptBR.login.fPassword;

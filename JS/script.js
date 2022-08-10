@@ -73,9 +73,10 @@ const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
-    const tags = Array.from(document.querySelectorAll(p));
     const lgnLabels = [labels[0], labels[1]];
+    const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
+    
     tags[0].classList.add("EN")
     tags[0].classList.remove("PT")
 
@@ -131,11 +132,11 @@ var state = false;
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
 
-
  // Error Messages and Succsess messages
 const e = document.querySelector("[data-error]");
 const sucsess = document.querySelector("[data-success]");
 
+// Login Inputs and Languages Initials
 const lgnInputs = [allInputs[0], allInputs[1]];
 const initals = document.querySelector("[data-initials]");
 

@@ -1,13 +1,13 @@
 
-
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 const de = document.querySelector(languages[2]);
 
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
+// Navigator user language
 var userLang = navigator.language || navigator.userLanguage; 
-console.log("The language is: " + userLang);
+if(userLang === "de") changeLanguageDE();
 
 
 // (German - Deutschland)
