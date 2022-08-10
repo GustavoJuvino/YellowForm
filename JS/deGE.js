@@ -1,13 +1,13 @@
 
-
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 const de = document.querySelector(languages[2]);
 
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
+// Navigator user language
 var userLang = navigator.language || navigator.userLanguage; 
-console.log("The language is: " + userLang);
+if(userLang === "de") changeLanguageDE();
 
 
 // (German - Deutschland)
@@ -20,6 +20,10 @@ function changeLanguageDE(){
 
         // German Login Form
         const classes = document.querySelectorAll(c);
+        classes[0].classList.add("DE");
+        classes[0].classList.remove("EN");
+        classes[0].classList.remove("PT");
+
         classes[0].innerText = deGE.login.lng;
         classes[1].innerText = deGE.login.fPassword;
         classes[2].innerText = deGE.login.btn;
