@@ -35,7 +35,7 @@ function changeLanguageDE(){
         labelDE[1].innerText = deGE.login.password;
     }
 
-    loginDE(".p-initials", ".f-password", ".btn", ".p-register", "[data-span='register']");
+    loginDE("[data-initials]", ".f-password", ".btn", ".p-register", "[data-span='register']");
 
 
     // German Register Form

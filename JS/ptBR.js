@@ -17,8 +17,8 @@ function changeLanguageBR(){
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
         classes[0].classList.add("PT");
-        classes[0].classList.remove("DE");
         classes[0].classList.remove("EN");
+        classes[0].classList.remove("DE");
 
         classes[0].innerText = ptBR.login.lng;
         classes[1].innerText = ptBR.login.fPassword;

@@ -66,26 +66,26 @@ const enUK = {
     btn: "Sign In",
     fRegister: "Don't have an existing account?",
     span: "Register right now!",
-    sucss: "Successful :)"
 }
 
 const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
+    console.log(p)
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
-    
-    tags[0].classList.add("EN")
-    tags[0].classList.remove("PT")
+    console.log(arrUK)
+    tags[0].classList.add("EN");
+    tags[0].classList.remove("PT");
+    tags[0].classList.remove("DE");
 
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
 en.addEventListener("click", () => 
-logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']", "[data-sucsess]"));
-
+logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
 
 
 // Hidden / Show Button -> Passwords
@@ -152,6 +152,7 @@ function checkingInput(){
         function lgnError(inpt){
             inpt.nextElementSibling.classList.add("error-actived");
             inpt.nextElementSibling.innerText = inpt.validationMessage;
+            sucsess.classList.remove("success-actived");
 
             if(initals.classList.contains("EN")){
                 inpt.nextElementSibling.innerText = "Please fill out this field.";
@@ -160,7 +161,7 @@ function checkingInput(){
                 inpt.nextElementSibling.innerText = "Campo Requerido";
             }
             else if(initals.classList.contains("DE")) {
-                inpt.nextElementSibling.innerText = "Campo Requerido";
+                inpt.nextElementSibling.innerText = "Fülle dieses Feld aus.";
             }
             else {
                 return null;
