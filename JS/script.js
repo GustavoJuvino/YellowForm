@@ -76,7 +76,7 @@ function logTest(...p){
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
-    console.log(arrUK)
+
     tags[0].classList.add("EN");
     tags[0].classList.remove("PT");
     tags[0].classList.remove("DE");
@@ -186,6 +186,7 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 
+
 // Register Form --------
 
 // Error Messages
@@ -196,69 +197,31 @@ const eMsg = [
     "Passwords do not match"
 ]
 
-// Inputs from register form
-const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
-
-// Errors
-const eReg = document.querySelectorAll("[data-error='register']");
-
-// Add Error
-function addError(inp){
-    // inp.nextElementSibling.classList.add("error-actived");
-    inp.nextElementSibling.innerText = validationMessage;
+const regL = Array.from(labels);
+const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
+const rgstUK = {
+    // Login
+    user: "Username",
+    email: "E-mail",
+    number: "Phone Number",
+    pass: "Password",
+    cpass: "Confirm Password",
+    h1: "Create an Account",
+    btn: "Register!",
+    fLogin: "Already have an existing account?",
+    spanLogin: "Login here!",
 }
 
+function regTest(...p){
+    const tags = Array.from(document.querySelectorAll(p));
+    const arrUK = Object.values(rgstUK);
 
-function inputErrors(index){
-    const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
+    // console.log( regL.concat(tags))
 
-
-    if(registerInp[index].value === ""){
-        registerInp[index].nextElementSibling.classList.add("error-actived");
-    } else {
-        removeError;
-    }
-
-    const domins = ["gmail","outlook"];
-    
-    const emails = {
-        1: `@${domins[0]}.com`,
-        2: `@${domins[1]}.com`,
-    }
-
-    const checkEmail = registerInp[1].value;
-
-    if(checkEmail.indexOf("#")== -1){
-        registerInp[1].nextElementSibling.classList.add("error-actived");
-        registerInp[1].nextElementSibling.innerText = registerInp[1].validationMessage
-    
-    }
-    else{
-        console.log("sucsesss g")
-    }
-
-
-    if(checkEmail.indexOf("@") == -1){
-        console.log("errorrr arroba");
-    } else {
-        console.log("sucsesss")
-    }
-
-
-    // if(registerInp[1].value.indexOf("@" && "gmail") !== -1){
-    //     console.log("yes contain");
-    // } else {
-    //     console.log("Nop")
-    // }
-
-
+    regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
+en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
 
-registerInp.forEach((input, index) => {
-    input.addEventListener("change", () => inputErrors(index))
-})
-
-console.log(registerInp[1].validationMessage)
 
 
