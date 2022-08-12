@@ -198,7 +198,12 @@ const eMsg = [
 ]
 
 const regL = Array.from(labels);
+
 const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
+
+const regInpt = Array.from(allInputs);
+const newInputs = regInpt.shift(regInpt[0]) && regInpt.shift(regInpt[1]);
+
 const rgstUK = {
     // Login
     user: "Username",
@@ -225,3 +230,6 @@ en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-si
 
 
 
+regInpt.forEach((label) => {
+    label.addEventListener("change", () => console.log("test"))
+})
