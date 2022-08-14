@@ -472,7 +472,8 @@ body {
   padding-left: 20px;
   display: block;
   width: 330px;
-  height: 28px;
+  min-height: 28px;
+  max-height: auto;
   border-radius: 6px;
   background-color: #FBBC05;
   color: black;

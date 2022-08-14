@@ -229,7 +229,24 @@ function regTest(...p){
 en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
 
 
+////////////////////////////////
+// REGISTER INPUT/LABEL ERRORS
 
-regInpt.forEach((label) => {
-    label.addEventListener("change", () => console.log("test"))
+const eReg = document.querySelectorAll("[data-error='register']");
+
+function inputErrors(index){
+    // Remove Errors
+    eReg.forEach((error) => error.classList.remove("error-actived"));
+
+
+    function regError(index){
+        regInpt[index].nextElementSibling.classList.add("error-actived")
+        regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+    }
+
+    !regInpt[index].checkValidity() ? regError(index) : console.log("sucsess");
+}
+
+regInpt.forEach((label, index) => {
+    label.addEventListener("change", () => inputErrors(index))
 })
