@@ -233,6 +233,7 @@ en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-si
 // REGISTER INPUT/LABEL ERRORS
 
 const eReg = document.querySelectorAll("[data-error='register']");
+var userLang = navigator.language || navigator.userLanguage;
 
 function inputErrors(index){
     // Remove Errors
@@ -242,6 +243,12 @@ function inputErrors(index){
     function regError(index){
         regInpt[index].nextElementSibling.classList.add("error-actived")
         regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+
+        if(userLang === "en"){
+            regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+        } else if(initals.classList.contains("EN")){
+            regInpt[index].nextElementSibling.innerText = "error";
+        }
     }
 
     !regInpt[index].checkValidity() ? regError(index) : console.log("sucsess");
@@ -250,3 +257,4 @@ function inputErrors(index){
 regInpt.forEach((label, index) => {
     label.addEventListener("change", () => inputErrors(index))
 })
+
