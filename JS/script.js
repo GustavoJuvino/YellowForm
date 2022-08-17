@@ -244,7 +244,7 @@ function inputErrors(index){
         regInpt[index].nextElementSibling.classList.add("error-actived")
         regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
 
-
+        // Testing
         if(initals.classList.contains("EN")) regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
         if(initals.classList.contains("PT")) regInpt[index].nextElementSibling.innerText = "error";
     }
