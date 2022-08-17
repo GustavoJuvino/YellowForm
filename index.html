@@ -33,7 +33,7 @@
         <!-- LOGIN -->
         <!-- class="login-active" -->
 
-        <section data-login class="login-active">
+        <section data-login>
             <div class="form-texts">
                 <h1>Login</h1>
                 <form action=''>
@@ -62,7 +62,7 @@
                 <p class="f-password">Forgot your password?</p>
                 <button class="btn">Sign In</button>
                 <div data-loading></div>
-                <div data-success>Successful :)</div>
+                <div data-success>successful 🤠</div>
             </div>
             
             <div class="f-register">
@@ -72,18 +72,18 @@
 
         <!-- REGISTER -->
         <!-- class="register-active" -->
-        <section data-register>
+        <section data-register class="register-active">
             <div class="registerForm">
-                <h1>Create your<br>account</h1>
+                <h1 data-h1>Create your<br>account</h1>
                 <form action=''>
                     <div class="texts"><label for="Username">Username</label></div>
                     <input type="text" placeholder="user123" required>
 
                     <!-- error -->
-                    <div data-error="register">! Enter with your username</div>
+                    <div data-error="register"></div>
 
                     <div class="texts"><label for="Email">E-mail</label></div>
-                    <input type="email" placeholder="user@gmail.com" required title="Lütfen işaretli yerleri doldurunuz">
+                    <input type="email" placeholder="user@gmail.com" required>
 
                     <!-- error -->
                     <div data-error="register"></div>
@@ -93,22 +93,22 @@
                     <input type="number" placeholder="+XX XXXX XXXXXX" required>
 
                     <!-- error -->
-                    <div data-error="register">! Enter a valid phone number</div>
+                    <div data-error="register"></div>
 
                     <div class="texts"><label for="Password">Password</label><img class="hidden" src="./Imgs/hidden.svg"></div>
                     <input type="password" required>
 
                     <!-- error -->
-                    <div data-error="register">! Enter a valid password</div>
+                    <div data-error="register"></div>
 
                     <div class="texts"><label for="ConfirmPass">Confirm Password</label><img class="hidden" src="./Imgs/hidden.svg"></div>
                     <input type="password" required>
 
                     <!-- error -->
-                     <div data-error="register">! Passwords do not match</div>
+                     <div data-error="register"></div>
                     
                 </form>
-                <button class="btn">Create Account</button>
+                <button data-btn="2" class="btn">Create Account</button>
                 <div class="signIn">
                     <p class="p-signIN">Already have an account?</p><span data-span="login">Sign In</span>
                 </div>

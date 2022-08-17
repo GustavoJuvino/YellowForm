@@ -253,7 +253,7 @@ body{
             display: block;
             @include form-text;
             font-size: 28px;
-            margin-left: 18.5%;
+            margin-left: 15.5%;
             color: #30b842;
         }
 
@@ -388,7 +388,8 @@ body{
             padding-left: 20px;
             display: block;
             width: 330px;
-            height: 28px;
+            min-height: 28px;
+            max-height: auto;
             border-radius: 6px;
             background-color: $main-color2;
             color: black;

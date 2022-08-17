@@ -310,7 +310,7 @@ body {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   font-size: 28px;
-  margin-left: 18.5%;
+  margin-left: 15.5%;
   color: #30b842;
 }
 .login-active .form-texts [data-loading] {
@@ -472,7 +472,8 @@ body {
   padding-left: 20px;
   display: block;
   width: 330px;
-  height: 28px;
+  min-height: 28px;
+  max-height: auto;
   border-radius: 6px;
   background-color: #FBBC05;
   color: black;

@@ -66,26 +66,26 @@ const enUK = {
     btn: "Sign In",
     fRegister: "Don't have an existing account?",
     span: "Register right now!",
-    sucss: "Successful :)"
 }
 
 const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
+    console.log(p)
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
-    
-    tags[0].classList.add("EN")
-    tags[0].classList.remove("PT")
+
+    tags[0].classList.add("EN");
+    tags[0].classList.remove("PT");
+    tags[0].classList.remove("DE");
 
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
 en.addEventListener("click", () => 
-logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']", "[data-sucsess]"));
-
+logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
 
 
 // Hidden / Show Button -> Passwords
@@ -152,6 +152,7 @@ function checkingInput(){
         function lgnError(inpt){
             inpt.nextElementSibling.classList.add("error-actived");
             inpt.nextElementSibling.innerText = inpt.validationMessage;
+            sucsess.classList.remove("success-actived");
 
             if(initals.classList.contains("EN")){
                 inpt.nextElementSibling.innerText = "Please fill out this field.";
@@ -160,7 +161,7 @@ function checkingInput(){
                 inpt.nextElementSibling.innerText = "Campo Requerido";
             }
             else if(initals.classList.contains("DE")) {
-                inpt.nextElementSibling.innerText = "Campo Requerido";
+                inpt.nextElementSibling.innerText = "Fülle dieses Feld aus.";
             }
             else {
                 return null;
@@ -185,6 +186,7 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 
+
 // Register Form --------
 
 // Error Messages
@@ -195,69 +197,62 @@ const eMsg = [
     "Passwords do not match"
 ]
 
-// Inputs from register form
-const registerInp = [allInputs[2],allInputs[3],allInputs[4],allInputs[5],allInputs[6]]
+const regL = Array.from(labels);
 
-// Errors
-const eReg = document.querySelectorAll("[data-error='register']");
+const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
 
-// Add Error
-function addError(inp){
-    // inp.nextElementSibling.classList.add("error-actived");
-    inp.nextElementSibling.innerText = validationMessage;
+const regInpt = Array.from(allInputs);
+const newInputs = regInpt.shift(regInpt[0]) && regInpt.shift(regInpt[1]);
+
+const rgstUK = {
+    // Login
+    user: "Username",
+    email: "E-mail",
+    number: "Phone Number",
+    pass: "Password",
+    cpass: "Confirm Password",
+    h1: "Create an Account",
+    btn: "Register!",
+    fLogin: "Already have an existing account?",
+    spanLogin: "Login here!",
 }
 
+function regTest(...p){
+    const tags = Array.from(document.querySelectorAll(p));
+    const arrUK = Object.values(rgstUK);
+
+    // console.log( regL.concat(tags))
+
+    regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
+}
+
+en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
+
+
+////////////////////////////////
+// REGISTER INPUT/LABEL ERRORS
+
+const eReg = document.querySelectorAll("[data-error='register']");
+var userLang = navigator.language || navigator.userLanguage;
 
 function inputErrors(index){
-    const removeError = registerInp.forEach((i) => i.nextElementSibling.classList.remove("error-actived"));
+    // Remove Errors
+    eReg.forEach((error) => error.classList.remove("error-actived"));
 
 
-    if(registerInp[index].value === ""){
-        registerInp[index].nextElementSibling.classList.add("error-actived");
-    } else {
-        removeError;
+    function regError(index){
+        regInpt[index].nextElementSibling.classList.add("error-actived")
+        regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+
+        // Testing
+        if(initals.classList.contains("EN")) regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
+        if(initals.classList.contains("PT")) regInpt[index].nextElementSibling.innerText = "error";
     }
 
-    const domins = ["gmail","outlook"];
-    
-    const emails = {
-        1: `@${domins[0]}.com`,
-        2: `@${domins[1]}.com`,
-    }
-
-    const checkEmail = registerInp[1].value;
-
-    if(checkEmail.indexOf("#")== -1){
-        registerInp[1].nextElementSibling.classList.add("error-actived");
-        registerInp[1].nextElementSibling.innerText = registerInp[1].validationMessage
-    
-    }
-    else{
-        console.log("sucsesss g")
-    }
-
-
-    if(checkEmail.indexOf("@") == -1){
-        console.log("errorrr arroba");
-    } else {
-        console.log("sucsesss")
-    }
-
-
-    // if(registerInp[1].value.indexOf("@" && "gmail") !== -1){
-    //     console.log("yes contain");
-    // } else {
-    //     console.log("Nop")
-    // }
-
-
+    !regInpt[index].checkValidity() ? regError(index) : console.log("sucsess");
 }
 
-
-registerInp.forEach((input, index) => {
-    input.addEventListener("change", () => inputErrors(index))
+regInpt.forEach((label, index) => {
+    label.addEventListener("change", () => inputErrors(index))
 })
-
-console.log(registerInp[1].validationMessage)
-
 

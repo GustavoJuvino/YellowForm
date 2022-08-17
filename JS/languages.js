@@ -3,13 +3,13 @@
 
 const ptBR = {
     login: {
+        lng: "PT/ BR",
         user: "Usuário ou Email",
         password: "Senha",
         fPassword: "Esqueceu a sua senha?",
+        btn: "Entrar",
         fregister: "Não tem uma conta existente?",
         span: "Registre-se agora mesmo!",
-        btn: "Entrar",
-        lng: "PT/ BR", 
     },
     register: {
         h1: "Crie a sua conta",
