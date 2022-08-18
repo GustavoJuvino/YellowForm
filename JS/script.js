@@ -233,23 +233,57 @@ en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-si
 // REGISTER INPUT/LABEL ERRORS
 
 const eReg = document.querySelectorAll("[data-error='register']");
-var userLang = navigator.language || navigator.userLanguage;
+
+import {errorsMsg} from "./languages.js";
 
 function inputErrors(index){
     // Remove Errors
     eReg.forEach((error) => error.classList.remove("error-actived"));
-
 
     function regError(index){
         regInpt[index].nextElementSibling.classList.add("error-actived")
         regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
 
         // Testing
-        if(initals.classList.contains("EN")) regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
-        if(initals.classList.contains("PT")) regInpt[index].nextElementSibling.innerText = "error";
+        // regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
+        const enErr = Object.values(errorsMsg.en);
+        const ptErr = Object.values(errorsMsg.pt);
+        const deErr = Object.values(errorsMsg.de);
+
+        if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
+        if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
+        if(initals.classList.contains("DE")) regInpt.forEach((input) => input.nextElementSibling.innerText = deErr.shift())
     }
 
-    !regInpt[index].checkValidity() ? regError(index) : console.log("sucsess");
+    !regInpt[index].checkValidity() ? regError(index) : null;
+
+
+
+
+
+
+    function replaceNumber(n){
+        const newNumber = n.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
+        return allInputs[4].value = newNumber;
+    }
+
+    function cleanNumber(n){
+        const cleanN = n.toString().replace(/\D/g, '');
+        return console.log(cleanN);
+    }
+
+
+    function testingPhoneNumber(){
+
+        if(allInputs[4].value.length < 13 && allInputs[4].value.indexOf(/\D/g)){
+            regError(index);
+        } else {
+            replaceNumber(allInputs[4].value);
+            eReg[4].classList.remove("error-actived");
+        }
+    }
+
+    allInputs[4].addEventListener("change", () => testingPhoneNumber());
 }
 
 regInpt.forEach((label, index) => {
