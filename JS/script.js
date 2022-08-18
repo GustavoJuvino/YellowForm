@@ -267,12 +267,6 @@ function inputErrors(index){
         return allInputs[4].value = newNumber;
     }
 
-    function cleanNumber(n){
-        const cleanN = n.toString().replace(/\D/g, '');
-        return console.log(cleanN);
-    }
-
-
     function testingPhoneNumber(){
 
         if(allInputs[4].value.length < 13 && allInputs[4].value.indexOf(/\D/g)){
