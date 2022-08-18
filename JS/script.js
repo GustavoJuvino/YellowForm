@@ -249,7 +249,7 @@ function inputErrors(index){
         // regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
         const enErr = Object.values(errorsMsg.en);
         const ptErr = Object.values(errorsMsg.pt);
-        const deErr = Object.values(errorsMsg.pt);
+        const deErr = Object.values(errorsMsg.de);
 
         if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
         if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
@@ -262,3 +262,4 @@ function inputErrors(index){
 regInpt.forEach((label, index) => {
     label.addEventListener("change", () => inputErrors(index))
 })
+

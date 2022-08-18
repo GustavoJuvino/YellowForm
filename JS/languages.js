@@ -61,11 +61,11 @@ const errorsMsg = {
         i5: "Senhas devem ser iguais.",
     },
     de: {
-        i1: "",
-        i2: "",
-        i3: "",
-        i4: "",
-        i5: "",
+        i1: "Bitte füllen Sie dieses Feld aus.",
+        i2: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        i3: "Bitte geben Sie eine gültige Telefonnummer ein.",
+        i4: "Bitte geben Sie ein gültiges Passwort ein.",
+        i5: "Passwörter müssen gleich sein.",
     }
 }
 export {ptBR, deGE, errorsMsg};
