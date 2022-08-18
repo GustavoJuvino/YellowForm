@@ -233,7 +233,6 @@ en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-si
 // REGISTER INPUT/LABEL ERRORS
 
 const eReg = document.querySelectorAll("[data-error='register']");
-var userLang = navigator.language || navigator.userLanguage;
 
 import {errorsMsg} from "./languages.js";
 
@@ -257,9 +256,17 @@ function inputErrors(index){
     }
 
     !regInpt[index].checkValidity() ? regError(index) : null;
+
+
+    function testingPhoneNumber(){
+        if(allInputs[4].value.length != 13) regError(index);
+    }
+
+    allInputs[4].addEventListener("change", () => testingPhoneNumber());
 }
 
 regInpt.forEach((label, index) => {
     label.addEventListener("change", () => inputErrors(index))
 })
+
 
