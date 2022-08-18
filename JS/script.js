@@ -248,7 +248,12 @@ function inputErrors(index){
         // Testing
         // regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
         const enErr = Object.values(errorsMsg.en);
+        const ptErr = Object.values(errorsMsg.pt);
+        const deErr = Object.values(errorsMsg.pt);
+
         if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
+        if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
+        if(initals.classList.contains("DE")) regInpt.forEach((input) => input.nextElementSibling.innerText = deErr.shift())
     }
 
     !regInpt[index].checkValidity() ? regError(index) : null;

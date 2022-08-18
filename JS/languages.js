@@ -60,13 +60,13 @@ const errorsMsg = {
         i4: "Preencha com uma senha válida.",
         i5: "Senhas devem ser iguais.",
     },
-    // de: {
-    //     i1: "",
-    //     i2: "",
-    //     i3: "",
-    //     i4: "",
-    //     i5: "",
-    // }
+    de: {
+        i1: "",
+        i2: "",
+        i3: "",
+        i4: "",
+        i5: "",
+    }
 }
 export {ptBR, deGE, errorsMsg};
 
