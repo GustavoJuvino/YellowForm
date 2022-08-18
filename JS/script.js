@@ -258,8 +258,29 @@ function inputErrors(index){
     !regInpt[index].checkValidity() ? regError(index) : null;
 
 
+
+
+
+
+    function replaceNumber(n){
+        const newNumber = n.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
+        return allInputs[4].value = newNumber;
+    }
+
+    function cleanNumber(n){
+        const cleanN = n.toString().replace(/\D/g, '');
+        return console.log(cleanN);
+    }
+
+
     function testingPhoneNumber(){
-        if(allInputs[4].value.length != 13) regError(index);
+
+        if(allInputs[4].value.length < 13 && allInputs[4].value.indexOf(/\D/g)){
+            regError(index);
+        } else {
+            replaceNumber(allInputs[4].value);
+            eReg[4].classList.remove("error-actived");
+        }
     }
 
     allInputs[4].addEventListener("change", () => testingPhoneNumber());
@@ -268,5 +289,4 @@ function inputErrors(index){
 regInpt.forEach((label, index) => {
     label.addEventListener("change", () => inputErrors(index))
 })
-
 

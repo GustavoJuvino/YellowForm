@@ -60,7 +60,7 @@ function changeLanguageBR(){
     i[0].classList.remove('de');
 
     // Brazil Phone Number style
-    allInputs[4].placeholder = "+ XX (XX) XXXX-XXXX";
+    allInputs[4].placeholder = "+ XX (XX) XXXXX-XXXX";
 }
 
 pt.addEventListener("click", changeLanguageBR);
