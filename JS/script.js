@@ -50,8 +50,6 @@ arrowMenu.addEventListener("click", () => {
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 
 const en =  document.querySelector(languages[0]);
-const pt = document.querySelector(languages[1]);
-const de = document.querySelector(languages[2]);
 
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
@@ -72,7 +70,6 @@ const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
-    console.log(p)
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
@@ -188,24 +185,16 @@ loginBtn.addEventListener("click", () => checkingInput())
 
 
 // Register Form --------
-
-// Error Messages
-const eMsg = [
-    "Enter with your username",
-    "Enter with your email",
-    "Enter a valid phone number",
-    "Passwords do not match"
-]
-
 const regL = Array.from(labels);
 
 const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
 
 const regInpt = Array.from(allInputs);
+
 const newInputs = regInpt.shift(regInpt[0]) && regInpt.shift(regInpt[1]);
 
 const rgstUK = {
-    // Login
+    // Register
     user: "Username",
     email: "E-mail",
     number: "Phone Number",
@@ -221,9 +210,8 @@ function regTest(...p){
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(rgstUK);
 
-    // console.log( regL.concat(tags))
-
     regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
+    allInputs[4].placeholder = "(XXXX) XXX XXXX"
 }
 
 en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
@@ -259,28 +247,48 @@ function inputErrors(index){
 
 
 
+    // Formating Phone Numbers
+    const phoneNmb = allInputs[4];
 
-
-
-    function replaceNumber(n){
-        const newNumber = n.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
-        return allInputs[4].value = newNumber;
+    function phoneCountry(){
+        if(initals.classList.contains("PT")) checkPhoneBR();
+        if(initals.classList.contains("EN")) checkPhoneEN();
     }
 
-    function testingPhoneNumber(){
-
-        if(allInputs[4].value.length < 13 && allInputs[4].value.indexOf(/\D/g)){
+    // Checking if the phone number is true or not
+    function checkPhoneBR(){
+        if(phoneNmb.value.length < 13 && phoneNmb.value.indexOf(/\D/g)){
             regError(index);
         } else {
-            replaceNumber(allInputs[4].value);
+            replaceNumber(phoneNmb.value);
+            eReg[4].classList.remove("error-actived");
+        }
+    }
+    
+    function checkPhoneEN(){
+        if(phoneNmb.value.length < 11 && phoneNmb.value.indexOf(/\D/g)){
+            regError(index);
+        } else {
+            replaceEN(phoneNmb.value);
             eReg[4].classList.remove("error-actived");
         }
     }
 
-    allInputs[4].addEventListener("change", () => testingPhoneNumber());
+    // Replacing the old nubmber into a new one but formated.
+    function replaceNumber(n){
+        const newNumber = n.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
+        return phoneNmb.value = newNumber;
+    }
+
+    function replaceEN(n){
+        //0131 496 0956  Number from London - UK
+        const newNumber = n.toString().replace(/(\d{4})(\d{3})(\d{4})/g, "($1) $2 $3");
+        return phoneNmb.value = newNumber;
+    }
+
+    phoneNmb.addEventListener("change", () => phoneCountry());
 }
 
-regInpt.forEach((label, index) => {
-    label.addEventListener("change", () => inputErrors(index))
-})
+regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
+
 
