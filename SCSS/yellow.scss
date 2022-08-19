@@ -4,6 +4,20 @@
     display: none;
   }
 
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: $gray-color1;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: $main-color2;
+  }
+  
 [data-login], [data-register], .l-menu{
     display: none;
 }
