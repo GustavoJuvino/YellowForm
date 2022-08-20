@@ -281,8 +281,8 @@ function inputErrors(index){
     }
 
     function replaceEN(n){
-        //0131 496 0956  Number from London - UK
-        const newNumber = n.toString().replace(/(\d{4})(\d{3})(\d{4})/g, "($1) $2 $3");
+        //020 4968 0956  Number from London - UK
+        const newNumber = n.toString().replace(/(\d{3})(\d{4})(\d{4})/g, "($1) $2 $3");
         return phoneNmb.value = newNumber;
     }
 
