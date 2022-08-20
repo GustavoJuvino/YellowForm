@@ -211,7 +211,7 @@ function regTest(...p){
     const arrUK = Object.values(rgstUK);
 
     regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
-    allInputs[4].placeholder = "(XXXX) XXX XXXX"
+    allInputs[4].placeholder = "(XXX) XXXX XXXX"
 }
 
 en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
