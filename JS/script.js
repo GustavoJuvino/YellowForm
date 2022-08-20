@@ -257,16 +257,17 @@ function inputErrors(index){
 
     // Checking if the phone number is true or not
     function checkPhoneBR(){
-        if(phoneNmb.value.length < 13 && phoneNmb.value.indexOf(/\D/g)){
+        if(phoneNmb.value.indexOf(/\D/g)){
             regError(index);
-        } else {
+        } 
+        else {
             replaceNumber(phoneNmb.value);
             eReg[4].classList.remove("error-actived");
         }
     }
     
     function checkPhoneEN(){
-        if(phoneNmb.value.length < 11 && phoneNmb.value.indexOf(/\D/g)){
+        if(phoneNmb.value.length > 11 && phoneNmb.value.indexOf(/\D/g)){
             regError(index);
         } else {
             replaceEN(phoneNmb.value);
@@ -289,6 +290,10 @@ function inputErrors(index){
     phoneNmb.addEventListener("change", () => phoneCountry());
 }
 
-regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
+regInpt.forEach((label, index) => label.addEventListener("keydown", () => inputErrors(index)));
 
 
+const tesssst = "aa4a4l9o3l0"
+const newTeeeeeeest = tesssst.indexOf(/\D/g)
+
+console.log(newTeeeeeeest)
