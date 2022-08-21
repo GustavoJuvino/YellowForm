@@ -259,7 +259,6 @@ function inputErrors(index){
     function checkPhoneBR(){
         if(phoneNmb.value.length < 13){
             regError(index);
-            //5511980312698
         } 
         else {
             replaceNumber(phoneNmb.value);
@@ -268,7 +267,7 @@ function inputErrors(index){
     }
     
     function checkPhoneEN(){
-        if(phoneNmb.value.length > 11 && phoneNmb.value.indexOf(/\D/g)){
+        if(phoneNmb.value.length < 11){
             regError(index);
         } else {
             replaceEN(phoneNmb.value);
@@ -278,14 +277,16 @@ function inputErrors(index){
 
     // Replacing the old nubmber into a new one but formated.
     function replaceNumber(n){
+        // Number from Brazil
         const clean = n.toString().replace(/\D/g, '');
-        // const newNumber = clean.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
-        return phoneNmb.value = clean;
+        const newNumber = clean.replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
+        return phoneNmb.value = newNumber;
     }
 
     function replaceEN(n){
         //020 4968 0956  Number from London - UK
-        const newNumber = n.toString().replace(/(\d{3})(\d{4})(\d{4})/g, "($1) $2 $3");
+        const clean = n.toString().replace(/\D/g, '');
+        const newNumber = clean.replace(/(\d{3})(\d{4})(\d{4})/g, "($1) $2 $3");
         return phoneNmb.value = newNumber;
     }
 
