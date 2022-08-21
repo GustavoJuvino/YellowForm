@@ -257,8 +257,9 @@ function inputErrors(index){
 
     // Checking if the phone number is true or not
     function checkPhoneBR(){
-        if(phoneNmb.value.indexOf(/\D/g)){
+        if(phoneNmb.value.length < 13){
             regError(index);
+            //5511980312698
         } 
         else {
             replaceNumber(phoneNmb.value);
@@ -277,8 +278,9 @@ function inputErrors(index){
 
     // Replacing the old nubmber into a new one but formated.
     function replaceNumber(n){
-        const newNumber = n.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
-        return phoneNmb.value = newNumber;
+        const clean = n.toString().replace(/\D/g, '');
+        // const newNumber = clean.toString().replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
+        return phoneNmb.value = clean;
     }
 
     function replaceEN(n){
@@ -287,13 +289,8 @@ function inputErrors(index){
         return phoneNmb.value = newNumber;
     }
 
-    phoneNmb.addEventListener("change", () => phoneCountry());
+    phoneNmb.addEventListener("keyup", () => phoneCountry());
 }
 
 regInpt.forEach((label, index) => label.addEventListener("keydown", () => inputErrors(index)));
 
-
-const tesssst = "aa4a4l9o3l0"
-const newTeeeeeeest = tesssst.indexOf(/\D/g)
-
-console.log(newTeeeeeeest)
