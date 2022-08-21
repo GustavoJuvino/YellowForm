@@ -65,8 +65,8 @@ function changeLanguageDE(){
     i[0].classList.add("de")
     i[0].classList.remove('pt');
 
-    // German Phone Number style
-    allInputs[4].placeholder = "+ XX XXX XXXXXX";
+    // Germany (DORTMUND) Phone Number style
+    allInputs[4].placeholder = "+49 231 XXXXXX";
 }
 
 de.addEventListener("click", changeLanguageDE);
