@@ -277,7 +277,7 @@ function inputErrors(index){
     }
 
     function checkPhoneDE(){
-        if(phoneNmb.value.length < 12){
+        if(phoneNmb.value.length < 12 ){
             regError(index);
         } else {
             replaceDE(phoneNmb.value);
@@ -301,7 +301,7 @@ function inputErrors(index){
     }
 
     function replaceDE(n){
-        //+49 231 9831068  Number from London - UK
+        //+49 231 9831068  Number from German
         const clean = n.toString().replace(/\D/g, '');
         const newNumber = clean.replace(/(\d{2})(\d{3})(\d{7})/g, "+$1 $2 $3");
         return phoneNmb.value = newNumber;
