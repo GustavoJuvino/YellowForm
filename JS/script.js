@@ -253,6 +253,7 @@ function inputErrors(index){
     function phoneCountry(){
         if(initals.classList.contains("PT")) checkPhoneBR();
         if(initals.classList.contains("EN")) checkPhoneEN();
+        if(initals.classList.contains("DE")) checkPhoneDE();
     }
 
     // Checking if the phone number is true or not
@@ -275,6 +276,15 @@ function inputErrors(index){
         }
     }
 
+    function checkPhoneDE(){
+        if(phoneNmb.value.length < 12){
+            regError(index);
+        } else {
+            replaceDE(phoneNmb.value);
+            eReg[4].classList.remove("error-actived");
+        }
+    }
+
     // Replacing the old nubmber into a new one but formated.
     function replaceNumber(n){
         // Number from Brazil
@@ -287,6 +297,13 @@ function inputErrors(index){
         //020 4968 0956  Number from London - UK
         const clean = n.toString().replace(/\D/g, '');
         const newNumber = clean.replace(/(\d{3})(\d{4})(\d{4})/g, "($1) $2 $3");
+        return phoneNmb.value = newNumber;
+    }
+
+    function replaceDE(n){
+        //+49 231 9831068  Number from London - UK
+        const clean = n.toString().replace(/\D/g, '');
+        const newNumber = clean.replace(/(\d{2})(\d{3})(\d{7})/g, "+$1 $2 $3");
         return phoneNmb.value = newNumber;
     }
 
