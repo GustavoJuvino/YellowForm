@@ -259,20 +259,22 @@ function inputErrors(index){
     // Checking if the phone number is true or not
     function checkPhoneBR(){
         if(phoneNmb.value.length < 13){
-            regError(index);
+            eReg[2].classList.add("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Preencha com um número de telefone válido.";
         } 
         else {
             replaceNumber(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            eReg[2].classList.remove("error-actived");
         }
     }
     
     function checkPhoneEN(){
         if(phoneNmb.value.length < 11){
-            regError(index);
+            eReg[2].classList.add("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Please fill in a valid password.";
         } else {
             replaceEN(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            eReg[2].classList.remove("error-actived");
         }
     }
 
@@ -281,7 +283,8 @@ function inputErrors(index){
             regError(index);
         } else {
             replaceDE(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Bitte geben Sie eine gültige Telefonnummer ein."
+            eReg[2].classList.remove("error-actived");
         }
     }
 
@@ -307,8 +310,8 @@ function inputErrors(index){
         return phoneNmb.value = newNumber;
     }
 
-    phoneNmb.addEventListener("keyup", () => phoneCountry());
+    phoneNmb.addEventListener("change", () => phoneCountry());
 }
 
-regInpt.forEach((label, index) => label.addEventListener("keydown", () => inputErrors(index)));
+regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
 
