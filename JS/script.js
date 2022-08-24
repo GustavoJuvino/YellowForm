@@ -315,3 +315,6 @@ function inputErrors(index){
 
 regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
 
+const testiiinng = "445oplk"
+
+console.log(testiiinng.search("d"));
