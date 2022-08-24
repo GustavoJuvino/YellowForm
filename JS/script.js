@@ -321,6 +321,8 @@ regInpt.forEach((label, index) => label.addEventListener("change", () => inputEr
 // Não deve conter espaços
 
 // Verificando se existe numéro e letra.
+const regx = "2A"
+console.log(regx.search(/[a-z]\d|\d[a-z]/g));
 
 // Verifica se tem letra em caixa alta
 const regx1 = "D"
