@@ -315,6 +315,17 @@ function inputErrors(index){
 
 regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
 
-const testiiinng = "445oplk"
 
-console.log(testiiinng.search("d"));
+// Checking password input
+
+// Não deve conter espaços
+
+// Verificando se existe numéro e letra.
+
+// Verifica se tem letra em caixa alta
+const regx1 = "D"
+console.log(regx1.search(/[A-Z]/g));
+
+// Verifica se tem símbolos.
+const regx2 = "s"
+console.log(regx2.search(/\@|\?/));
