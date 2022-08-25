@@ -320,17 +320,24 @@ regInpt.forEach((label, index) => label.addEventListener("change", () => inputEr
 // Não deve conter espaços
 const pswrd = allInputs[5]
 
+// (WARNING) Put this on the top of the script
+var userLang = navigator.language || navigator.userLanguage;
+
 function checkPswrd(){
     // Should contain at least number, one lower case, one upper case.
-    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/g) === -1){
-        console.log("error1");
+    let errorMSG = "";
+    if(userLang === "pt" || userLang === "pt-BR") errorMSG = "A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um símbolo @?-"
+    
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\@|\?|\$|\+|\_\-|\#])/g) === -1){
+        pswrd.nextElementSibling.classList.add("error-actived")
+        pswrd.nextElementSibling.innerText = errorMSG;
     }
     else {
         console.log("succsess")
     }
 }
 
-pswrd.addEventListener("change", () => checkPswrd())
+pswrd.addEventListener("change", () => checkPswrd());
 
 
 // Verificando se existe numéro e letra.
