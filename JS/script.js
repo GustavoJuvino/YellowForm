@@ -321,12 +321,12 @@ regInpt.forEach((label, index) => label.addEventListener("change", () => inputEr
 const pswrd = allInputs[5]
 
 function checkPswrd(){
-    if(pswrd.value.search(/[a-z]\d|\d[a-z]/g) === -1){
+    // Should contain at least number, one lower case, one upper case.
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/g) === -1){
         console.log("error1");
     }
-
-    if(pswrd.value.search(/[A-Z]/g) === -1){
-        console.log("error2");
+    else {
+        console.log("succsess")
     }
 }
 
