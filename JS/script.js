@@ -317,8 +317,21 @@ regInpt.forEach((label, index) => label.addEventListener("change", () => inputEr
 
 
 // Checking password input
-
 // Não deve conter espaços
+const pswrd = allInputs[5]
+
+function checkPswrd(){
+    if(pswrd.value.search(/[a-z]\d|\d[a-z]/g) === -1){
+        console.log("error1");
+    }
+
+    if(pswrd.value.search(/[A-Z]/g) === -1){
+        console.log("error2");
+    }
+}
+
+pswrd.addEventListener("change", () => checkPswrd())
+
 
 // Verificando se existe numéro e letra.
 const regx = "2A"
