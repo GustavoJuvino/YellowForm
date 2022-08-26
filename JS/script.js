@@ -326,9 +326,10 @@ var userLang = navigator.language || navigator.userLanguage;
 function checkPswrd(){
     // Should contain at least number, one lower case, one upper case.
     let errorMSG = "";
-    if(userLang === "pt" || userLang === "pt-BR") errorMSG = "A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um símbolo @?-"
-    
-    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\@|\?|\$|\+|\_\-|\#])/g) === -1){
+    if(userLang === "pt" || userLang === "pt-BR") errorMSG = "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo @?-"
+
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?{}[]+]{1})([\w{7}])/) === -1 
+    && pswrd.value.length < 8){
         pswrd.nextElementSibling.classList.add("error-actived")
         pswrd.nextElementSibling.innerText = errorMSG;
     }
