@@ -325,10 +325,12 @@ var userLang = navigator.language || navigator.userLanguage;
 function checkPswrd(){
     // Should contain at least number, one lower case, one upper case.
     let errorMSG = "";
-    if(userLang === "pt" || userLang === "pt-BR") errorMSG = "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo @?-"
+    if(initals.classList.contains("PT")) errorMSG = "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo #?@"
+    if(initals.classList.contains("EN")) errorMSG = "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!"
+    if(initals.classList.contains("DE")) errorMSG = "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&";
 
-    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?{}[]+]{1})([\w{7}])/) === -1 
-    && pswrd.value.length < 8){
+
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
         pswrd.nextElementSibling.innerText = errorMSG;
     }
@@ -338,15 +340,3 @@ function checkPswrd(){
 }
 
 pswrd.addEventListener("change", () => checkPswrd());
-
-// Verificando se existe numéro e letra.
-const regx = "2A"
-console.log(regx.search(/[a-z]\d|\d[a-z]/g));
-
-// Verifica se tem letra em caixa alta
-const regx1 = "D"
-console.log(regx1.search(/[A-Z]/g));
-
-// Verifica se tem símbolos.
-const regx2 = "s"
-console.log(regx2.search(/\@|\?/));
