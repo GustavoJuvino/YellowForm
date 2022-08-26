@@ -1,4 +1,3 @@
-
 // Login And Register Navigation
 
 const sectionLogin = document.querySelector("[data-login]");
@@ -259,20 +258,22 @@ function inputErrors(index){
     // Checking if the phone number is true or not
     function checkPhoneBR(){
         if(phoneNmb.value.length < 13){
-            regError(index);
+            eReg[2].classList.add("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Preencha com um número de telefone válido.";
         } 
         else {
             replaceNumber(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            eReg[2].classList.remove("error-actived");
         }
     }
     
     function checkPhoneEN(){
         if(phoneNmb.value.length < 11){
-            regError(index);
+            eReg[2].classList.add("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Please fill in a valid password.";
         } else {
             replaceEN(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            eReg[2].classList.remove("error-actived");
         }
     }
 
@@ -281,7 +282,8 @@ function inputErrors(index){
             regError(index);
         } else {
             replaceDE(phoneNmb.value);
-            eReg[4].classList.remove("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Bitte geben Sie eine gültige Telefonnummer ein."
+            eReg[2].classList.remove("error-actived");
         }
     }
 
@@ -307,8 +309,44 @@ function inputErrors(index){
         return phoneNmb.value = newNumber;
     }
 
-    phoneNmb.addEventListener("keyup", () => phoneCountry());
+    phoneNmb.addEventListener("change", () => phoneCountry());
 }
 
-regInpt.forEach((label, index) => label.addEventListener("keydown", () => inputErrors(index)));
+regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
 
+
+// Checking password input
+// Não deve conter espaços
+const pswrd = allInputs[5]
+
+// (WARNING) Put this on the top of the script
+var userLang = navigator.language || navigator.userLanguage;
+
+function checkPswrd(){
+    // Should contain at least number, one lower case, one upper case.
+    let errorMSG = "";
+    if(userLang === "pt" || userLang === "pt-BR") errorMSG = "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo @?-"
+
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?{}[]+]{1})([\w{7}])/) === -1 
+    && pswrd.value.length < 8){
+        pswrd.nextElementSibling.classList.add("error-actived")
+        pswrd.nextElementSibling.innerText = errorMSG;
+    }
+    else {
+        console.log("succsess")
+    }
+}
+
+pswrd.addEventListener("change", () => checkPswrd());
+
+// Verificando se existe numéro e letra.
+const regx = "2A"
+console.log(regx.search(/[a-z]\d|\d[a-z]/g));
+
+// Verifica se tem letra em caixa alta
+const regx1 = "D"
+console.log(regx1.search(/[A-Z]/g));
+
+// Verifica se tem símbolos.
+const regx2 = "s"
+console.log(regx2.search(/\@|\?/));
