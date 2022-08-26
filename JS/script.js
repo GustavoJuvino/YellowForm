@@ -1,4 +1,3 @@
-
 // Login And Register Navigation
 
 const sectionLogin = document.querySelector("[data-login]");
@@ -339,7 +338,6 @@ function checkPswrd(){
 }
 
 pswrd.addEventListener("change", () => checkPswrd());
-
 
 // Verificando se existe numéro e letra.
 const regx = "2A"
