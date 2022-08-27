@@ -341,4 +341,15 @@ function checkPswrd(){
 
 pswrd.addEventListener("change", () => checkPswrd());
 
-console.log(allInputs)
+
+// Confirm Password
+const confirmP = allInputs[6];
+
+function checkError(){
+    eReg[4].classList.add("error-actived");
+    eReg[4].innerText = errorsMsg.pt.i5;
+}
+
+function checkConfirmP(){confirmP.value == pswrd.value ? console.log("succsess") : checkError();}
+
+confirmP.addEventListener("change", () => checkConfirmP());
