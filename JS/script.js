@@ -350,6 +350,6 @@ function checkError(){
     eReg[4].innerText = errorsMsg.pt.i5;
 }
 
-function checkConfirmP(){confirmP.value == pswrd.value ? console.log("succsess") : checkError();}
+const checkConfirmP = () => confirmP.value == pswrd.value ? console.log("succsess") : checkError();
 
 confirmP.addEventListener("change", () => checkConfirmP());
