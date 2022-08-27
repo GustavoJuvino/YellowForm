@@ -279,10 +279,10 @@ function inputErrors(index){
 
     function checkPhoneDE(){
         if(phoneNmb.value.length < 12 ){
-            regError(index);
+            eReg[2].classList.add("error-actived");
+            allInputs[4].nextElementSibling.innerText = "Bitte geben Sie eine gültige Telefonnummer ein.";
         } else {
             replaceDE(phoneNmb.value);
-            allInputs[4].nextElementSibling.innerText = "Bitte geben Sie eine gültige Telefonnummer ein."
             eReg[2].classList.remove("error-actived");
         }
     }
@@ -340,3 +340,5 @@ function checkPswrd(){
 }
 
 pswrd.addEventListener("change", () => checkPswrd());
+
+console.log(allInputs)
