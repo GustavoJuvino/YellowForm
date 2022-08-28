@@ -333,9 +333,8 @@ function checkPswrd(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
         pswrd.nextElementSibling.innerText = errorMSG;
-    }
-    else {
-        console.log("succsess")
+    } else {
+        return true;
     }
 }
 
@@ -347,9 +346,13 @@ const confirmP = allInputs[6];
 
 function checkError(){
     eReg[4].classList.add("error-actived");
-    eReg[4].innerText = errorsMsg.pt.i5;
+
+    if(initals.classList.contains("PT")) eReg[4].innerText = errorsMsg.pt.i5;
+    if(initals.classList.contains("EN")) eReg[4].innerText = errorsMsg.en.i5;
+    if(initals.classList.contains("DE")) eReg[4].innerText = errorsMsg.de.i5;
+
 }
 
-const checkConfirmP = () => confirmP.value == pswrd.value ? console.log("succsess") : checkError();
+const checkConfirmP = () => confirmP.value == pswrd.value ? true : checkError();
 
 confirmP.addEventListener("change", () => checkConfirmP());
