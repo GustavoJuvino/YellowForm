@@ -333,9 +333,8 @@ function checkPswrd(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
         pswrd.nextElementSibling.innerText = errorMSG;
-    }
-    else {
-        console.log("succsess")
+    } else {
+        return true;
     }
 }
 
@@ -354,6 +353,6 @@ function checkError(){
 
 }
 
-const checkConfirmP = () => confirmP.value == pswrd.value ? console.log("succsess") : checkError();
+const checkConfirmP = () => confirmP.value == pswrd.value ? true : checkError();
 
 confirmP.addEventListener("change", () => checkConfirmP());
