@@ -138,7 +138,7 @@ body{
 }
 
 // ------------ LOGIN FORM ------------
-.login-active {
+.login-activated {
     display: block;
     animation: anime1 .3s forwards;
 
@@ -332,7 +332,7 @@ body{
 }
 
 // ----------------- REGISTER FORM -----------------
-.register-active{
+.register-activated{
     width: auto;
     background-color: $gray-color1;
     display: block;
@@ -453,7 +453,7 @@ body{
 
 
 // Responsive
-.login-active {
+.login-activated {
     @include desktop-responsive(large) {
         .form-texts {
             margin-left: 20px;
@@ -576,7 +576,7 @@ body{
     }
 }
 
-.register-active{
+.register-activated{
     @include desktop-responsive(large) {
         .registerForm{
             margin-left: 10%;
@@ -716,7 +716,7 @@ body{
         .floating-menu {
             .l-menu {
                 margin-right: 18px;
-                top: 100px;
+                top: 80px;
             }
         }
     }

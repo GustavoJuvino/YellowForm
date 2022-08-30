@@ -1,22 +1,36 @@
+
 // Login And Register Navigation
+class Selecting{
+    // Register, Login , Section Login, Section Register
+    constructor(r, l, sl, sr){
+        // Sections
+        this.s1 = document.querySelector(sl);
+        this.s2 = document.querySelector(sr);
 
-const sectionLogin = document.querySelector("[data-login]");
-const sectionRegister = document.querySelector("[data-register]");
+        // Login and Register
+        this.login = document.querySelector(r);
+        this.register = document.querySelector(l);
 
-const register = document.querySelector("[data-span='register']");
-const login = document.querySelector("[data-span='login']");
+    }
 
-const m = ["register-active", "login-active"];
+    addLogin(){ 
+        this.s1.classList.add("login-activated")
+        this.s2.classList.remove("register-activated");
+     }
 
-register.addEventListener("click", () =>{
-    sectionRegister.classList.add(m[0]);
-    sectionLogin.classList.remove(m[1]);
-})
+     addRegister(){ 
+        this.s2.classList.add("register-activated")
+        this.s1.classList.remove("login-activated");
+     }
 
-login.addEventListener("click", () =>{
-    sectionLogin.classList.add(m[1]);
-    sectionRegister.classList.remove(m[0]);
-})
+    // Activate 1 = Activate Login Form | Activate 2 = Activate Register Form
+    activate1(){ this.register.addEventListener("click", () => this.addLogin()) };
+    activate2(){ this.login.addEventListener("click", () => this.addRegister()) };
+}
+
+const selecting = new Selecting("[data-span='register']", "[data-span='login']", "[data-login]", "[data-register]");
+selecting.activate1();
+selecting.activate2();
 
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
