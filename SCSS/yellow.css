@@ -178,34 +178,34 @@ body {
     transform: translate3d(0px, 0px, 0px);
   }
 }
-.login-active {
+.login-activated {
   display: block;
   -webkit-animation: anime1 0.3s forwards;
           animation: anime1 0.3s forwards;
 }
-.login-active .form-texts {
+.login-activated .form-texts {
   margin-top: 70px;
   margin-left: 30%;
 }
-.login-active .form-texts h1 {
+.login-activated .form-texts h1 {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
 }
-.login-active .form-texts form .texts {
+.login-activated .form-texts form .texts {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   margin-top: 60px;
 }
-.login-active .form-texts form .texts .hidden {
+.login-activated .form-texts form .texts .hidden {
   position: absolute;
   margin-left: 10px;
   cursor: pointer;
 }
-.login-active .form-texts form input {
+.login-activated .form-texts form input {
   outline: none;
   margin-top: 10px;
   padding-left: 15px;
@@ -219,16 +219,16 @@ body {
   transition: 0.9s;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
-.login-active .form-texts form input:hover {
+.login-activated .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
-.login-active .form-texts form .error {
+.login-activated .form-texts form .error {
   border: 2px solid red;
 }
-.login-active .form-texts form [data-error] {
+.login-activated .form-texts form [data-error] {
   display: none;
 }
-.login-active .form-texts form .error-actived {
+.login-activated .form-texts form .error-actived {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
@@ -249,7 +249,7 @@ body {
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
 }
-.login-active .form-texts form .error-actived::before {
+.login-activated .form-texts form .error-actived::before {
   content: "";
   display: block;
   position: absolute;
@@ -280,7 +280,7 @@ body {
     transform: translate3d(0px, 0px, 0px);
   }
 }
-.login-active .form-texts .f-password {
+.login-activated .form-texts .f-password {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -291,13 +291,13 @@ body {
   cursor: pointer;
   transition: 0.4s;
 }
-.login-active .form-texts .f-password:hover {
+.login-activated .form-texts .f-password:hover {
   color: #FBBC05;
 }
-.login-active .form-texts .hidden-button {
+.login-activated .form-texts .hidden-button {
   display: none;
 }
-.login-active .form-texts .btn {
+.login-activated .form-texts .btn {
   font-family: "Nunito", sans-serif;
   font-size: 32px;
   color: #141313;
@@ -313,10 +313,10 @@ body {
   border-radius: 6px;
   box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
-.login-active .form-texts [data-success] {
+.login-activated .form-texts [data-success] {
   display: none;
 }
-.login-active .form-texts .success-actived {
+.login-activated .form-texts .success-actived {
   margin-top: 40px;
   display: block;
   font-family: "Nunito", sans-serif;
@@ -327,10 +327,10 @@ body {
   margin-left: 15.5%;
   color: #30b842;
 }
-.login-active .form-texts [data-loading] {
+.login-activated .form-texts [data-loading] {
   display: none;
 }
-.login-active .form-texts .loading {
+.login-activated .form-texts .loading {
   display: block;
   width: 62px;
   height: 62px;
@@ -369,7 +369,7 @@ body {
     box-shadow: 1px 4px 2px yellow;
   }
 }
-.login-active .f-register {
+.login-activated .f-register {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -377,7 +377,7 @@ body {
   margin-top: 60px;
   text-align: center;
 }
-.login-active span {
+.login-activated span {
   cursor: pointer;
   font-family: "Nunito", sans-serif;
   font-size: 20px;
@@ -386,7 +386,7 @@ body {
   color: #FFFFFF;
   transition: 0.4s;
 }
-.login-active span:hover {
+.login-activated span:hover {
   color: #FBBC05;
 }
 
@@ -407,23 +407,23 @@ body {
     opacity: 1;
   }
 }
-.register-active {
+.register-activated {
   width: auto;
   background-color: #282723;
   display: block;
   -webkit-animation: anime1 0.3s forwards;
           animation: anime1 0.3s forwards;
 }
-.register-active .registerForm {
+.register-activated .registerForm {
   margin-left: 30%;
 }
-.register-active .registerForm h1 {
+.register-activated .registerForm h1 {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 48px;
   color: #FFFFFF;
 }
-.register-active .btn {
+.register-activated .btn {
   font-family: "Nunito", sans-serif;
   font-size: 32px;
   color: #141313;
@@ -439,19 +439,19 @@ body {
   box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
   cursor: pointer;
 }
-.register-active form .texts {
+.register-activated form .texts {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
   padding-top: 30px;
 }
-.register-active form .texts .hidden {
+.register-activated form .texts .hidden {
   position: absolute;
   margin-left: 10px;
   cursor: pointer;
 }
-.register-active form input {
+.register-activated form input {
   margin-top: 10px;
   outline: none;
   margin-top: 10px;
@@ -466,13 +466,13 @@ body {
   transition: 0.9s;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.435);
 }
-.register-active form input:hover {
+.register-activated form input:hover {
   border: 2px solid #FFFFFF;
 }
-.register-active form [data-error=register] {
+.register-activated form [data-error=register] {
   display: none;
 }
-.register-active form .error-actived {
+.register-activated form .error-actived {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: rgba(255, 255, 255, 0.8);
@@ -495,7 +495,7 @@ body {
   -webkit-animation: animaError 0.5s forwards;
           animation: animaError 0.5s forwards;
 }
-.register-active form .error-actived::before {
+.register-activated form .error-actived::before {
   content: "";
   display: block;
   position: absolute;
@@ -516,7 +516,7 @@ body {
     transform: translate3d(0px, 0px, 0px);
   }
 }
-.register-active .signIn {
+.register-activated .signIn {
   display: flex;
   font-family: "Nunito", sans-serif;
   font-size: 20px;
@@ -525,7 +525,7 @@ body {
   margin-top: 40px;
   margin-left: 5%;
 }
-.register-active span {
+.register-activated span {
   margin-left: 6px;
   cursor: pointer;
   font-family: "Nunito", sans-serif;
@@ -535,175 +535,175 @@ body {
   color: #FFFFFF;
   transition: 0.4s;
 }
-.register-active span:hover {
+.register-activated span:hover {
   color: #FBBC05;
 }
 
 @media screen and (max-width: 1350px) {
-  .login-active .form-texts {
+  .login-activated .form-texts {
     margin-left: 20px;
   }
-  .login-active .form-texts .f-password {
+  .login-activated .form-texts .f-password {
     margin-right: 0px;
   }
-  .login-active .form-texts .btn {
+  .login-activated .form-texts .btn {
     margin-left: 28%;
     margin-right: 0px;
   }
 }
 @media screen and (max-width: 1060px) {
-  .login-active .form-texts h1 {
+  .login-activated .form-texts h1 {
     font-size: 38px;
   }
-  .login-active .form-texts form .texts {
+  .login-activated .form-texts form .texts {
     font-size: 16px;
   }
-  .login-active .form-texts form .texts .hidden {
+  .login-activated .form-texts form .texts .hidden {
     width: 25px;
     margin-left: 8px;
   }
-  .login-active .form-texts form input {
+  .login-activated .form-texts form input {
     width: 300px;
     font-size: 16px;
   }
-  .login-active .form-texts form .error-actived {
+  .login-activated .form-texts form .error-actived {
     width: 300px;
     font-size: 16px;
   }
-  .login-active .form-texts .f-password {
+  .login-activated .form-texts .f-password {
     font-size: 16px;
   }
-  .login-active .form-texts .btn {
+  .login-activated .form-texts .btn {
     width: 200px;
     margin-left: 26%;
   }
-  .login-active .f-register {
+  .login-activated .f-register {
     font-size: 16px;
     margin-left: 20px;
   }
-  .login-active span {
+  .login-activated span {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 800px) {
-  .login-active {
+  .login-activated {
     margin-left: 15%;
   }
-  .login-active .form-texts {
+  .login-activated .form-texts {
     margin-top: 0px;
   }
-  .login-active .form-texts .btn {
+  .login-activated .form-texts .btn {
     margin-left: 0%;
   }
-  .login-active .form-texts .f-password {
+  .login-activated .form-texts .f-password {
     margin-right: 30px;
   }
-  .login-active .f-register {
+  .login-activated .f-register {
     margin-right: 0px;
     text-align: start;
   }
 }
 @media screen and (max-width: 440px) {
-  .login-active {
+  .login-activated {
     margin-left: 0px;
   }
-  .login-active .f-register {
+  .login-activated .f-register {
     margin-top: 35px;
   }
 }
 @media screen and (max-width: 380px) {
-  .login-active .form-texts .f-password {
+  .login-activated .form-texts .f-password {
     font-size: 16px;
   }
-  .login-active .form-texts form input {
+  .login-activated .form-texts form input {
     width: 80%;
     height: 40px;
   }
-  .login-active .form-texts form .error-actived {
+  .login-activated .form-texts form .error-actived {
     width: 80%;
     font-size: 14px;
   }
-  .login-active .form-texts .btn {
+  .login-activated .form-texts .btn {
     width: 150px;
     height: 50px;
     font-size: 24px;
   }
-  .login-active .f-register {
+  .login-activated .f-register {
     font-size: 14px;
   }
-  .login-active span {
+  .login-activated span {
     font-size: 14px;
   }
 }
 
 @media screen and (max-width: 1350px) {
-  .register-active .registerForm {
+  .register-activated .registerForm {
     margin-left: 10%;
   }
 }
 @media screen and (max-width: 1060px) {
-  .register-active form .texts {
+  .register-activated form .texts {
     font-size: 16px;
   }
-  .register-active form .texts .hidden {
+  .register-activated form .texts .hidden {
     margin-left: 8px;
     width: 25px;
   }
-  .register-active form input {
+  .register-activated form input {
     width: 70%;
     font-size: 16px;
   }
-  .register-active .registerForm h1 {
+  .register-activated .registerForm h1 {
     font-size: 35px;
   }
 }
 @media screen and (max-width: 800px) {
-  .register-active {
+  .register-activated {
     margin-left: 5%;
   }
-  .register-active .form-texts {
+  .register-activated .form-texts {
     margin-top: 0px;
   }
-  .register-active .form-texts .btn {
+  .register-activated .form-texts .btn {
     margin-left: 0%;
   }
-  .register-active .form-texts .f-password {
+  .register-activated .form-texts .f-password {
     margin-right: 30px;
   }
-  .register-active form input {
+  .register-activated form input {
     width: 300px;
     font-size: 16px;
   }
 }
 @media screen and (max-width: 440px) {
-  .register-active {
+  .register-activated {
     margin-left: 0px;
   }
-  .register-active form input {
+  .register-activated form input {
     width: 74%;
   }
-  .register-active .registerForm .btn {
+  .register-activated .registerForm .btn {
     width: 200px;
     font-size: 22px;
     margin-right: 12%;
   }
-  .register-active .signIn {
+  .register-activated .signIn {
     padding-bottom: 40px;
     font-size: 16px;
     margin-top: 40px;
   }
-  .register-active .signIn span {
+  .register-activated .signIn span {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 380px) {
-  .register-active .registerForm h1 {
+  .register-activated .registerForm h1 {
     font-size: 22px;
   }
-  .register-active .registerForm .btn {
+  .register-activated .registerForm .btn {
     margin-left: 0%;
   }
-  .register-active .signIn {
+  .register-activated .signIn {
     font-size: 14px;
     padding-bottom: 80px;
     margin-left: 0px;
