@@ -1,22 +1,32 @@
+
 // Login And Register Navigation
+const selecting = (...t) => {
+    // Tags
+    const tags = Array.from(document.querySelectorAll(t));
 
-const sectionLogin = document.querySelector("[data-login]");
-const sectionRegister = document.querySelector("[data-register]");
+    // Register, Login
+    const spans = [tags[1], tags[3]];
 
-const register = document.querySelector("[data-span='register']");
-const login = document.querySelector("[data-span='login']");
+    // Sections
+    const sections = [tags[0], tags[2]]
 
-const m = ["register-active", "login-active"];
+    const m = ["register-active", "login-active"];
 
-register.addEventListener("click", () =>{
-    sectionRegister.classList.add(m[0]);
-    sectionLogin.classList.remove(m[1]);
-})
+    spans[1].addEventListener("click", () => {
+        sections[1].classList.add(m[0])
+        sections[0].classList.remove(m[1])
+    })
 
-login.addEventListener("click", () =>{
-    sectionLogin.classList.add(m[1]);
-    sectionRegister.classList.remove(m[0]);
-})
+    spans[0].addEventListener("click", () => {
+        sections[1].classList.remove(m[0])
+        sections[0].classList.add(m[1])
+    })
+}
+
+selecting("[data-login]", "[data-register]", "[data-span='register']", "[data-span='login']")
+
+
+
 
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
