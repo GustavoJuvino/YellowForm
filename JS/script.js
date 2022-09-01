@@ -32,6 +32,7 @@ const selecting = new Selecting("[data-span='register']", "[data-span='login']",
 selecting.activate1();
 selecting.activate2();
 
+
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
