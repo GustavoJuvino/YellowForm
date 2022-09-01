@@ -106,17 +106,17 @@ const hidden = document.querySelectorAll(".hidden");
 var state = false;
 
 
-function testHidden(input, value){
+function hide(input, value){
     input.setAttribute("type", "password");
     state = value;
 }
 
-function testHidden2(input, value){
+function show(input, value){
     input.setAttribute("type", "text");
     state = value;
 }
 
-hidden[0].addEventListener("click", () => state ? testHidden(allInputs[1], false) : testHidden2(allInputs[1], true));
+hidden[0].addEventListener("click", () => state ? hide(allInputs[1], false) : show(allInputs[1], true));
 
 
 
