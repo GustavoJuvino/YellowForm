@@ -62,11 +62,9 @@ arrowMenu.addEventListener("click", () => {
 
 // Changing the language page
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
-
 const en =  document.querySelector(languages[0]);
 
-const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+const labels =  document.getElementsByTagName("label")
 
 // English
 const enUK = {
@@ -79,8 +77,6 @@ const enUK = {
     fRegister: "Don't have an existing account?",
     span: "Register right now!",
 }
-
-const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
@@ -98,6 +94,12 @@ function logTest(...p){
 en.addEventListener("click", () => 
 logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
 
+
+
+
+
+const allInputs = document.querySelectorAll("input");
+const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // Hidden / Show Button -> Passwords
 const hidden = document.querySelectorAll(".hidden");
