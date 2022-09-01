@@ -99,44 +99,25 @@ logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='regi
 
 
 const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+// const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // Hidden / Show Button -> Passwords
 const hidden = document.querySelectorAll(".hidden");
 var state = false;
 
-    hidden[0].addEventListener("click", () => {
-        if(state) {
-            i[1].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[1].setAttribute("type", "text")
-            state = true;
-        }
-    })
 
-    hidden[1].addEventListener("click", () => {
-        if(state) {
-            i[2].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[2].setAttribute("type", "text")
-            state = true;
-        }
-    })
+function testHidden(input, value){
+    input.setAttribute("type", "password");
+    state = value;
+}
 
-    hidden[2].addEventListener("click", () => {
-        if(state) {
-            i[3].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[3].setAttribute("type", "text")
-            state = true;
-        }
-    })
+function testHidden2(input, value){
+    input.setAttribute("type", "text");
+    state = value;
+}
+
+hidden[0].addEventListener("click", () => state ? testHidden(allInputs[1], false) : testHidden2(allInputs[1], true));
+
 
 
 // Checking inputs in login form
