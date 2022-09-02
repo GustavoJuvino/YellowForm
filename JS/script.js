@@ -32,6 +32,7 @@ const selecting = new Selecting("[data-span='register']", "[data-span='login']",
 selecting.activate1();
 selecting.activate2();
 
+
 // Activating Floating Language-Menu
 const arrowMenu = document.querySelector(".ArrowDown");
 const floatMenu = document.querySelector("[data-menu]");
@@ -61,11 +62,9 @@ arrowMenu.addEventListener("click", () => {
 
 // Changing the language page
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
-
 const en =  document.querySelector(languages[0]);
 
-const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
+const labels =  document.getElementsByTagName("label")
 
 // English
 const enUK = {
@@ -78,8 +77,6 @@ const enUK = {
     fRegister: "Don't have an existing account?",
     span: "Register right now!",
 }
-
-const labels =  document.getElementsByTagName("label")
 
 // Changing Language page in ENGLISH/UK
 function logTest(...p){
@@ -98,46 +95,28 @@ en.addEventListener("click", () =>
 logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
 
 
+
 // Hidden / Show Button -> Passwords
+const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
 var state = false;
 
-    hidden[0].addEventListener("click", () => {
-        if(state) {
-            i[1].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[1].setAttribute("type", "text")
-            state = true;
-        }
-    })
+// Checking if the state are true or not, so then it will change the input type to text or to password.
+const checkHidden = (hide, input) => hide.addEventListener("click", () => 
+    state ? changeHidden(input, false, "password"): changeHidden(input, true, "text"));
 
-    hidden[1].addEventListener("click", () => {
-        if(state) {
-            i[2].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[2].setAttribute("type", "text")
-            state = true;
-        }
-    })
+// Changing the input type.
+function changeHidden(input, value, character){
+    input.setAttribute("type", character);
+    state = value;
+}
 
-    hidden[2].addEventListener("click", () => {
-        if(state) {
-            i[3].setAttribute("type", "password");
-            state = false;
-        }
-        else{
-            i[3].setAttribute("type", "text")
-            state = true;
-        }
-    })
+checkHidden(hidden[0], allInputs[1]);
+checkHidden(hidden[1], allInputs[5]);
+checkHidden(hidden[2], allInputs[6]);
 
 
 // Checking inputs in login form
-
 // Sign In button
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
