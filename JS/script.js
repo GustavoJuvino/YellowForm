@@ -99,7 +99,7 @@ logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='regi
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
-var state = false;
+let state = false;
 
 // Checking if the state are true or not, so then it will change the input type to text or to password.
 const checkHidden = (hide, input) => hide.addEventListener("click", () => 
