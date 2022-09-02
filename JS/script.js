@@ -96,32 +96,27 @@ logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='regi
 
 
 
-
-
-const allInputs = document.querySelectorAll("input");
-// const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
-
 // Hidden / Show Button -> Passwords
+const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
 var state = false;
 
+// Checking if the state are true or not, so then it will change the input type to text or to password.
+const checkHidden = (hide, input) => hide.addEventListener("click", () => 
+    state ? changeHidden(input, false, "password"): changeHidden(input, true, "text"));
 
-function hide(input, value){
-    input.setAttribute("type", "password");
+// Changing the input type.
+function changeHidden(input, value, character){
+    input.setAttribute("type", character);
     state = value;
 }
 
-function show(input, value){
-    input.setAttribute("type", "text");
-    state = value;
-}
-
-hidden[0].addEventListener("click", () => state ? hide(allInputs[1], false) : show(allInputs[1], true));
-
+checkHidden(hidden[0], allInputs[1]);
+checkHidden(hidden[1], allInputs[5]);
+checkHidden(hidden[2], allInputs[6]);
 
 
 // Checking inputs in login form
-
 // Sign In button
 const loginBtn = document.querySelector(".btn");
 const loading = document.querySelector("[data-loading]");
