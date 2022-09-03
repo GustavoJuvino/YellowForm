@@ -79,20 +79,27 @@ const enUK = {
 }
 
 // Changing Language page in ENGLISH/UK
-function logTest(...p){
+function engLogin(...p){
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
 
-    tags[0].classList.add("EN");
-    tags[0].classList.remove("PT");
-    tags[0].classList.remove("DE");
+    // L = Languages
+    const testEN = (l1, l2, l3) => {
+        tags[0].classList.add(l1);
+        tags[0].classList.remove(l2, l3);
+    };
 
+    testEN("EN", "PT", "DE");
+
+    // Changing the language page
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => 
-logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
+en.addEventListener("click", () => {
+    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']")
+}
+);
 
 
 
