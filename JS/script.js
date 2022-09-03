@@ -85,12 +85,12 @@ function engLogin(...p){
     const arrUK = Object.values(enUK)
 
     // L = Languages
-    const testEN = (l1, l2, l3) => {
+    const activeEN = (l1, l2, l3) => {
         tags[0].classList.add(l1);
         tags[0].classList.remove(l2, l3);
     };
 
-    testEN("EN", "PT", "DE");
+    activeEN("EN", "PT", "DE");
 
     // Changing the language page
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());

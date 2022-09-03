@@ -16,7 +16,13 @@ function changeLanguageBR(){
     // Login Form in PT-BR
     function loginBR(...c){
         const classes = document.querySelectorAll(c);
-        classes[0].classList.add("PT");
+
+        const activePT = (l1, l2, l3) => {
+            classes[0].classList.add(l1);
+            classes[0].classList.remove(l2, l3);
+        };
+    
+        activePT("PT", "EN", "DE");
 
         classes[0].innerText = ptBR.login.lng;
         classes[1].innerText = ptBR.login.fPassword;

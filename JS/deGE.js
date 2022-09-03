@@ -20,9 +20,13 @@ function changeLanguageDE(){
 
         // German Login Form
         const classes = document.querySelectorAll(c);
-        // classes[0].classList.add("DE");
-        // classes[0].classList.remove("EN");
-        // classes[0].classList.remove("PT");
+
+        const activeDE = (l1, l2, l3) => {
+            classes[0].classList.add(l1);
+            classes[0].classList.remove(l2, l3);
+        };
+    
+        activeDE("DE", "EN", "PT");
 
         classes[0].innerText = deGE.login.lng;
         classes[1].innerText = deGE.login.fPassword;
