@@ -124,60 +124,49 @@ checkHidden(hidden[2], allInputs[6]);
 
 
 // Checking inputs in login form
-// Sign In button
-const loginBtn = document.querySelector(".btn");
-const loading = document.querySelector("[data-loading]");
+const loginBtn = document.querySelector("[data-btn='1']");
 
- // Error Messages and Succsess messages
-const e = document.querySelector("[data-error]");
-const sucsess = document.querySelector("[data-success]");
+class Testt{
+    constructor(...t){
+        this.tags = document.querySelectorAll(t);
+        this.inputs = [allInputs[0], allInputs[1]];
+    }   
 
-// Login Inputs and Languages Initials
-const lgnInputs = [allInputs[0], allInputs[1]];
-const initals = document.querySelector("[data-initials]");
+    testAdd(tag, value){
+        tag.classList.add(value)
+    }
 
-function checkingInput(){
-    // Loading Icon
-    loading.classList.add("loading")
-    loginBtn.classList.add("hidden-button")
+    testRemove(tag, value){
+        tag.classList.remove(value)
+    }
 
-    setTimeout(() => {
-        loading.classList.remove("loading")
-        loginBtn.classList.remove("hidden-button")
+    checkingInput(){
+        // Loading Requisition
+        this.testAdd(this.tags[1], "loading")
+        this.testAdd(loginBtn, "hidden-button")
 
-        function lgnError(inpt){
-            inpt.nextElementSibling.classList.add("error-actived");
-            inpt.nextElementSibling.innerText = inpt.validationMessage;
-            sucsess.classList.remove("success-actived");
+        setTimeout(() => {
+            // Stop Requisition
+            this.testRemove(this.tags[1], "loading")
+            this.testRemove(loginBtn, "hidden-button")
 
-            if(initals.classList.contains("EN")){
-                inpt.nextElementSibling.innerText = "Please fill out this field.";
-            } 
-            else if(initals.classList.contains("PT")) {
-                inpt.nextElementSibling.innerText = "Campo Requerido";
+            function errorAlert(i){
+                i.nextElementSibling.classList.add("error-actived");
+                i.nextElementSibling.innerText = i.validationMessage;
             }
-            else if(initals.classList.contains("DE")) {
-                inpt.nextElementSibling.innerText = "Fülle dieses Feld aus.";
-            }
-            else {
-                return null;
-            }
-        }
 
-        lgnInputs.forEach((inpt) => {
+            // Check
+            this.inputs.forEach((i) => {
+                !i.checkValidity() ? errorAlert(i) : i.nextElementSibling.classList.remove("error-actived");
+            })
 
-            // Checking if the inputs are true or not
-            !inpt.checkValidity() ? lgnError(inpt) : inpt.nextElementSibling.classList.remove("error-actived");
-
-            // If both of the inputs are true, then show sucsess message
-            lgnInputs[0].checkValidity() && lgnInputs[1].checkValidity() ? 
-            sucsess.classList.add("success-actived") : null
-        });
-
-    }, 1000)
+        }, 1000)
+    }
 }
 
-loginBtn.addEventListener("click", () => checkingInput())
+const testtt = new Testt("[data-initials]", "[data-loading]", "[data-success]");
+
+loginBtn.addEventListener("click", () => testtt.checkingInput())
 
 
 
