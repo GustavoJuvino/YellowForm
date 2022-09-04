@@ -79,27 +79,34 @@ const enUK = {
 }
 
 // Changing Language page in ENGLISH/UK
-function logTest(...p){
+function engLogin(...p){
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
     const arrUK = Object.values(enUK)
 
-    tags[0].classList.add("EN");
-    tags[0].classList.remove("PT");
-    tags[0].classList.remove("DE");
+    // L = Languages
+    const activeEN = (l1, l2, l3) => {
+        tags[0].classList.add(l1);
+        tags[0].classList.remove(l2, l3);
+    };
 
+    activeEN("EN", "PT", "DE");
+
+    // Changing the language page
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => 
-logTest("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
+en.addEventListener("click", () => {
+    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']")
+}
+);
 
 
 
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
-var state = false;
+let state = false;
 
 // Checking if the state are true or not, so then it will change the input type to text or to password.
 const checkHidden = (hide, input) => hide.addEventListener("click", () => 
@@ -117,64 +124,53 @@ checkHidden(hidden[2], allInputs[6]);
 
 
 // Checking inputs in login form
-// Sign In button
-const loginBtn = document.querySelector(".btn");
-const loading = document.querySelector("[data-loading]");
+const loginBtn = document.querySelector("[data-btn='1']");
 
- // Error Messages and Succsess messages
-const e = document.querySelector("[data-error]");
-const sucsess = document.querySelector("[data-success]");
+class CheckInp{
+    constructor(...t){
+        this.tags = document.querySelectorAll(t);
+        this.inputs = [allInputs[0], allInputs[1]];
+    }   
 
-// Login Inputs and Languages Initials
-const lgnInputs = [allInputs[0], allInputs[1]];
-const initals = document.querySelector("[data-initials]");
+    add(tag, value) { tag.classList.add(value) };
+    remove(tag, value){ tag.classList.remove(value) };
 
-function checkingInput(){
-    // Loading Icon
-    loading.classList.add("loading")
-    loginBtn.classList.add("hidden-button")
+    checkingInput(){
+        // Loading Requisition
+        this.add(this.tags[0], "loading")
+        this.add(loginBtn, "hidden-button")
 
-    setTimeout(() => {
-        loading.classList.remove("loading")
-        loginBtn.classList.remove("hidden-button")
+        setTimeout(() => {
+            // Stop Requisition
+            this.remove(this.tags[0], "loading")
+            this.remove(loginBtn, "hidden-button")
 
-        function lgnError(inpt){
-            inpt.nextElementSibling.classList.add("error-actived");
-            inpt.nextElementSibling.innerText = inpt.validationMessage;
-            sucsess.classList.remove("success-actived");
-
-            if(initals.classList.contains("EN")){
-                inpt.nextElementSibling.innerText = "Please fill out this field.";
-            } 
-            else if(initals.classList.contains("PT")) {
-                inpt.nextElementSibling.innerText = "Campo Requerido";
+            // Add an alert with error msg
+            function errorAlert(i){
+                i.nextElementSibling.classList.add("error-actived");
+                i.nextElementSibling.innerText = i.validationMessage;
             }
-            else if(initals.classList.contains("DE")) {
-                inpt.nextElementSibling.innerText = "Fülle dieses Feld aus.";
+
+            // Change the error language.
+            function testError(i, value, text){
+                const initials = document.querySelector("[data-initials]");
+                
+                if(initials.classList.contains(value)) i.nextElementSibling.innerText = text;
             }
-            else {
-                return null;
-            }
-        }
 
-        lgnInputs.forEach((inpt) => {
+            // Check if both inputs are true, if not them wil return an error.
+            this.inputs.forEach((i) => {
+                !i.checkValidity() ? (errorAlert(i), testError(i, "EN", "Please fill out this field."))
+                    : i.nextElementSibling.classList.remove("error-actived");
+            })
 
-            // Checking if the inputs are true or not
-            !inpt.checkValidity() ? lgnError(inpt) : inpt.nextElementSibling.classList.remove("error-actived");
-
-            // If both of the inputs are true, then show sucsess message
-            lgnInputs[0].checkValidity() && lgnInputs[1].checkValidity() ? 
-            sucsess.classList.add("success-actived") : null
-        });
-
-    }, 1000)
+        }, 1000)
+    }
 }
 
-loginBtn.addEventListener("click", () => checkingInput())
+const checkInpt = new CheckInp("[data-loading]", "[data-success]");
 
-
-
-
+loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
 // Register Form --------
 const regL = Array.from(labels);
