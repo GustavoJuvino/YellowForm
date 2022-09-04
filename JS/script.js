@@ -126,29 +126,24 @@ checkHidden(hidden[2], allInputs[6]);
 // Checking inputs in login form
 const loginBtn = document.querySelector("[data-btn='1']");
 
-class Testt{
+class CheckInp{
     constructor(...t){
         this.tags = document.querySelectorAll(t);
         this.inputs = [allInputs[0], allInputs[1]];
     }   
 
-    testAdd(tag, value){
-        tag.classList.add(value)
-    }
-
-    testRemove(tag, value){
-        tag.classList.remove(value)
-    }
+    add(tag, value) { tag.classList.add(value) };
+    remove(tag, value){ tag.classList.remove(value) };
 
     checkingInput(){
         // Loading Requisition
-        this.testAdd(this.tags[0], "loading")
-        this.testAdd(loginBtn, "hidden-button")
+        this.add(this.tags[0], "loading")
+        this.add(loginBtn, "hidden-button")
 
         setTimeout(() => {
             // Stop Requisition
-            this.testRemove(this.tags[0], "loading")
-            this.testRemove(loginBtn, "hidden-button")
+            this.remove(this.tags[0], "loading")
+            this.remove(loginBtn, "hidden-button")
 
             // Add an alert with error msg
             function errorAlert(i){
@@ -173,13 +168,9 @@ class Testt{
     }
 }
 
-const testtt = new Testt("[data-loading]", "[data-success]");
+const checkInpt = new CheckInp("[data-loading]", "[data-success]");
 
-loginBtn.addEventListener("click", () => testtt.checkingInput())
-
-
-
-
+loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
 // Register Form --------
 const regL = Array.from(labels);
