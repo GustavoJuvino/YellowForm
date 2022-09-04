@@ -142,29 +142,38 @@ class Testt{
 
     checkingInput(){
         // Loading Requisition
-        this.testAdd(this.tags[1], "loading")
+        this.testAdd(this.tags[0], "loading")
         this.testAdd(loginBtn, "hidden-button")
 
         setTimeout(() => {
             // Stop Requisition
-            this.testRemove(this.tags[1], "loading")
+            this.testRemove(this.tags[0], "loading")
             this.testRemove(loginBtn, "hidden-button")
 
+            // Add an alert with error msg
             function errorAlert(i){
                 i.nextElementSibling.classList.add("error-actived");
                 i.nextElementSibling.innerText = i.validationMessage;
             }
 
-            // Check
+            // Change the error language.
+            function testError(i, value, text){
+                const initials = document.querySelector("[data-initials]");
+                
+                if(initials.classList.contains(value)) i.nextElementSibling.innerText = text;
+            }
+
+            // Check if both inputs are true, if not them wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? errorAlert(i) : i.nextElementSibling.classList.remove("error-actived");
+                !i.checkValidity() ? (errorAlert(i), testError(i, "EN", "Please fill out this field."))
+                    : i.nextElementSibling.classList.remove("error-actived");
             })
 
         }, 1000)
     }
 }
 
-const testtt = new Testt("[data-initials]", "[data-loading]", "[data-success]");
+const testtt = new Testt("[data-loading]", "[data-success]");
 
 loginBtn.addEventListener("click", () => testtt.checkingInput())
 
