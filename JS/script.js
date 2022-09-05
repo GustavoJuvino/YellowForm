@@ -96,12 +96,7 @@ function engLogin(...p){
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => {
-    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']")
-}
-);
-
-
+en.addEventListener("click", () => engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
 
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
@@ -169,17 +164,17 @@ class CheckInp{
 }
 
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
-
 loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
 // Register Form --------
+// These labels are from const labels, in change the language page.
 const regL = Array.from(labels);
 
 const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
+console.log(regL)
 
 const regInpt = Array.from(allInputs);
 
-const newInputs = regInpt.shift(regInpt[0]) && regInpt.shift(regInpt[1]);
 
 const rgstUK = {
     // Register
