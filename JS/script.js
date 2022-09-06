@@ -96,7 +96,7 @@ function engLogin(...p){
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"));
+// EVENT LISTENER IN OTHER LINE
 
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
@@ -166,16 +166,7 @@ class CheckInp{
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
 loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
-// Register Form --------
-// These labels are from const labels, in change the language page.
-const regL = Array.from(labels);
-
-const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
-console.log(regL)
-
-const regInpt = Array.from(allInputs);
-
-
+// Register Form
 const rgstUK = {
     // Register
     user: "Username",
@@ -190,14 +181,25 @@ const rgstUK = {
 }
 
 function regTest(...p){
-    const tags = Array.from(document.querySelectorAll(p));
+    // Tags and labels from Register Form
+    let tags = Array.from(document.querySelectorAll(p));
+    let Rlabels = Array.from(labels).slice(2);
     const arrUK = Object.values(rgstUK);
 
-    regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
-    allInputs[4].placeholder = "(XXX) XXXX XXXX"
+    Rlabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
+    allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
-en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
+
+// Checar o event listener lá em cima, comentar.
+en.addEventListener("click", () => {
+    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
+    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
+});
+
+
+// Move this const
+const regInpt = Array.from(allInputs);
 
 
 ////////////////////////////////
