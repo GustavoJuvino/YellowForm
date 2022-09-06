@@ -96,13 +96,6 @@ function engLogin(...p){
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-en.addEventListener("click", () => {
-    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']")
-}
-);
-
-
-
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
@@ -169,20 +162,11 @@ class CheckInp{
 }
 
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
-
 loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
-// Register Form --------
-const regL = Array.from(labels);
-
-const newLabels = regL.shift(regL[0]) && regL.shift(regL[1]);
-
-const regInpt = Array.from(allInputs);
-
-const newInputs = regInpt.shift(regInpt[0]) && regInpt.shift(regInpt[1]);
-
+// Register Form
 const rgstUK = {
-    // Register
+    // Register EN/UK
     user: "Username",
     email: "E-mail",
     number: "Phone Number",
@@ -195,16 +179,25 @@ const rgstUK = {
 }
 
 function regTest(...p){
-    const tags = Array.from(document.querySelectorAll(p));
+    // Tags and labels from Register Form
+    let tags = Array.from(document.querySelectorAll(p));
+    let Rlabels = Array.from(labels).slice(2);
     const arrUK = Object.values(rgstUK);
 
-    regL.concat(tags).forEach((t) => t.innerText = arrUK.shift());
-    allInputs[4].placeholder = "(XXX) XXXX XXXX"
+    Rlabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
+    allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
-en.addEventListener("click", () => regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"));
+// This event also change the language in login form.
+en.addEventListener("click", () => {
+    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
+    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
+});
 
 
+
+
+const regInpt = Array.from(allInputs);
 ////////////////////////////////
 // REGISTER INPUT/LABEL ERRORS
 
