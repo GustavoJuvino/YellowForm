@@ -96,8 +96,6 @@ function engLogin(...p){
     lgnLabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
 }
 
-// EVENT LISTENER IN OTHER LINE
-
 // Hidden / Show Button -> Passwords
 const allInputs = document.querySelectorAll("input");
 const hidden = document.querySelectorAll(".hidden");
@@ -168,7 +166,7 @@ loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
 // Register Form
 const rgstUK = {
-    // Register
+    // Register EN/UK
     user: "Username",
     email: "E-mail",
     number: "Phone Number",
@@ -190,18 +188,16 @@ function regTest(...p){
     allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
-
-// Checar o event listener lá em cima, comentar.
+// This event also change the language in login form.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
     regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
 });
 
 
-// Move this const
+
+
 const regInpt = Array.from(allInputs);
-
-
 ////////////////////////////////
 // REGISTER INPUT/LABEL ERRORS
 
