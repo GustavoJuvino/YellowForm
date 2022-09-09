@@ -200,7 +200,7 @@ import {errorsMsg} from "./languages.js";
 
 class TestInpt{
     constructor(){
-        regInpt.forEach((label, index) => label.addEventListener("keyup", () => testInputs.methodTest(index)));
+        regInpt.forEach((label, index) => label.addEventListener("change", () => testInputs.methodTest(index)));
     }
 
     methodTest(index){
@@ -210,24 +210,28 @@ class TestInpt{
     regError(index){
         regInpt[index].nextElementSibling.classList.add("error-actived");
         regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+
+        const enErr = Object.values(errorsMsg.en);
+        const ptErr = Object.values(errorsMsg.pt);
+        const deErr = Object.values(errorsMsg.de);
+
+        if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
+        if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
+        if(initals.classList.contains("DE")) regInpt.forEach((input) => input.nextElementSibling.innerText = deErr.shift())
     }
 
     removeError(){ eReg.forEach((error) => error.classList.remove("error-actived")) };
 
     // This method change the error's language depending what language is seted in the page.
-    errorLanguage(array){
-        const error = Object.values(array);
-        regInpt.forEach((input) => input.nextElementSibling.innerText = error.shift());
-    }
 }
 
 const testInputs = new TestInpt();
 
+
 // This event also change the language in login form.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
-    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    testInputs.errorLanguage(errorsMsg.en);
+    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']")
 });
 
 
