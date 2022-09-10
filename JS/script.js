@@ -200,10 +200,14 @@ import {errorsMsg} from "./languages.js";
 
 class TestInpt{
     constructor(){
-        regInpt.forEach((label, index) => label.addEventListener("change", () => testInputs.methodTest(index)));
+        regInpt.forEach((label, index) => label.addEventListener("change", () => this.methodTest(index, event)));
     }
 
-    methodTest = (index) => !regInpt[index].checkValidity() ? this.regError(index) : this.removeError();
+    // Checking if the inputs are true or not.
+    methodTest = (index, event) => {
+        !regInpt[index].checkValidity() ? this.regError(index) : this.removeError();
+        this.testEmail(event);
+    };
 
     // Add error msg
     regError = (index) => regInpt[index].nextElementSibling.classList.add("error-actived");
@@ -215,6 +219,18 @@ class TestInpt{
     languagesTest(value){
         const languages = Object.values(value);
         regInpt.forEach((input) => input.nextElementSibling.innerText = languages.shift())
+    }
+
+    // TESTING
+    testEmail(event){
+        // regInpt[1].checkValidity ? console.log(true) : console.log(regInpt[1].validationMessage)
+        // const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        // if(email.match(regex)){
+        //     console.log(true)
+        // } else {
+        //     console.log(false)
+        // }
+        console.log(event)
     }
 }
 
@@ -229,7 +245,16 @@ en.addEventListener("click", () => {
 
 });
 
+// function testEmails(email){
+//     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+//     if(email.match(regex)){
+//         console.log(true)
+//     } else {
+//         console.log(false)
+//     }
+// }
 
+// testEmails("aloha@gmail.com")
 
 
 
