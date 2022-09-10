@@ -190,71 +190,44 @@ function regTest(...p){
 
 
 
+// Errors in REGISTER FORM.
+const dataError = document.querySelectorAll("[data-error='register']");
 
-
-////////////////////////////////
-const eReg = document.querySelectorAll("[data-error='register']");
-const regInpt = Array.from(allInputs).slice(2);
+// Inputs from REGISTER FORM.
+const inputsR = Array.from(allInputs).slice(2);
 
 import {errorsMsg} from "./languages.js";
 
-class TestInpt{
+export default class Errors{
     constructor(){
-        regInpt.forEach((label, index) => label.addEventListener("change", () => this.methodTest(index, event)));
+        inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index)));
     }
 
     // Checking if the inputs are true or not.
-    methodTest = (index, event) => {
-        !regInpt[index].checkValidity() ? this.regError(index) : this.removeError();
-        this.testEmail(event);
-    };
+    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError();
 
     // Add error msg
-    regError = (index) => regInpt[index].nextElementSibling.classList.add("error-actived");
+    addError = (index) => inputsR[index].nextElementSibling.classList.add("error-actived");
 
     // Remove the error msg.
-    removeError = () =>  eReg.forEach((error) => error.classList.remove("error-actived"));
+    removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
 
-    // This method change the error's language depending what language is seted in the page.
+    // This method changes the language of errors depending on which language is on the page.
     languagesTest(value){
         const languages = Object.values(value);
-        regInpt.forEach((input) => input.nextElementSibling.innerText = languages.shift())
-    }
-
-    // TESTING
-    testEmail(event){
-        // regInpt[1].checkValidity ? console.log(true) : console.log(regInpt[1].validationMessage)
-        // const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        // if(email.match(regex)){
-        //     console.log(true)
-        // } else {
-        //     console.log(false)
-        // }
-        console.log(event)
+        inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift())
     }
 }
 
-const testInputs = new TestInpt();
-
+const errorsRegister = new Errors();
 
 // This event also change the language in login form.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
     regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    testInputs.languagesTest(errorsMsg.en)
-
+    errorsRegister.languagesTest(errorsMsg.en)
 });
 
-// function testEmails(email){
-//     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-//     if(email.match(regex)){
-//         console.log(true)
-//     } else {
-//         console.log(false)
-//     }
-// }
-
-// testEmails("aloha@gmail.com")
 
 
 
