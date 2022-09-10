@@ -145,7 +145,7 @@ class CheckInp{
             }
 
             // Change the error language.
-            function testError(i, value, text){
+            function LanguageError(i, value, text){
                 const initials = document.querySelector("[data-initials]");
                 
                 if(initials.classList.contains(value)) i.nextElementSibling.innerText = text;
@@ -153,7 +153,7 @@ class CheckInp{
 
             // Check if both inputs are true, if not them wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? (errorAlert(i), testError(i, "EN", "Please fill out this field."))
+                !i.checkValidity() ? (errorAlert(i), LanguageError(i, "EN", "Please fill out this field."))
                     : i.nextElementSibling.classList.remove("error-actived");
             })
 
@@ -188,116 +188,53 @@ function regTest(...p){
     allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
+
+
+// Errors in REGISTER FORM.
+const dataError = document.querySelectorAll("[data-error='register']");
+
+// Inputs from REGISTER FORM.
+const inputsR = Array.from(allInputs).slice(2);
+
+import {errorsMsg} from "./languages.js";
+
+export default class Errors{
+    constructor(){
+        inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index)));
+    }
+
+    // Checking if the inputs are true or not.
+    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError();
+
+    // Add error msg
+    addError = (index) => inputsR[index].nextElementSibling.classList.add("error-actived");
+
+    // Remove the error msg.
+    removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
+
+    // This method changes the language of errors depending on which language is on the page.
+    languagesTest(value){
+        const languages = Object.values(value);
+        inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift())
+    }
+}
+
+const errorsRegister = new Errors();
+
 // This event also change the language in login form.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
-    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
+    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+    errorsRegister.languagesTest(errorsMsg.en)
 });
 
 
 
 
-const regInpt = Array.from(allInputs);
-////////////////////////////////
-// REGISTER INPUT/LABEL ERRORS
-
-const eReg = document.querySelectorAll("[data-error='register']");
-
-import {errorsMsg} from "./languages.js";
-
-function inputErrors(index){
-    // Remove Errors
-    eReg.forEach((error) => error.classList.remove("error-actived"));
-
-    function regError(index){
-        regInpt[index].nextElementSibling.classList.add("error-actived")
-        regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
-
-        // Testing
-        // regInpt[index].nextElementSibling.innerText = "Please fill in this field.";
-        const enErr = Object.values(errorsMsg.en);
-        const ptErr = Object.values(errorsMsg.pt);
-        const deErr = Object.values(errorsMsg.de);
-
-        if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
-        if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
-        if(initals.classList.contains("DE")) regInpt.forEach((input) => input.nextElementSibling.innerText = deErr.shift())
-    }
-
-    !regInpt[index].checkValidity() ? regError(index) : null;
-
-
-
-    // Formating Phone Numbers
-    const phoneNmb = allInputs[4];
-
-    function phoneCountry(){
-        if(initals.classList.contains("PT")) checkPhoneBR();
-        if(initals.classList.contains("EN")) checkPhoneEN();
-        if(initals.classList.contains("DE")) checkPhoneDE();
-    }
-
-    // Checking if the phone number is true or not
-    function checkPhoneBR(){
-        if(phoneNmb.value.length < 13){
-            eReg[2].classList.add("error-actived");
-            allInputs[4].nextElementSibling.innerText = "Preencha com um número de telefone válido.";
-        } 
-        else {
-            replaceNumber(phoneNmb.value);
-            eReg[2].classList.remove("error-actived");
-        }
-    }
-    
-    function checkPhoneEN(){
-        if(phoneNmb.value.length < 11){
-            eReg[2].classList.add("error-actived");
-            allInputs[4].nextElementSibling.innerText = "Please fill in a valid password.";
-        } else {
-            replaceEN(phoneNmb.value);
-            eReg[2].classList.remove("error-actived");
-        }
-    }
-
-    function checkPhoneDE(){
-        if(phoneNmb.value.length < 12 ){
-            eReg[2].classList.add("error-actived");
-            allInputs[4].nextElementSibling.innerText = "Bitte geben Sie eine gültige Telefonnummer ein.";
-        } else {
-            replaceDE(phoneNmb.value);
-            eReg[2].classList.remove("error-actived");
-        }
-    }
-
-    // Replacing the old nubmber into a new one but formated.
-    function replaceNumber(n){
-        // Number from Brazil
-        const clean = n.toString().replace(/\D/g, '');
-        const newNumber = clean.replace(/(\d{2})(\d{2})(\d{5})(\d{4})/g, "+$1 ($2) $3-$4");
-        return phoneNmb.value = newNumber;
-    }
-
-    function replaceEN(n){
-        //020 4968 0956  Number from London - UK
-        const clean = n.toString().replace(/\D/g, '');
-        const newNumber = clean.replace(/(\d{3})(\d{4})(\d{4})/g, "($1) $2 $3");
-        return phoneNmb.value = newNumber;
-    }
-
-    function replaceDE(n){
-        //+49 231 9831068  Number from German
-        const clean = n.toString().replace(/\D/g, '');
-        const newNumber = clean.replace(/(\d{2})(\d{3})(\d{7})/g, "+$1 $2 $3");
-        return phoneNmb.value = newNumber;
-    }
-
-    phoneNmb.addEventListener("change", () => phoneCountry());
-}
-
-regInpt.forEach((label, index) => label.addEventListener("change", () => inputErrors(index)));
-
 
 // Checking password input
+const initals = document.querySelector("[data-initials]");
+
 // Não deve conter espaços
 const pswrd = allInputs[5]
 
