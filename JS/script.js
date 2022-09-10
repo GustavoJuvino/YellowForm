@@ -203,23 +203,19 @@ class TestInpt{
         regInpt.forEach((label, index) => label.addEventListener("change", () => testInputs.methodTest(index)));
     }
 
-    methodTest(index){
-        !regInpt[index].checkValidity() ? this.regError(index) : this.removeError();
-    }
+    methodTest = (index) => !regInpt[index].checkValidity() ? this.regError(index) : this.removeError();
 
-    regError(index){
-        regInpt[index].nextElementSibling.classList.add("error-actived");
-        // regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
-    }
+    // Add error msg
+    regError = (index) => regInpt[index].nextElementSibling.classList.add("error-actived");
 
+    // Remove the error msg.
+    removeError = () =>  eReg.forEach((error) => error.classList.remove("error-actived"));
+
+    // This method change the error's language depending what language is seted in the page.
     languagesTest(value){
         const languages = Object.values(value);
         regInpt.forEach((input) => input.nextElementSibling.innerText = languages.shift())
     }
-
-    removeError(){ eReg.forEach((error) => error.classList.remove("error-actived")) };
-
-    // This method change the error's language depending what language is seted in the page.
 }
 
 const testInputs = new TestInpt();
