@@ -209,15 +209,12 @@ class TestInpt{
 
     regError(index){
         regInpt[index].nextElementSibling.classList.add("error-actived");
-        regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+        // regInpt[index].nextElementSibling.innerText = regInpt[index].validationMessage;
+    }
 
-        const enErr = Object.values(errorsMsg.en);
-        const ptErr = Object.values(errorsMsg.pt);
-        const deErr = Object.values(errorsMsg.de);
-
-        if(initals.classList.contains("EN")) regInpt.forEach((input) => input.nextElementSibling.innerText = enErr.shift())
-        if(initals.classList.contains("PT")) regInpt.forEach((input) => input.nextElementSibling.innerText = ptErr.shift())
-        if(initals.classList.contains("DE")) regInpt.forEach((input) => input.nextElementSibling.innerText = deErr.shift())
+    languagesTest(value){
+        const languages = Object.values(value);
+        regInpt.forEach((input) => input.nextElementSibling.innerText = languages.shift())
     }
 
     removeError(){ eReg.forEach((error) => error.classList.remove("error-actived")) };
@@ -231,7 +228,9 @@ const testInputs = new TestInpt();
 // This event also change the language in login form.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
-    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']")
+    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+    testInputs.languagesTest(errorsMsg.en)
+
 });
 
 
