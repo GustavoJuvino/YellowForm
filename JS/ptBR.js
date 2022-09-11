@@ -9,7 +9,10 @@ const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "pt" || userLang === "pt-BR") changeLanguageBR()
+if(userLang === "pt" || userLang === "pt-BR") {
+    changeLanguageBR(),
+    errorsRegister.languagesTest(errorsMsg.pt);
+}
 
 function changeLanguageBR(){
 
@@ -67,4 +70,13 @@ function changeLanguageBR(){
     allInputs[4].placeholder = "+ XX (XX) XXXXX-XXXX";
 }
 
-pt.addEventListener("click", changeLanguageBR);
+// Importing method which allow us to check if the inputs are true
+// and importing portuguese errors messages from languages.js
+import {errorsRegister} from "./script.js";
+import {errorsMsg} from "./languages.js";
+
+
+pt.addEventListener("click", () => {
+    changeLanguageBR(),
+    errorsRegister.languagesTest(errorsMsg.pt)
+});
