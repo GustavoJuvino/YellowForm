@@ -7,8 +7,10 @@ const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage; 
-if(userLang === "de") changeLanguageDE();
-
+if(userLang === "de") {
+    changeLanguageDE(),
+    errorsRegister.languagesTest(errorsMsg.de);
+}
 
 // (German - Deutschland)
 import {deGE} from "./languages.js";
@@ -73,4 +75,13 @@ function changeLanguageDE(){
     allInputs[4].placeholder = "+49 231 XXXXXX";
 }
 
-de.addEventListener("click", changeLanguageDE);
+// Importing method which allow us to check if the inputs are true
+// and importing portuguese errors messages from languages.js
+import {errorsRegister} from "./script.js";
+import {errorsMsg} from "./languages.js";
+
+
+de.addEventListener("click", () => {
+    changeLanguageDE(),
+    errorsRegister.languagesTest(errorsMsg.de)
+});

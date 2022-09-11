@@ -78,7 +78,7 @@ const enUK = {
     span: "Register right now!",
 }
 
-// Changing Language page in ENGLISH/UK
+// Changing Login Language page in ENGLISH/UK
 function engLogin(...p){
     const lgnLabels = [labels[0], labels[1]];
     const tags = Array.from(document.querySelectorAll(p));
@@ -178,9 +178,9 @@ const rgstUK = {
     spanLogin: "Login here!",
 }
 
-function regTest(...p){
+function registerLanguage(...p){
     // Tags and labels from Register Form
-    let tags = Array.from(document.querySelectorAll(p));
+    const tags = Array.from(document.querySelectorAll(p));
     let Rlabels = Array.from(labels).slice(2);
     const arrUK = Object.values(rgstUK);
 
@@ -198,10 +198,8 @@ const inputsR = Array.from(allInputs).slice(2);
 
 import {errorsMsg} from "./languages.js";
 
-export default class Errors{
-    constructor(){
-        inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index)));
-    }
+class Errors{
+    constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
     checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError();
@@ -215,16 +213,19 @@ export default class Errors{
     // This method changes the language of errors depending on which language is on the page.
     languagesTest(value){
         const languages = Object.values(value);
-        inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift())
+        inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
 }
 
-const errorsRegister = new Errors();
+if(userLang === "en") errorsRegister.languagesTest(errorsMsg.en);
 
-// This event also change the language in login form.
+export const errorsRegister = new Errors();
+
+// This event change the login/register page in English
+// and also active the class which check if the inputs are true or not.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
-    regTest("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+    registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
     errorsRegister.languagesTest(errorsMsg.en)
 });
 
