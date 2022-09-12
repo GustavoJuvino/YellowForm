@@ -11,7 +11,7 @@ const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "pt" || userLang === "pt-BR") {
     changeLanguageBR(),
-    errorsRegister.languagesTest(errorsMsg.pt);
+    errorsRegister.changeL(errorsMsg.pt);
 }
 
 function changeLanguageBR(){
@@ -78,5 +78,5 @@ import {errorsMsg} from "./languages.js";
 
 pt.addEventListener("click", () => {
     changeLanguageBR(),
-    errorsRegister.languagesTest(errorsMsg.pt)
+    errorsRegister.changeL(errorsMsg.pt)
 });

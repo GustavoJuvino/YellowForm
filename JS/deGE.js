@@ -9,7 +9,7 @@ const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 var userLang = navigator.language || navigator.userLanguage; 
 if(userLang === "de") {
     changeLanguageDE(),
-    errorsRegister.languagesTest(errorsMsg.de);
+    errorsRegister.changeL(errorsMsg.de);
 }
 
 // (German - Deutschland)
@@ -83,5 +83,5 @@ import {errorsMsg} from "./languages.js";
 
 de.addEventListener("click", () => {
     changeLanguageDE(),
-    errorsRegister.languagesTest(errorsMsg.de)
+    errorsRegister.changeL(errorsMsg.de)
 });

@@ -212,7 +212,7 @@ class Errors{
     removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
 
     // This method changes the language of errors depending on which language is on the page.
-    languagesTest(value){
+    changeL(value){
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
@@ -227,7 +227,7 @@ export const errorsRegister = new Errors();
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    errorsRegister.languagesTest(errorsMsg.en)
+    errorsRegister.changeL(errorsMsg.en)
 });
 
 
