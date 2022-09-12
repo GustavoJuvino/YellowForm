@@ -118,6 +118,7 @@ checkHidden(hidden[2], allInputs[6]);
 
 // Checking inputs in login form
 const loginBtn = document.querySelector("[data-btn='1']");
+const initials = document.querySelector("[data-initials]");
 
 class CheckInp{
     constructor(...t){
@@ -138,27 +139,27 @@ class CheckInp{
             this.remove(this.tags[0], "loading")
             this.remove(loginBtn, "hidden-button")
 
-            // Add an alert with error msg
-            function errorAlert(i){
-                i.nextElementSibling.classList.add("error-actived");
-                i.nextElementSibling.innerText = i.validationMessage;
-            }
 
-            // Change the error language.
-            function LanguageError(i, value, text){
-                const initials = document.querySelector("[data-initials]");
-                
-                if(initials.classList.contains(value)) i.nextElementSibling.innerText = text;
-            }
-
-            // Check if both inputs are true, if not them wil return an error.
+            // Check if both inputs are true, if not, it wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? (errorAlert(i), LanguageError(i, "EN", "Please fill out this field."))
-                    : i.nextElementSibling.classList.remove("error-actived");
+                !i.checkValidity() ? this.alert(i): i.nextElementSibling.classList.remove("error-actived");
             })
 
         }, 1000)
     }
+
+        // Add an alert with error msg
+        alert(i){
+            i.nextElementSibling.classList.add("error-actived");
+
+            if(initials.classList.contains("EN")){
+                i.nextElementSibling.innerText = "Please fill in this input"
+            } else if (initials.classList.contains("DE")){
+                i.nextElementSibling.innerText = "Bitte füllen Sie dieses Feld aus"
+            }else if (initials.classList.contains("PT")){
+                i.nextElementSibling.innerText = "Campo Requerido"
+            }
+        }
 }
 
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
