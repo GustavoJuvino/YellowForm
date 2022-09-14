@@ -7,13 +7,6 @@ const pt = document.querySelector(languages[1]);
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
-// Navigator user language
-var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "pt" || userLang === "pt-BR") {
-    changeLanguageBR(),
-    errorsRegister.changeL(errorsMsg.pt);
-}
-
 function changeLanguageBR(){
 
     // Login Form in PT-BR
@@ -75,8 +68,16 @@ function changeLanguageBR(){
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+// Navigator user language
+var userLang = navigator.language || navigator.userLanguage;
+if(userLang === "pt" || userLang === "pt-BR") {
+    changeLanguageBR(),
+    errorsRegister.changeL(errorsMsg.pt);
+    errorsRegister.changeLogin(errorsMsg.pt.i1);
+}
 
 pt.addEventListener("click", () => {
     changeLanguageBR(),
-    errorsRegister.changeL(errorsMsg.pt)
+    errorsRegister.changeL(errorsMsg.pt),
+    errorsRegister.changeLogin(errorsMsg.pt.i1)
 });

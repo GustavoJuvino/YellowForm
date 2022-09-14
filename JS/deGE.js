@@ -5,13 +5,6 @@ const de = document.querySelector(languages[2]);
 const allInputs = document.querySelectorAll("input");
 const i = [allInputs[0], allInputs[1], allInputs[5] ,allInputs[6]]
 
-// Navigator user language
-var userLang = navigator.language || navigator.userLanguage; 
-if(userLang === "de") {
-    changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de);
-}
-
 // (German - Deutschland)
 import {deGE} from "./languages.js";
 
@@ -80,8 +73,16 @@ function changeLanguageDE(){
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+// Navigator user language
+var userLang = navigator.language || navigator.userLanguage; 
+if(userLang === "de") {
+    changeLanguageDE(),
+    errorsRegister.changeL(errorsMsg.de);
+    errorsRegister.changeLogin(errorsMsg.de.i1);
+}
 
 de.addEventListener("click", () => {
     changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de)
+    errorsRegister.changeL(errorsMsg.de);
+    errorsRegister.changeLogin(errorsMsg.de.i1);
 });

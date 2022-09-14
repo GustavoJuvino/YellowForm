@@ -59,7 +59,6 @@ arrowMenu.addEventListener("click", () => {
     outsideMenu();
 })
 
-
 // Changing the language page
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 const en =  document.querySelector(languages[0]);
@@ -118,7 +117,6 @@ checkHidden(hidden[2], allInputs[6]);
 
 // Checking inputs in login form
 const loginBtn = document.querySelector("[data-btn='1']");
-const initials = document.querySelector("[data-initials]");
 
 class CheckInp{
     constructor(...t){
@@ -142,24 +140,11 @@ class CheckInp{
 
             // Check if both inputs are true, if not, it wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? this.alert(i): i.nextElementSibling.classList.remove("error-actived");
+                !i.checkValidity() ? i.nextElementSibling.classList.add("error-actived") : i.nextElementSibling.classList.remove("error-actived");
             })
 
         }, 1000)
     }
-
-        // Add an alert with error msg
-        alert(i){
-            i.nextElementSibling.classList.add("error-actived");
-
-            if(initials.classList.contains("EN")){
-                i.nextElementSibling.innerText = "Please fill in this input"
-            } else if (initials.classList.contains("DE")){
-                i.nextElementSibling.innerText = "Bitte füllen Sie dieses Feld aus"
-            }else if (initials.classList.contains("PT")){
-                i.nextElementSibling.innerText = "Campo Requerido"
-            }
-        }
 }
 
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
@@ -197,6 +182,9 @@ const dataError = document.querySelectorAll("[data-error='register']");
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
+// Inputs from LOGIN FORM.
+const inputsL = Array.from(allInputs).slice(0, 2);
+
 import {errorsMsg} from "./languages.js";
 
 class Errors{
@@ -216,18 +204,27 @@ class Errors{
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
+
+    // This method will change the language of error message in Login Form.
+    changeLogin = (value) => inputsL.forEach((input) => input.nextElementSibling.innerText = value);
+    
 }
 
-if(userLang === "en") errorsRegister.languagesTest(errorsMsg.en);
+if(userLang === "en") {
+    errorsRegister.languagesTest(errorsMsg.en),
+    errorsRegister.changeLogin(errorsMsg.en.i1);
+}
 
 export const errorsRegister = new Errors();
+
 
 // This event change the login/register page in English
 // and also active the class which check if the inputs are true or not.
 en.addEventListener("click", () => {
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    errorsRegister.changeL(errorsMsg.en)
+    errorsRegister.changeL(errorsMsg.en),
+    errorsRegister.changeLogin(errorsMsg.en.i1)
 });
 
 

@@ -68,6 +68,7 @@ const errorsMsg = {
         i5: "Passwörter müssen gleich sein.",
     }
 }
+
 export {ptBR, deGE, errorsMsg};
 
 
