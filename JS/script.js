@@ -217,6 +217,7 @@ var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "en") {
     errorsRegister.languagesTest(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1);
+    changeErrorLang("EN", errorPassword.en);
 }
 
 // Checking password input from Register Form.

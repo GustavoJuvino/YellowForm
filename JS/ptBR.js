@@ -67,6 +67,7 @@ function changeLanguageBR(){
 // and importing portuguese errors messages from languages.js
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
+
 import { errorPassword } from "./languages.js";
 import{ changeErrorLang } from "./script.js";
 
@@ -77,6 +78,7 @@ if(userLang === "pt" || userLang === "pt-BR") {
     changeLanguageBR(),
     errorsRegister.changeL(errorsMsg.pt);
     errorsRegister.changeLogin(errorsMsg.pt.i1);
+    changeErrorLang("PT", errorPassword.pt );
 }
 
 pt.addEventListener("click", () => {
