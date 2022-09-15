@@ -68,16 +68,22 @@ function changeLanguageBR(){
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+import { errorPassword } from "./languages.js";
+import{ changeErrorLang } from "./script.js";
+
+
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "pt" || userLang === "pt-BR") {
     changeLanguageBR(),
     errorsRegister.changeL(errorsMsg.pt);
     errorsRegister.changeLogin(errorsMsg.pt.i1);
+    changeErrorLang("PT", errorPassword.pt );
 }
 
 pt.addEventListener("click", () => {
     changeLanguageBR(),
     errorsRegister.changeL(errorsMsg.pt),
     errorsRegister.changeLogin(errorsMsg.pt.i1)
+    changeErrorLang("PT", errorPassword.pt );
 });

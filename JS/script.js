@@ -140,7 +140,8 @@ class CheckInp{
 
             // Check if both inputs are true, if not, it wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? i.nextElementSibling.classList.add("error-actived") : i.nextElementSibling.classList.remove("error-actived");
+                !i.checkValidity() ? i.nextElementSibling.classList.add("error-actived")
+                    : i.nextElementSibling.classList.remove("error-actived");
             })
 
         }, 1000)
@@ -173,7 +174,6 @@ function registerLanguage(...p){
     Rlabels.concat(tags).forEach((t) => t.innerText = arrUK.shift());
     allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
-
 
 
 // Errors in REGISTER FORM.
@@ -210,54 +210,55 @@ class Errors{
     
 }
 
+export const errorsRegister = new Errors();
+
+// Language page will be English if the browser's language is English.
+var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "en") {
     errorsRegister.languagesTest(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1);
+    changeErrorLang("EN", errorPassword.en);
 }
 
-export const errorsRegister = new Errors();
+// Checking password input from Register Form.
+const initials = document.querySelector("[data-initials]");
 
-
-// This event change the login/register page in English
-// and also active the class which check if the inputs are true or not.
-en.addEventListener("click", () => {
-    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
-    registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    errorsRegister.changeL(errorsMsg.en),
-    errorsRegister.changeLogin(errorsMsg.en.i1)
-});
-
-
-
-
-
-// Checking password input
-const initals = document.querySelector("[data-initials]");
-
-// Não deve conter espaços
+// Password Input
 const pswrd = allInputs[5]
 
-// (WARNING) Put this on the top of the script
-var userLang = navigator.language || navigator.userLanguage;
+import {errorPassword} from "./languages.js";
 
-function checkPswrd(){
-    // Should contain at least number, one lower case, one upper case.
-    let errorMSG = "";
-    if(initals.classList.contains("PT")) errorMSG = "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo #?@"
-    if(initals.classList.contains("EN")) errorMSG = "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!"
-    if(initals.classList.contains("DE")) errorMSG = "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&";
+// Change the error language.
+let errorMsg = "";
 
+// Ativar ao click pela linguagem.
+export function changeErrorLang(language, text){ if(initials.classList.contains(language)) errorMsg = text; }
 
+// Ativar ao change do pswrd.
+function checkPassword(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
-        pswrd.nextElementSibling.innerText = errorMSG;
+        pswrd.nextElementSibling.innerText = errorMsg;
     } else {
         return true;
     }
 }
 
-pswrd.addEventListener("change", () => checkPswrd());
+pswrd.addEventListener("change", () => checkPassword());
 
+// This event change the login/register page in English
+// and also active the Class that check if the inputs are true or not.
+en.addEventListener("click", () => {
+    engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
+    registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+    errorsRegister.changeL(errorsMsg.en),
+    errorsRegister.changeLogin(errorsMsg.en.i1)
+    changeErrorLang("EN", errorPassword.en);
+});
+
+// function english(){
+
+// }
 
 // Confirm Password
 const confirmP = allInputs[6];

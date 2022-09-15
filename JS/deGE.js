@@ -73,16 +73,21 @@ function changeLanguageDE(){
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+import { errorPassword } from "./languages.js";
+import{ changeErrorLang } from "./script.js";
+
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage; 
 if(userLang === "de") {
     changeLanguageDE(),
     errorsRegister.changeL(errorsMsg.de);
     errorsRegister.changeLogin(errorsMsg.de.i1);
+    changeErrorLang("DE", errorPassword.de );
 }
 
 de.addEventListener("click", () => {
     changeLanguageDE(),
     errorsRegister.changeL(errorsMsg.de);
     errorsRegister.changeLogin(errorsMsg.de.i1);
+    changeErrorLang("DE", errorPassword.de );
 });
