@@ -69,6 +69,12 @@ const errorsMsg = {
     }
 }
 
-export {ptBR, deGE, errorsMsg};
+const errorPassword = {
+    en: "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!",
+    pt: "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo #?@",
+    de: "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&"
+}
+
+export {ptBR, deGE, errorsMsg, errorPassword};
 
 
