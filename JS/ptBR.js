@@ -68,22 +68,23 @@ function changeLanguageBR(){
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+// Portuguese Errors
 import { errorPassword } from "./languages.js";
 import{ changeErrorLang } from "./script.js";
 
-
 // Navigator user language
+// Here it's where the methods that change the language of the page are.
 var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "pt" || userLang === "pt-BR") {
-    changeLanguageBR(),
-    errorsRegister.changeRegister(errorsMsg.pt);
-    errorsRegister.changeLogin(errorsMsg.pt.i1);
-    changeErrorLang("PT", errorPassword.pt );
-}
+if(userLang === "pt" || userLang === "pt-BR") storageBR();
 
-pt.addEventListener("click", () => {
+pt.addEventListener("click", () => storageBR());
+
+function storageBR(){
+    // Changing Login Language page in Portuguese/Brazil
     changeLanguageBR(),
+
+    // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.pt),
     errorsRegister.changeLogin(errorsMsg.pt.i1)
     changeErrorLang("PT", errorPassword.pt );
-});
+}

@@ -243,6 +243,7 @@ pswrd.addEventListener("change", () => checkPassword());
 // Methods Storage
 en.addEventListener("click", () => storage());
 
+// Here it's where the methods that change the language of the page are.
 function storage(){
     // Changing Login Language page in ENGLISH/UK
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
