@@ -231,10 +231,10 @@ import {errorPassword} from "./languages.js";
 // Change the error language.
 let errorMsg = "";
 
-// Ativar ao click pela linguagem.
+// Change the error language in password input.
 export function changeErrorLang(language, text){ if(initials.classList.contains(language)) errorMsg = text; }
 
-// Ativar ao change do pswrd.
+// Check if the password input are true or not according to the regex.
 function checkPassword(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
