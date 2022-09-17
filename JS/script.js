@@ -165,6 +165,7 @@ const rgstUK = {
     spanLogin: "Login here!",
 }
 
+// Changing the language in Register Form into ENGLISH
 function registerLanguage(...p){
     // Tags and labels from Register Form
     const tags = Array.from(document.querySelectorAll(p));
@@ -200,7 +201,7 @@ class Errors{
     removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
 
     // This method changes the language of errors depending on which language is on the page.
-    changeL(value){
+    changeRegister(value){
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
@@ -211,14 +212,6 @@ class Errors{
 }
 
 export const errorsRegister = new Errors();
-
-// Language page will be English if the browser's language is English.
-var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "en") {
-    errorsRegister.languagesTest(errorsMsg.en),
-    errorsRegister.changeLogin(errorsMsg.en.i1);
-    changeErrorLang("EN", errorPassword.en);
-}
 
 // Checking password input from Register Form.
 const initials = document.querySelector("[data-initials]");
@@ -231,10 +224,10 @@ import {errorPassword} from "./languages.js";
 // Change the error language.
 let errorMsg = "";
 
-// Ativar ao click pela linguagem.
+// Change the error language in password input.
 export function changeErrorLang(language, text){ if(initials.classList.contains(language)) errorMsg = text; }
 
-// Ativar ao change do pswrd.
+// Check if the password input are true or not according to the regex.
 function checkPassword(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
@@ -246,19 +239,33 @@ function checkPassword(){
 
 pswrd.addEventListener("change", () => checkPassword());
 
-// This event change the login/register page in English
-// and also active the Class that check if the inputs are true or not.
-en.addEventListener("click", () => {
+
+// Methods Storage
+en.addEventListener("click", () => storage());
+
+// Here it's where the methods that change the language of the page are.
+function storage(){
+    // Changing Login Language page in ENGLISH/UK
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
+
+    // Changing the language in Register Form into ENGLISH
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    errorsRegister.changeL(errorsMsg.en),
+
+    // Change the error language in Login / Register Form.
+    errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
     changeErrorLang("EN", errorPassword.en);
-});
+}
 
-// function english(){
+// Language page will be English if the browser's language is English.
+var userLang = navigator.language || navigator.userLanguage;
+if(userLang === "en") {
+    // Change the error language in Login / Register Form.
+    errorsRegister.changeRegister(errorsMsg.en),
+    errorsRegister.changeLogin(errorsMsg.en.i1);
+    changeErrorLang("EN", errorPassword.en);
+}
 
-// }
 
 // Confirm Password
 const confirmP = allInputs[6];

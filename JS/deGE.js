@@ -68,26 +68,28 @@ function changeLanguageDE(){
     allInputs[4].placeholder = "+49 231 XXXXXX";
 }
 
-// Importing method which allow us to check if the inputs are true
-// and importing portuguese errors messages from languages.js
+// Importing methods which allow us to check if the inputs are true
+// and importing german errors messages from languages.js
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";
 
+// German Errors
 import { errorPassword } from "./languages.js";
 import{ changeErrorLang } from "./script.js";
 
 // Navigator user language
+// Here it's where the methods that change the language of the page are.
 var userLang = navigator.language || navigator.userLanguage; 
-if(userLang === "de") {
+if(userLang === "de") storageDE()
+
+de.addEventListener("click", () => storageDE());
+
+function storageDE(){
+    // Changing Login Language page in Portuguese/Brazil
     changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de);
+
+    // Change the error language in Login / Register Form.
+    errorsRegister.changeRegister(errorsMsg.de);
     errorsRegister.changeLogin(errorsMsg.de.i1);
     changeErrorLang("DE", errorPassword.de );
 }
-
-de.addEventListener("click", () => {
-    changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de);
-    errorsRegister.changeLogin(errorsMsg.de.i1);
-    changeErrorLang("DE", errorPassword.de );
-});
