@@ -80,14 +80,14 @@ import{ changeErrorLang } from "./script.js";
 var userLang = navigator.language || navigator.userLanguage; 
 if(userLang === "de") {
     changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de);
+    errorsRegister.changeRegister(errorsMsg.de);
     errorsRegister.changeLogin(errorsMsg.de.i1);
     changeErrorLang("DE", errorPassword.de );
 }
 
 de.addEventListener("click", () => {
     changeLanguageDE(),
-    errorsRegister.changeL(errorsMsg.de);
+    errorsRegister.changeRegister(errorsMsg.de);
     errorsRegister.changeLogin(errorsMsg.de.i1);
     changeErrorLang("DE", errorPassword.de );
 });

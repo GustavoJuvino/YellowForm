@@ -165,6 +165,7 @@ const rgstUK = {
     spanLogin: "Login here!",
 }
 
+// Changing the language in Register Form into ENGLISH
 function registerLanguage(...p){
     // Tags and labels from Register Form
     const tags = Array.from(document.querySelectorAll(p));
@@ -200,7 +201,7 @@ class Errors{
     removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
 
     // This method changes the language of errors depending on which language is on the page.
-    changeL(value){
+    changeRegister(value){
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
@@ -211,14 +212,6 @@ class Errors{
 }
 
 export const errorsRegister = new Errors();
-
-// Language page will be English if the browser's language is English.
-var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "en") {
-    errorsRegister.languagesTest(errorsMsg.en),
-    errorsRegister.changeLogin(errorsMsg.en.i1);
-    changeErrorLang("EN", errorPassword.en);
-}
 
 // Checking password input from Register Form.
 const initials = document.querySelector("[data-initials]");
@@ -246,15 +239,32 @@ function checkPassword(){
 
 pswrd.addEventListener("change", () => checkPassword());
 
-// This event change the login/register page in English
-// and also active the Class that check if the inputs are true or not.
-en.addEventListener("click", () => {
+
+// Methods Storage
+en.addEventListener("click", () => storage());
+
+function storage(){
+    // Changing Login Language page in ENGLISH/UK
     engLogin("[data-initials]", ".f-password", ".btn",".p-register","[data-span='register']"),
+
+    // Changing the language in Register Form into ENGLISH
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
-    errorsRegister.changeL(errorsMsg.en),
+
+    // Change the error language in Login / Register Form.
+    errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
     changeErrorLang("EN", errorPassword.en);
-});
+}
+
+// Language page will be English if the browser's language is English.
+var userLang = navigator.language || navigator.userLanguage;
+if(userLang === "en") {
+    // Change the error language in Login / Register Form.
+    errorsRegister.changeRegister(errorsMsg.en),
+    errorsRegister.changeLogin(errorsMsg.en.i1);
+    changeErrorLang("EN", errorPassword.en);
+}
+
 
 // function english(){
 

@@ -76,14 +76,14 @@ import{ changeErrorLang } from "./script.js";
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "pt" || userLang === "pt-BR") {
     changeLanguageBR(),
-    errorsRegister.changeL(errorsMsg.pt);
+    errorsRegister.changeRegister(errorsMsg.pt);
     errorsRegister.changeLogin(errorsMsg.pt.i1);
     changeErrorLang("PT", errorPassword.pt );
 }
 
 pt.addEventListener("click", () => {
     changeLanguageBR(),
-    errorsRegister.changeL(errorsMsg.pt),
+    errorsRegister.changeRegister(errorsMsg.pt),
     errorsRegister.changeLogin(errorsMsg.pt.i1)
     changeErrorLang("PT", errorPassword.pt );
 });
