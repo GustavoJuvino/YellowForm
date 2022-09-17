@@ -68,7 +68,7 @@ function changeLanguageDE(){
     allInputs[4].placeholder = "+49 231 XXXXXX";
 }
 
-// Importing method which allow us to check if the inputs are true
+// Importing methods which allow us to check if the inputs are true
 // and importing german errors messages from languages.js
 import {errorsRegister} from "./script.js";
 import {errorsMsg} from "./languages.js";

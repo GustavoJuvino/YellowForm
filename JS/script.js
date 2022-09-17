@@ -267,10 +267,6 @@ if(userLang === "en") {
 }
 
 
-// function english(){
-
-// }
-
 // Confirm Password
 const confirmP = allInputs[6];
 
