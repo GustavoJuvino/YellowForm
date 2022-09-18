@@ -273,9 +273,9 @@ const confirmP = allInputs[6];
 function checkError(){
     eReg[4].classList.add("error-actived");
 
-    if(initals.classList.contains("PT")) eReg[4].innerText = errorsMsg.pt.i5;
-    if(initals.classList.contains("EN")) eReg[4].innerText = errorsMsg.en.i5;
-    if(initals.classList.contains("DE")) eReg[4].innerText = errorsMsg.de.i5;
+    if(initials.classList.contains("PT")) eReg[4].innerText = errorsMsg.pt.i5;
+    if(initials.classList.contains("EN")) eReg[4].innerText = errorsMsg.en.i5;
+    if(initials.classList.contains("DE")) eReg[4].innerText = errorsMsg.de.i5;
 
 }
 
