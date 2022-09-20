@@ -70,12 +70,12 @@ function changeLanguageDE(){
 
 // Importing methods which allow us to check if the inputs are true
 // and importing german errors messages from languages.js
-import {errorsRegister} from "./script.js";
+import {errorsRegister} from "../register.js";
 import {errorsMsg} from "./languages.js";
 
 // German Errors
 import { errorPassword } from "./languages.js";
-import{ changeErrorLang } from "./script.js";
+import{ changeErrorLang } from "../register.js";
 
 // Navigator user language
 // Here it's where the methods that change the language of the page are.
