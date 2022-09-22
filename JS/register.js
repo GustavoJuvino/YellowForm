@@ -71,44 +71,39 @@ import {errorPassword} from "./Languages/languages.js";
 
 const initials = document.querySelector("[data-initials]");
 
+// Change the error language.
+let errorPass = "";
+let errorCheckPass = "";
+
 // Password Input
 const pswrd = allInputs[5]
 
-
-// Change the error language.
-let errorMsg = "";
-
 // Change the error language in password input.
-export function changeErrorLang(language, text){ if(initials.classList.contains(language)) errorMsg = text; }
+export const changeErrorLang = (language, text, text2) => {
+    if(initials.classList.contains(language)) return errorPass = text, errorCheckPass = text2; 
+}
 
 // Check if the password input are true or not according to the regex.
 function checkPassword(){
     if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
         pswrd.nextElementSibling.classList.add("error-actived")
-        pswrd.nextElementSibling.innerText = errorMsg;
-    } else {
-        return true;
+        pswrd.nextElementSibling.innerText = errorPass;
     }
 }
 
 pswrd.addEventListener("change", () => checkPassword());
 
-// Confirm Password
-const confirmP = allInputs[6];
+
+//Check confirm password.
 const errorCheckP = document.querySelectorAll("[data-error='register']");
+const confirmPassword = allInputs[6];
 
-function checkError(){
-    errorCheckP[4].classList.add("error-actived");
-
-    if(initials.classList.contains("PT")) errorCheckP[4].innerText = errorsMsg.pt.i5;
-    if(initials.classList.contains("EN")) errorCheckP[4].innerText = errorsMsg.en.i5;
-    if(initials.classList.contains("DE")) errorCheckP[4].innerText = errorsMsg.de.i5;
-
+const checkConfirmPass = () => { 
+    if(confirmPassword.value !== pswrd.value) errorCheckP[4].classList.add("error-actived"),
+    errorCheckP[4].innerText = errorCheckPass;
 }
 
-const checkConfirmP = () => confirmP.value == pswrd.value ? true : checkError();
-
-confirmP.addEventListener("change", () => checkConfirmP());
+confirmPassword.addEventListener("change", () => checkConfirmPass());
 
 
 // Methods Storage
@@ -122,7 +117,7 @@ function storage(){
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
-    changeErrorLang("EN", errorPassword.en);
+    changeErrorLang("EN", errorPassword.en, errorsMsg.en.i5);
 }
 
 // Language page will be English if the browser's language is English.
