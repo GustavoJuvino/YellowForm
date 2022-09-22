@@ -86,5 +86,5 @@ function storageBR(){
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.pt),
     errorsRegister.changeLogin(errorsMsg.pt.i1)
-    changeErrorLang("PT", errorPassword.pt );
+    changeErrorLang("PT", errorPassword.pt, errorsMsg.pt.i5);
 }
