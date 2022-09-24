@@ -1,22 +1,24 @@
 // Language Page
 const ptBR = {
     login: {
-        user: "Usuário ou Email",
-        password: "Senha",
         lng: "PT/ BR",
         fPassword: "Esqueceu a sua senha?",
         btn: "Entrar",
         fregister: "Não tem uma conta existente?",
         span: "Registre-se agora mesmo!",
+        user: "Usuário ou Email",
+        password: "Senha",
     },
     register: {
         h1: "Crie a sua conta",
-        user: "Usuário",
-        phone: "Número de telefone",
-        cpassword: "Confirme a senha",
         btn: "Criar Conta",
         flogin: "Já tem uma conta existente?",
         span: "Faça o login aqui",
+        user: "Usuário",
+        email: "Email",
+        phone: "Número de telefone",
+        password: "Senha",
+        cpassword: "Confirme a senha",
     }
 }
 

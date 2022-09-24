@@ -4,18 +4,29 @@ import {ptBR} from "./languages.js";
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 const pt = document.querySelector(languages[1]);
 
-const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1]]
+const labels = Array.from(document.getElementsByTagName("label"));
 
-// Changing the language in Register Form into Portuguese - Brazil
-function registerLanguageBR(...p){
-    const properties = Array.from(document.querySelectorAll(p));
-    const arrBR = Object.values(ptBR.login)
-    const test = i.concat(properties);
+// Changing the language in Login Form into Portuguese - Brazil
+class Portuguese{
+    constructor(...tags){ this.tags = Array.from(document.querySelectorAll(tags)) };
+    
+    // Login Form
+    login(){
+        // Object into an array with the Portuguese translation.
+        this.array = Object.values(ptBR.login)
+        this.tags.concat(labels[0],labels[1]).forEach((t) => t.innerText = this.array.shift())
+    }
 
-    test.forEach((p) => console.log(p.innerText));
+    // Register Form
+    register(){
+        // Object into an array with the Portuguese translation.
+        this.array = Object.values(ptBR.register)
+        this.tags.concat(labels.slice(2)).forEach((t) => t.innerText = this.array.shift());
+    }
 }
 
+const LoginBR = new Portuguese("[data-initials]",".f-password","[data-btn='1']", ".p-register", "[data-span='register']");
+const RegisterBR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
 
 // Importing method which allow us to check if the inputs are true
 // and importing portuguese errors messages from languages.js
@@ -34,9 +45,9 @@ if(userLang === "pt" || userLang === "pt-BR") storageBR();
 pt.addEventListener("click", () => storageBR());
 
 function storageBR(){
-    // Changing Login Language page in Portuguese/Brazil
-    registerLanguageBR("[data-initials]",".f-password",
-    "[data-btn='1']", ".p-register", "[data-span='register']");
+    // Change the language page into Portuguese.
+    LoginBR.login();
+    RegisterBR.register();
 
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.pt),
