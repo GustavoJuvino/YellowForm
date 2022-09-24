@@ -1,9 +1,9 @@
 // Language Page
 const ptBR = {
     login: {
-        lng: "PT/ BR",
         user: "Usuário ou Email",
         password: "Senha",
+        lng: "PT/ BR",
         fPassword: "Esqueceu a sua senha?",
         btn: "Entrar",
         fregister: "Não tem uma conta existente?",
