@@ -4,18 +4,22 @@ import {ptBR} from "./languages.js";
 const languages = ["[data-en]", "[data-pt]", "[data-de]"];
 const pt = document.querySelector(languages[1]);
 
-const allInputs = document.querySelectorAll("input");
-const i = [allInputs[0], allInputs[1]]
+const labels = document.querySelectorAll("label");
 
-// Changing the language in Register Form into Portuguese - Brazil
-function registerLanguageBR(...p){
-    const properties = Array.from(document.querySelectorAll(p));
-    const arrBR = Object.values(ptBR.login)
-    const test = i.concat(properties);
-
-    test.forEach((p) => console.log(p.innerText));
+// Changing the language in Login Form into Portuguese - Brazil
+class Portuguese{
+    constructor(...tags){
+        this.login = document.querySelectorAll(tags);
+    }
+    
+    testing(){console.log(this.login)}
 }
 
+const changingLanguage = new Portuguese("[data-initials]",".f-password","[data-btn='1']", ".p-register", "[data-span='register']");
+const changeR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
+
+changeR.testing();
+changingLanguage.testing();
 
 // Importing method which allow us to check if the inputs are true
 // and importing portuguese errors messages from languages.js
@@ -34,9 +38,6 @@ if(userLang === "pt" || userLang === "pt-BR") storageBR();
 pt.addEventListener("click", () => storageBR());
 
 function storageBR(){
-    // Changing Login Language page in Portuguese/Brazil
-    registerLanguageBR("[data-initials]",".f-password",
-    "[data-btn='1']", ".p-register", "[data-span='register']");
 
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.pt),
