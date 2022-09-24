@@ -11,12 +11,14 @@ const ptBR = {
     },
     register: {
         h1: "Crie a sua conta",
-        user: "Usuário",
-        phone: "Número de telefone",
-        cpassword: "Confirme a senha",
         btn: "Criar Conta",
         flogin: "Já tem uma conta existente?",
         span: "Faça o login aqui",
+        user: "Usuário",
+        email: "Email",
+        phone: "Número de telefone",
+        password: "Senha",
+        cpassword: "Confirme a senha",
     }
 }
 
