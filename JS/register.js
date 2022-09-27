@@ -106,11 +106,14 @@ const checkConfirmPass = () => {
 confirmPassword.addEventListener("change", () => checkConfirmPass());
 
 
-// Methods Storage
 en.addEventListener("click", () => storage());
 
-// Here it's where the methods that change the language of the page are.
-function storage(){
+// Language page will be English if the browser's language is English.
+var userLang = navigator.language || navigator.userLanguage;
+if(userLang === "en") {storage()}
+
+// Methods Storage
+function storage(){ 
     // Changing the language in Register Form into ENGLISH
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
 
@@ -118,13 +121,4 @@ function storage(){
     errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
     changeErrorLang("EN", errorPassword.en, errorsMsg.en.i5);
-}
-
-// Language page will be English if the browser's language is English.
-var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "en") {
-    // Change the error language in Login / Register Form.
-    errorsRegister.changeRegister(errorsMsg.en),
-    errorsRegister.changeLogin(errorsMsg.en.i1);
-    changeErrorLang("EN", errorPassword.en);
 }

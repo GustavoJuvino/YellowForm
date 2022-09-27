@@ -28,6 +28,7 @@ class Portuguese{
 const LoginBR = new Portuguese("[data-initials]",".f-password","[data-btn='1']", ".p-register", "[data-span='register']");
 const RegisterBR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
 
+
 // Importing method which allow us to check if the inputs are true
 // and importing portuguese errors messages from languages.js
 import {errorsRegister} from "../register.js";
