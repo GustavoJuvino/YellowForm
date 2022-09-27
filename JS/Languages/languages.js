@@ -23,26 +23,26 @@ const ptBR = {
 }
 
 const deGE = {
-    login:{
-        user: "Benutzer oder E-Mail",
-        password: "Passwort",
+    login: {
+        lng: "DE/ GE", 
         fPassword: "Haben Sie Ihr Passwort vergessen?",
         btn: "Einloggen",
         fRegister: "Sie haben kein bestehendes Konto?",
         span: "Gleich anmelden",
-        lng: "DE/ GE", 
-
+        user: "Benutzer oder E-Mail",
+        password: "Passwort",
     },
     register: {
         h1: "Erstelle deinen Account",
+        btn: "Ein Konto erstellen",
+        flogin: "Sie haben bereits ein bestehendes Konto?",
+        span: "Hier zugreifen",
         user: "Benutzer",
+        email: "Email",
         phone: "Telefonnummer",
         password: "Passwort",
         cPassword: "Bestätigen Sie das Passwort",
-        btn: "Ein Konto erstellen",
-        fRegister: "Sie haben bereits ein bestehendes Konto?",
-        span: "Hier zugreifen"
-    },
+    }
 }
 
 // Errors Messages in some languages
