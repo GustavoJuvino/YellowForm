@@ -33,12 +33,11 @@ const RegisterBR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[
 import {errorsRegister} from "../register.js";
 import {errorsMsg} from "./languages.js";
 
-// Portuguese Errors
+// Portuguese Errors methods.
 import { errorPassword } from "./languages.js";
 import{ changeErrorLang } from "../register.js";
 
 // Navigator user language
-// Here it's where the methods that change the language of the page are.
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "pt" || userLang === "pt-BR") storageBR();
 
