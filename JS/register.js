@@ -106,6 +106,23 @@ const checkConfirmPass = () => {
 confirmPassword.addEventListener("change", () => checkConfirmPass());
 
 
+// errorCheckP[2].classList.add("error-actived");
+
+
+let phone = allInputs[4];
+// Check the phone number
+function testNumber({target}){
+    let length = phone.value.length;
+    if(length > 11){
+        errorCheckP[2].classList.add("error-actived");
+    } else{
+        console.log(true); 
+    }
+}
+
+phone.addEventListener("change", (event) => testNumber(event))
+
+
 en.addEventListener("click", () => storage());
 
 // Language page will be English if the browser's language is English.
