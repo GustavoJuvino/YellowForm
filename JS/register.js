@@ -65,34 +65,22 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
-// Checking password input from Register Form.
-import {errorsMsg} from "./Languages/languages.js";
 
-const initials = document.querySelector("[data-initials]");
-
+// Check if the password input are true or not according to the regex.
 // Password Input
 const pswrd = allInputs[5]
 
-class ChangeLanguage{
-    constructor(){
-    }
-
-    // Check if the password input are true or not according to the regex.
-    checkPassword(){
-        if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
-            pswrd.nextElementSibling.classList.add("error-actived")
-            errorsRegister.addError(3)
-        }
+function checkPassword(){
+    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
+        pswrd.nextElementSibling.classList.add("error-actived")
+        errorsRegister.addError(3)
     }
 }
-export const change = new ChangeLanguage();
+pswrd.addEventListener("change", () => checkPassword());
 
-pswrd.addEventListener("change", () => {
-    change.checkPassword();
-})
 
-// change.checkPassword("test error")
-
+// Checking password input from Register Form.
+import {errorsMsg} from "./Languages/languages.js";
 en.addEventListener("click", () => storage());
 
 // Language page will be English if the browser's language is English.
@@ -107,5 +95,4 @@ function storage(){
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
-    // changeErrorLang("EN", errorPassword.en, errorsMsg.en.i5);
 }
