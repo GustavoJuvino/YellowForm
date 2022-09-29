@@ -80,7 +80,7 @@ const pswrd = allInputs[5]
 
 // Change the error language in password input.
 export const changeErrorLang = (language, text, text2) => {
-    if(initials.classList.contains(language)) return errorPass = text, errorCheckPass = text2; 
+    if(initials.classList.contains(language)) errorPass = text, errorCheckPass = text2; 
 }
 
 // Check if the password input are true or not according to the regex.
@@ -106,21 +106,23 @@ const checkConfirmPass = () => {
 confirmPassword.addEventListener("change", () => checkConfirmPass());
 
 
-// errorCheckP[2].classList.add("error-actived");
-
 
 let phone = allInputs[4];
 // Check the phone number
-function testNumber({target}){
+function testNumber(error){
     let length = phone.value.length;
     if(length > 11){
         errorCheckP[2].classList.add("error-actived");
+        errorCheckP[2].innerText = error;
+    } else if (length < 11){
+        errorCheckP[2].classList.add("error-actived");
+        errorCheckP[2].innerText = error;
     } else{
-        console.log(true); 
+        errorCheckP[2].classList.remove("error-actived");
     }
 }
 
-phone.addEventListener("change", (event) => testNumber(event))
+phone.addEventListener("change", () => testNumber("Por favor preencha um número com até 11 dígitos."))
 
 
 en.addEventListener("click", () => storage());
