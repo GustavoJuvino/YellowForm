@@ -36,7 +36,7 @@ import {errorsMsg} from "./languages.js";
 
 // Portuguese Errors methods.
 import { errorPassword } from "./languages.js";
-import{ changeErrorLang } from "../register.js";
+// import{ changeErrorLang } from "../register.js";
 
 
 // Navigator user language
@@ -53,5 +53,5 @@ function storageDE(){
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.de),
     errorsRegister.changeLogin(errorsMsg.de.i1)
-    changeErrorLang("DE", errorPassword.de, errorsMsg.de.i5);
+    // changeErrorLang("DE", errorPassword.de, errorsMsg.de.i5);
 }
