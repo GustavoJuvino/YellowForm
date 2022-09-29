@@ -53,6 +53,7 @@ class Errors{
 
     // This method changes the language of errors depending on which language is on the page.
     changeRegister(value){
+        // Transform an object into an array.
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
@@ -64,66 +65,33 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
-
 // Checking password input from Register Form.
 import {errorsMsg} from "./Languages/languages.js";
-import {errorPassword} from "./Languages/languages.js";
 
 const initials = document.querySelector("[data-initials]");
-
-// Change the error language.
-let errorPass = "";
-let errorCheckPass = "";
 
 // Password Input
 const pswrd = allInputs[5]
 
-// Change the error language in password input.
-export const changeErrorLang = (language, text, text2) => {
-    if(initials.classList.contains(language)) errorPass = text, errorCheckPass = text2; 
-}
+class ChangeLanguage{
+    constructor(){
+    }
 
-// Check if the password input are true or not according to the regex.
-function checkPassword(){
-    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
-        pswrd.nextElementSibling.classList.add("error-actived")
-        pswrd.nextElementSibling.innerText = errorPass;
+    // Check if the password input are true or not according to the regex.
+    checkPassword(){
+        if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
+            pswrd.nextElementSibling.classList.add("error-actived")
+            errorsRegister.addError(3)
+        }
     }
 }
+export const change = new ChangeLanguage();
 
-pswrd.addEventListener("change", () => checkPassword());
+pswrd.addEventListener("change", () => {
+    change.checkPassword();
+})
 
-
-//Check confirm password.
-const errorCheckP = document.querySelectorAll("[data-error='register']");
-const confirmPassword = allInputs[6];
-
-const checkConfirmPass = () => { 
-    if(confirmPassword.value !== pswrd.value) errorCheckP[4].classList.add("error-actived"),
-    errorCheckP[4].innerText = errorCheckPass;
-}
-
-confirmPassword.addEventListener("change", () => checkConfirmPass());
-
-
-
-let phone = allInputs[4];
-// Check the phone number
-function testNumber(error){
-    let length = phone.value.length;
-    if(length > 11){
-        errorCheckP[2].classList.add("error-actived");
-        errorCheckP[2].innerText = error;
-    } else if (length < 11){
-        errorCheckP[2].classList.add("error-actived");
-        errorCheckP[2].innerText = error;
-    } else{
-        errorCheckP[2].classList.remove("error-actived");
-    }
-}
-
-phone.addEventListener("change", () => testNumber("Por favor preencha um número com até 11 dígitos."))
-
+// change.checkPassword("test error")
 
 en.addEventListener("click", () => storage());
 
@@ -139,5 +107,5 @@ function storage(){
     // Change the error language in Login / Register Form.
     errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
-    changeErrorLang("EN", errorPassword.en, errorsMsg.en.i5);
+    // changeErrorLang("EN", errorPassword.en, errorsMsg.en.i5);
 }

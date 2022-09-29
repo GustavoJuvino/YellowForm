@@ -52,21 +52,21 @@ const errorsMsg = {
         i1: "Please fill in this field.",
         i2: "Please fill in a valid email.",
         i3: "Please fill in a valid phone number.",
-        i4: "Please fill in a valid password.",
+        i4: "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!",
         i5: "Passwords must be the same.",
     },
     pt: {
         i1: "Preencha este campo.",
         i2: "Preencha com um email válido.",
         i3: "Preencha com um número de telefone válido.",
-        i4: "Preencha com uma senha válida.",
+        i4: "A senha deve conter pelo menos uma letra maiúscula, uma minúscula e um símbolo #?@",
         i5: "Senhas devem ser iguais.",
     },
     de: {
         i1: "Bitte füllen Sie dieses Feld aus.",
         i2: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         i3: "Bitte geben Sie eine gültige Telefonnummer ein.",
-        i4: "Bitte geben Sie ein gültiges Passwort ein.",
+        i4: "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&",
         i5: "Passwörter müssen gleich sein.",
     }
 }
