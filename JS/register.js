@@ -36,6 +36,8 @@ const dataError = document.querySelectorAll("[data-error='register']");
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
+console.log(inputsR)
+
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
@@ -77,6 +79,20 @@ function checkPassword(){
     }
 }
 pswrd.addEventListener("change", () => checkPassword());
+
+
+//Check confirm password.
+const errorCheckP = document.querySelectorAll("[data-error='register']");
+const confirmPassword = allInputs[6];
+
+const checkConfirmPass = () => { 
+    if(confirmPassword.value !== pswrd.value) {
+        errorCheckP[4].classList.add("error-actived")
+        errorsRegister.addError(3)
+    }
+}
+
+confirmPassword.addEventListener("change", () => checkConfirmPass());
 
 
 // Checking password input from Register Form.
