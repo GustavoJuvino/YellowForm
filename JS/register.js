@@ -36,6 +36,8 @@ const dataError = document.querySelectorAll("[data-error='register']");
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
+console.log(inputsR)
+
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
@@ -51,14 +53,14 @@ class Errors{
     // Remove the error msg.
     removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
 
-    // This method changes the language of errors depending on which language is on the page.
+    // This method will show the error message to the user in the Register Form. We can also set other language error messages.
     changeRegister(value){
         // Transform an object into an array.
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
     }
 
-    // This method will change the language of error message in Login Form.
+    // It will show the error message to the user in the Login Form. We can also set other language error messages.
     changeLogin = (value) => inputsL.forEach((input) => input.nextElementSibling.innerText = value);
     
 }
@@ -77,6 +79,39 @@ function checkPassword(){
     }
 }
 pswrd.addEventListener("change", () => checkPassword());
+
+
+//Check confirm password.
+const confirmPassword = allInputs[6];
+
+const checkConfirmPass = () => { 
+    if(confirmPassword.value !== pswrd.value) {
+        allInputs[6].nextElementSibling.classList.add("error-actived")
+        errorsRegister.addError(4)
+    } else {
+        allInputs[6].nextElementSibling.classList.remove("error-actived")
+    }
+}
+
+confirmPassword.addEventListener("change", () => checkConfirmPass());
+
+
+// Check the phone number
+let phone = allInputs[4];
+function testNumber(error){
+    let length = phone.value.length;
+    if(length > 11){
+        errorCheckP[2].classList.add("error-actived");
+        errorCheckP[2].innerText = error;
+    } else if (length < 11){
+        errorCheckP[2].classList.add("error-actived");
+        errorCheckP[2].innerText = error;
+    } else{
+        errorCheckP[2].classList.remove("error-actived");
+    }
+}
+
+phone.addEventListener("change", () => testNumber("Por favor preencha um número com até 11 dígitos."))
 
 
 // Checking password input from Register Form.
