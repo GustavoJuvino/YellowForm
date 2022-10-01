@@ -36,8 +36,6 @@ const dataError = document.querySelectorAll("[data-error='register']");
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
-console.log(inputsR)
-
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
@@ -67,60 +65,55 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
+// Checking inputs: Phone Number, Password, Check Password
+class Check{
+    constructor(){
+        this.phone = allInputs[4];
+        this.password = allInputs[5];
+        this.confirmPass = allInputs[6];
+    }
 
-// Check if the password input are true or not according to the regex.
-// Password Input
-const pswrd = allInputs[5]
+    // Check if the phone number have at least 11 numbers.
+    checkPhoneNumber(){
+        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
+    }
 
-function checkPassword(){
-    if(pswrd.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
-        pswrd.nextElementSibling.classList.add("error-actived")
-        errorsRegister.addError(3)
+    // Check Password Input
+    checkPassword(){
+        if(this.password.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
+            errorsRegister.addError(3);
+        } else {
+            errorsRegister.removeError(3);
+        }
+    }
+
+    // Check if both passwords has the same value, if not it will show an error message.
+    checkConfirmPass(){
+        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
     }
 }
-pswrd.addEventListener("change", () => checkPassword());
 
+const checking = new Check();
+
+// Check Phone Number
+allInputs[4].addEventListener("change", () => checking.checkPhoneNumber())
+
+// Check Password Input
+allInputs[5].addEventListener("change", () => checking.checkPassword());
 
 //Check confirm password.
-const confirmPassword = allInputs[6];
-
-const checkConfirmPass = () => { 
-    if(confirmPassword.value !== pswrd.value) {
-        allInputs[6].nextElementSibling.classList.add("error-actived")
-        errorsRegister.addError(4)
-    } else {
-        allInputs[6].nextElementSibling.classList.remove("error-actived")
-    }
-}
-
-confirmPassword.addEventListener("change", () => checkConfirmPass());
+allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
 
 
-// Check the phone number
-let phone = allInputs[4];
-function testNumber(error){
-    let length = phone.value.length;
-    if(length > 11){
-        errorCheckP[2].classList.add("error-actived");
-        errorCheckP[2].innerText = error;
-    } else if (length < 11){
-        errorCheckP[2].classList.add("error-actived");
-        errorCheckP[2].innerText = error;
-    } else{
-        errorCheckP[2].classList.remove("error-actived");
-    }
-}
-
-phone.addEventListener("change", () => testNumber("Por favor preencha um número com até 11 dígitos."))
-
-
-// Checking password input from Register Form.
+// Applying English Language in Register Form.
 import {errorsMsg} from "./Languages/languages.js";
-en.addEventListener("click", () => storage());
 
-// Language page will be English if the browser's language is English.
+// Language page will be English if the browser's language is English or
+// if the user clicks on the language menu to set another language.
 var userLang = navigator.language || navigator.userLanguage;
-if(userLang === "en") {storage()}
+if(userLang === "en") storage();
+
+en.addEventListener("click", () => storage());
 
 // Methods Storage
 function storage(){ 
