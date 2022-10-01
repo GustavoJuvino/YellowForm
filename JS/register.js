@@ -87,6 +87,7 @@ class Check{
         this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
     }
 
+    // Check if the phone number have at least 11 numbers.
     checkPhoneNumber(){
         this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
     }
