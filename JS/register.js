@@ -65,12 +65,17 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
-
+// Checking inputs: Phone Number, Password, Check Password
 class Check{
     constructor(){
         this.phone = allInputs[4];
         this.password = allInputs[5];
         this.confirmPass = allInputs[6];
+    }
+
+    // Check if the phone number have at least 11 numbers.
+    checkPhoneNumber(){
+        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
     }
 
     // Check Password Input
@@ -85,11 +90,6 @@ class Check{
     // Check if both passwords has the same value, if not it will show an error message.
     checkConfirmPass(){
         this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
-    }
-
-    // Check if the phone number have at least 11 numbers.
-    checkPhoneNumber(){
-        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
     }
 }
 
