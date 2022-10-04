@@ -65,6 +65,35 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
+
+// Final Button |  It will check if the inputs from Register form are true or not.
+const btn2 = document.querySelector("[data-btn='2']");
+
+function checkRegister(...index){
+   index.map((i) => errorsRegister.checkInputs(i))
+}
+
+btn2.addEventListener("click", () => {
+    inputsR.forEach((i) => {
+        if(!i.checkValidity()){
+            i.nextElementSibling.classList.add("error-actived")
+        } else {
+            i.nextElementSibling.classList.remove("error-actived")
+        }
+    })
+})
+
+// this.inputs.forEach((i) => {
+//     if(!i.checkValidity()){
+//         i.nextElementSibling.classList.add("error-actived")
+//     } else {
+//         i.nextElementSibling.classList.remove("error-actived"),
+//         i.classList.add("true");
+//     }
+// })
+
+
+
 // Checking inputs: Phone Number, Password, Check Password
 class Check{
     constructor(){
@@ -103,6 +132,8 @@ allInputs[5].addEventListener("change", () => checking.checkPassword());
 
 //Check confirm password.
 allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
+
+
 
 
 // Applying English Language in Register Form.

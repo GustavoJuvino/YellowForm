@@ -259,18 +259,6 @@ body{
             box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
         }
 
-        [data-success]{
-            display: none;
-        }
-
-        .success-actived{
-            margin-top: 40px;
-            display: block;
-            @include form-text;
-            font-size: 28px;
-            margin-left: 15.5%;
-            color: #30b842;
-        }
 
         [data-loading] {
             display: none;
