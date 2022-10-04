@@ -61,8 +61,12 @@ class CheckInp{
 
             // Check if both inputs are true, if not, it wil return an error.
             this.inputs.forEach((i) => {
-                !i.checkValidity() ? i.nextElementSibling.classList.add("error-actived")
-                    : i.nextElementSibling.classList.remove("error-actived");
+                if(!i.checkValidity()){
+                    i.nextElementSibling.classList.add("error-actived")
+                } else {
+                    i.nextElementSibling.classList.remove("error-actived"),
+                    i.classList.add("true");
+                }
             })
 
         }, 1000)
