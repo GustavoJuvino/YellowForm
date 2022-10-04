@@ -222,8 +222,8 @@ body {
 .login-activated .form-texts form input:hover {
   border: 2px solid #FFFFFF;
 }
-.login-activated .form-texts form .error {
-  border: 2px solid red;
+.login-activated .form-texts form .true {
+  border: 2px solid rgb(57, 190, 36);
 }
 .login-activated .form-texts form [data-error] {
   display: none;
