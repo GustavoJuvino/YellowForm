@@ -46,10 +46,12 @@ class Errors{
     checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError(index);
 
     // Add error msg
-    addError = (index) => inputsR[index].nextElementSibling.classList.add("error-actived");
+    addError = (index) => {
+        inputsR[index].nextElementSibling.classList.add("error-actived"),
+        inputsR[index].classList.remove("true");
+    } 
 
     // Remove the error msg.
-    // removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
     removeError = (index) =>  inputsR[index].nextElementSibling.classList.remove("error-actived");
     
     // This method will show the error message to the user in the Register Form. We can also set other language error messages.
@@ -97,7 +99,7 @@ class Check{
 
     // Check if the phone number have at least 11 numbers.
     checkPhoneNumber(){
-        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
+        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2): (errorsRegister.removeError(2), this.test(this.phone));
     }
 
     // Check Password Input
@@ -106,14 +108,18 @@ class Check{
             errorsRegister.addError(3);
         } else {
             errorsRegister.removeError(3);
+            this.test(this.password);
         }
     }
 
     // Check if both passwords has the same value, if not it will show an error message.
     checkConfirmPass(){
-        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
+        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : (errorsRegister.removeError(4), this.test(this.confirmPass));
     }
 
+    test(input){
+        input.classList.add("true");
+    }
 }
 
 const checking = new Check();
