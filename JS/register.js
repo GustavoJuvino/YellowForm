@@ -43,14 +43,15 @@ class Errors{
     constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
-    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError();
+    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError(index);
 
     // Add error msg
     addError = (index) => inputsR[index].nextElementSibling.classList.add("error-actived");
 
     // Remove the error msg.
-    removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
-
+    // removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
+    removeError = (index) =>  inputsR[index].nextElementSibling.classList.remove("error-actived");
+    
     // This method will show the error message to the user in the Register Form. We can also set other language error messages.
     changeRegister(value){
         // Transform an object into an array.
@@ -68,31 +69,23 @@ export const errorsRegister = new Errors();
 
 // Final Button |  It will check if the inputs from Register form are true or not.
 const btn2 = document.querySelector("[data-btn='2']");
-
-function checkRegister(...index){
-   index.map((i) => errorsRegister.checkInputs(i))
-}
+const checkInputs = Array.from(allInputs).slice(2, 4);
 
 btn2.addEventListener("click", () => {
-    inputsR.forEach((i) => {
+
+    checkInputs.forEach((i) => {
         if(!i.checkValidity()){
-            i.nextElementSibling.classList.add("error-actived")
+            i.nextElementSibling.classList.add("error-actived");
         } else {
-            i.nextElementSibling.classList.remove("error-actived")
+            i.nextElementSibling.classList.remove("error-actived"),
+            i.classList.add("true")
         }
     })
+
+    checking.checkPhoneNumber();
+    checking.checkPassword();
+    checking.checkConfirmPass();
 })
-
-// this.inputs.forEach((i) => {
-//     if(!i.checkValidity()){
-//         i.nextElementSibling.classList.add("error-actived")
-//     } else {
-//         i.nextElementSibling.classList.remove("error-actived"),
-//         i.classList.add("true");
-//     }
-// })
-
-
 
 // Checking inputs: Phone Number, Password, Check Password
 class Check{
@@ -120,6 +113,7 @@ class Check{
     checkConfirmPass(){
         this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
     }
+
 }
 
 const checking = new Check();

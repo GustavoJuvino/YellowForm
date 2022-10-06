@@ -377,6 +377,10 @@ body{
             }
         }
 
+        .true{
+            border: 2px solid rgb(57, 190, 36);
+        }
+
         [data-error="register"]{
             display: none;
         }
