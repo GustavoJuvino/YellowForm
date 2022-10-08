@@ -99,7 +99,7 @@ class Check{
 
     // Check if the phone number have at least 11 numbers.
     checkPhoneNumber(){
-        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2): (errorsRegister.removeError(2), this.test(this.phone));
+        this.phone.value.length < 11 ? errorsRegister.addError(2) : (errorsRegister.removeError(2), this.test(this.phone));
     }
 
     // Check Password Input
