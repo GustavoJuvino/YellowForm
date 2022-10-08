@@ -52,7 +52,7 @@ const errorsMsg = {
         i1: "Please fill in this field.",
         i2: "Please fill in a valid email.",
         i3: "Please fill in a valid phone number.",
-        i4: "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!",
+        i4: "The password must contain at least one uppercase letter, one lowercase letter, and a #?@ symbol",
         i5: "Passwords must be the same.",
     },
     pt: {
@@ -66,7 +66,7 @@ const errorsMsg = {
         i1: "Bitte füllen Sie dieses Feld aus.",
         i2: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
         i3: "Bitte geben Sie eine gültige Telefonnummer ein.",
-        i4: "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&",
+        i4: "Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben und ein #?@-Symbol enthalten",
         i5: "Passwörter müssen gleich sein.",
     }
 }
@@ -74,7 +74,7 @@ const errorsMsg = {
 const errorPassword = {
     en: "The password must contain at least 8 characters and an uppercase letter, a lowercase letter and an symbol $-!",
     pt: "A senha deve conter pelo menos 8 caracteres e uma letra maiúscula, uma minúscula e um símbolo #?@",
-    de: "Geben Sie ein Passwort mit 8 Zeichen ein, das 1 Großbuchstaben, 1 Kleinbuchstaben und 1 Symbol enthält ^@&"
+    de: "Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben und ein #?@-Symbol enthalten"
 }
 
 export {ptBR, deGE, errorsMsg, errorPassword};

@@ -68,27 +68,6 @@ class Errors{
 
 export const errorsRegister = new Errors();
 
-
-// Final Button |  It will check if the inputs from Register form are true or not.
-const btn2 = document.querySelector("[data-btn='2']");
-const checkInputs = Array.from(allInputs).slice(2, 4);
-
-btn2.addEventListener("click", () => {
-
-    checkInputs.forEach((i) => {
-        if(!i.checkValidity()){
-            i.nextElementSibling.classList.add("error-actived");
-        } else {
-            i.nextElementSibling.classList.remove("error-actived"),
-            i.classList.add("true")
-        }
-    })
-
-    checking.checkPhoneNumber();
-    checking.checkPassword();
-    checking.checkConfirmPass();
-})
-
 // Checking inputs: Phone Number, Password, Check Password
 class Check{
     constructor(){
@@ -114,7 +93,8 @@ class Check{
 
     // Check if both passwords has the same value, if not it will show an error message.
     checkConfirmPass(){
-        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : (errorsRegister.removeError(4), this.test(this.confirmPass));
+        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) :
+         (errorsRegister.removeError(4), this.test(this.confirmPass));
     }
 
     test(input){
@@ -128,12 +108,29 @@ const checking = new Check();
 allInputs[4].addEventListener("change", () => checking.checkPhoneNumber())
 
 // Check Password Input
-allInputs[5].addEventListener("change", () => checking.checkPassword());
+allInputs[5].addEventListener("change", () => {
+    checking.checkPassword();
+});
 
 //Check confirm password.
 allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
 
 
+// Final Button |  It will check if the inputs from Register form are true or not.
+const btn2 = document.querySelector("[data-btn='2']");
+
+btn2.addEventListener("click", () => {
+
+    inputsR.forEach((i) => {
+        if(!i.checkValidity()){
+            i.nextElementSibling.classList.add("error-actived");
+        } else {
+            i.nextElementSibling.classList.remove("error-actived"),
+            i.classList.add("true")
+        }
+    })
+
+})
 
 
 // Applying English Language in Register Form.
@@ -155,3 +152,6 @@ function storage(){
     errorsRegister.changeRegister(errorsMsg.en),
     errorsRegister.changeLogin(errorsMsg.en.i1)
 }
+
+
+
