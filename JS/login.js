@@ -74,6 +74,7 @@ class CheckInp{
 }
 
 const checkInpt = new CheckInp("[data-loading]", "[data-success]");
+
 loginBtn.addEventListener("click", () => checkInpt.checkingInput())
 
 

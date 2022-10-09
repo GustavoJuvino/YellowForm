@@ -29,15 +29,9 @@ const loginDE = new German("[data-initials]",".f-password","[data-btn='1']", ".p
 const registerDE = new German("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
 
 
-// Importing method which allow us to check if the inputs are true
-// and importing portuguese errors messages from languages.js
-import {errorsRegister} from "../register.js";
+// Importing german methods and errors messages from languages.js
+import {errors} from "../register.js";
 import {errorsMsg} from "./languages.js";
-
-// Portuguese Errors methods.
-import { errorPassword } from "./languages.js";
-// import{ changeErrorLang } from "../register.js";
-
 
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage;
@@ -51,7 +45,6 @@ function storageDE(){
     registerDE.register();
 
     // Change the error language in Login / Register Form.
-    errorsRegister.changeRegister(errorsMsg.de),
-    errorsRegister.changeLogin(errorsMsg.de.i1)
-    // changeErrorLang("DE", errorPassword.de, errorsMsg.de.i5);
+    errors.changeRegister(errorsMsg.de),
+    errors.changeLogin(errorsMsg.de.i1)
 }
