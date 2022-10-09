@@ -29,9 +29,8 @@ const LoginBR = new Portuguese("[data-initials]",".f-password","[data-btn='1']",
 const RegisterBR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']");
 
 
-// Importing method which allow us to check if the inputs are true
-// and importing portuguese errors messages from languages.js
-import {errorsRegister} from "../register.js";
+// Importing portuguese methods and errors messages from languages.js
+import {errors} from "../register.js";
 import {errorsMsg} from "./languages.js";
 
 var userLang = navigator.language || navigator.userLanguage;
@@ -46,7 +45,7 @@ function storageBR(){
     RegisterBR.register();
 
     // Change the error language in Login / Register Form.
-    errorsRegister.changeRegister(errorsMsg.pt),
-    errorsRegister.changeLogin(errorsMsg.pt.i1)
+    errors.changeRegister(errorsMsg.pt),
+    errors.changeLogin(errorsMsg.pt.i1)
 }
 

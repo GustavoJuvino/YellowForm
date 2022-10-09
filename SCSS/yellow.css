@@ -313,20 +313,6 @@ body {
   border-radius: 6px;
   box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
 }
-.login-activated .form-texts [data-success] {
-  display: none;
-}
-.login-activated .form-texts .success-actived {
-  margin-top: 40px;
-  display: block;
-  font-family: "Nunito", sans-serif;
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  font-size: 28px;
-  margin-left: 15.5%;
-  color: #30b842;
-}
 .login-activated .form-texts [data-loading] {
   display: none;
 }
@@ -468,6 +454,9 @@ body {
 }
 .register-activated form input:hover {
   border: 2px solid #FFFFFF;
+}
+.register-activated form .true {
+  border: 2px solid rgb(57, 190, 36);
 }
 .register-activated form [data-error=register] {
   display: none;

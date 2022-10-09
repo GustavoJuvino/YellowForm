@@ -39,18 +39,21 @@ const inputsR = Array.from(allInputs).slice(2);
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
-class Errors{
+class errorsRegister{
     constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
-    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError();
+    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError(index);
 
     // Add error msg
-    addError = (index) => inputsR[index].nextElementSibling.classList.add("error-actived");
+    addError = (index) => {
+        inputsR[index].nextElementSibling.classList.add("error-actived"),
+        inputsR[index].classList.remove("true");
+    } 
 
     // Remove the error msg.
-    removeError = () =>  dataError.forEach((error) => error.classList.remove("error-actived"));
-
+    removeError = (index) =>  inputsR[index].nextElementSibling.classList.remove("error-actived");
+    
     // This method will show the error message to the user in the Register Form. We can also set other language error messages.
     changeRegister(value){
         // Transform an object into an array.
@@ -63,7 +66,7 @@ class Errors{
     
 }
 
-export const errorsRegister = new Errors();
+export const errors = new errorsRegister();
 
 // Checking inputs: Phone Number, Password, Check Password
 class Check{
@@ -74,23 +77,26 @@ class Check{
     }
 
     // Check if the phone number have at least 11 numbers.
-    checkPhoneNumber(){
-        this.phone.value.length > 11 || this.phone.value.length < 11 ? errorsRegister.addError(2) : errorsRegister.removeError(2);
-    }
+    checkPhoneNumber(){ this.phone.value.length < 11 ? errors.addError(2) : (errors.removeError(2), this.success(this.phone)) };
 
     // Check Password Input
     checkPassword(){
         if(this.password.value.search(/(?=.*\d)(?=.*[a-z]{1})(?=.*[A-Z]{1})(?=.*[-!$%^&@#?]{1})([\w{7}])/) === -1){
-            errorsRegister.addError(3);
+            errors.addError(3);
         } else {
-            errorsRegister.removeError(3);
+            errors.removeError(3);
+            this.success(this.password);
         }
     }
 
     // Check if both passwords has the same value, if not it will show an error message.
     checkConfirmPass(){
-        this.confirmPass.value !== this.password.value ? errorsRegister.addError(4) : errorsRegister.removeError(4);
+        this.confirmPass.value !== this.password.value ? errors.addError(4) :
+         (errors.removeError(4), this.success(this.confirmPass));
     }
+
+    // Active green borders
+    success(input){ input.classList.add("true") };
 }
 
 const checking = new Check();
@@ -103,6 +109,21 @@ allInputs[5].addEventListener("change", () => checking.checkPassword());
 
 //Check confirm password.
 allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
+
+
+// Final Button |  It will check if the inputs from Register form are true or not.
+const btn2 = document.querySelector("[data-btn='2']");
+
+btn2.addEventListener("click", () => {
+    inputsR.forEach((i) => {
+        if(!i.checkValidity()){
+            i.nextElementSibling.classList.add("error-actived");
+        } else {
+            i.nextElementSibling.classList.remove("error-actived"),
+            i.classList.add("true")
+        }
+    })
+})
 
 
 // Applying English Language in Register Form.
@@ -121,6 +142,9 @@ function storage(){
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
 
     // Change the error language in Login / Register Form.
-    errorsRegister.changeRegister(errorsMsg.en),
-    errorsRegister.changeLogin(errorsMsg.en.i1)
+    errors.changeRegister(errorsMsg.en),
+    errors.changeLogin(errorsMsg.en.i1)
 }
+
+
+
