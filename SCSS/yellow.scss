@@ -181,13 +181,14 @@ body{
                 }
             }
 
-            .error{
-                border: 2px solid red;
+            .true{
+                border: 2px solid rgb(57, 190, 36);
             }
 
             [data-error]{
                 display: none;
             }
+
             .error-actived{
                 @include form-text;
                 position: absolute;
