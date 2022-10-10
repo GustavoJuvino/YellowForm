@@ -1,4 +1,3 @@
-
 // Login And Register Navigation
 class Selecting{
     // Register, Login , Section Login, Section Register
