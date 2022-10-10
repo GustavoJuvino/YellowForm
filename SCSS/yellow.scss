@@ -447,8 +447,18 @@ body{
     }
 }
 
-// Responsive
 
+// End Page
+#end-page{
+    text-align: center;
+
+    img, h2, p{
+        margin-top: 40px;
+    }
+}
+
+
+// Responsive
 // Login Form
 .login-activated {
     @include desktop-responsive(large) {

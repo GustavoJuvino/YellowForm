@@ -528,6 +528,13 @@ body {
   color: #FBBC05;
 }
 
+#end-page {
+  text-align: center;
+}
+#end-page img, #end-page h2, #end-page p {
+  margin-top: 40px;
+}
+
 @media screen and (max-width: 1350px) {
   .login-activated .form-texts {
     margin-left: 20px;
