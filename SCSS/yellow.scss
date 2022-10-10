@@ -28,6 +28,7 @@ body{
     grid-template-columns: repeat(2, 1fr);
 }
 
+// Background Left
 #main-left{
     background-color: $main-color;
     width: auto;
@@ -107,6 +108,7 @@ body{
         animation: leaveMenu .3s forwards;
     }
 }
+
 // Floating Menu Animation
 @keyframes enterMenu {
     from{
@@ -242,9 +244,11 @@ body{
                 color: $main-color2;
             }
         }
+
         .hidden-button{
             display: none;
         }
+
         .btn {
             @include button;
             cursor: pointer;
@@ -257,19 +261,6 @@ body{
             border: none;
             border-radius: 6px;
             box-shadow: 3px 6px 4px 0px rgba(0, 0, 0, 0.435);
-        }
-
-        [data-success]{
-            display: none;
-        }
-
-        .success-actived{
-            margin-top: 40px;
-            display: block;
-            @include form-text;
-            font-size: 28px;
-            margin-left: 15.5%;
-            color: #30b842;
         }
 
         [data-loading] {
@@ -286,7 +277,6 @@ body{
             border: 1px solid black;
             animation: ring 1s linear infinite;
         }
-
 
         @keyframes ring {
             0% {
@@ -311,6 +301,7 @@ body{
         margin-top: 60px;
         text-align: center;
     }
+
     span {
         cursor: pointer;
         @include texts(700);
@@ -389,6 +380,10 @@ body{
             }
         }
 
+        .true{
+            border: 2px solid rgb(57, 190, 36);
+        }
+
         [data-error="register"]{
             display: none;
         }
@@ -452,8 +447,9 @@ body{
     }
 }
 
-
 // Responsive
+
+// Login Form
 .login-activated {
     @include desktop-responsive(large) {
         .form-texts {
@@ -577,6 +573,7 @@ body{
     }
 }
 
+// Register Form
 .register-activated{
     @include desktop-responsive(large) {
         .registerForm{
@@ -674,6 +671,7 @@ body{
     }
 }
 
+// Language Menu
 #main {
     @include float-menu(float){
         [data-menu]{
@@ -769,9 +767,9 @@ body{
             }
         }
     }
-
-
 }
+
+// Background Left
 #main-left{
     @include desktop-responsive(large){
         height: 100vh;
