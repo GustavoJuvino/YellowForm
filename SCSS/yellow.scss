@@ -70,14 +70,14 @@ body{
             cursor: pointer;
             margin-bottom: 2px;
             margin-left: 10px;
+            animation: leaveMenu .3s forwards;
         }
     }
 
     .floating-menu {
-        img {
+        .ArrowDown{
             animation: enterMenu .3s forwards;
         }
-
         .l-menu {
             animation: anime2 .3s forwards;
             display: block;
@@ -102,11 +102,7 @@ body{
                 border-bottom: 2px solid black;
             }
         }
-    }
-
-    img {
-        animation: leaveMenu .3s forwards;
-    }
+    }           
 }
 
 // Floating Menu Animation
@@ -457,21 +453,23 @@ body{
     h1{
         @include headings(40px);
     }
-
     h2{
         @include headings(30px);
         margin-top: 40px;
     }
-
     p{
         @include texts(700);
         font-size: 24px;
         color: $gray-color3;
         margin-top: 40px;
     }
-
-    .click-here{
-        color: $main-color2;
+    [data-return]{
+        color: white;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover{
+            color: $main-color2;
+        }
     }
 
     // IMAGES
@@ -479,13 +477,6 @@ body{
         width: 400px;
         max-width: 100%;
         margin-top: 40px;
-    }
-
-    .test-end{
-        text-align: center;
-        position: absolute;
-        top: 135px;
-        margin-left: 10px;
     }
 }
 

@@ -88,8 +88,10 @@ body {
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 10px;
+  -webkit-animation: leaveMenu 0.3s forwards;
+          animation: leaveMenu 0.3s forwards;
 }
-#main .floating-menu img {
+#main .floating-menu .ArrowDown {
   -webkit-animation: enterMenu 0.3s forwards;
           animation: enterMenu 0.3s forwards;
 }
@@ -119,10 +121,6 @@ body {
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
-}
-#main img {
-  -webkit-animation: leaveMenu 0.3s forwards;
-          animation: leaveMenu 0.3s forwards;
 }
 
 @-webkit-keyframes enterMenu {
@@ -554,19 +552,18 @@ body {
   color: #9B9B97;
   margin-top: 40px;
 }
-#end-page .click-here {
+#end-page [data-return] {
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#end-page [data-return]:hover {
   color: #FBBC05;
 }
 #end-page .end-img {
   width: 400px;
   max-width: 100%;
   margin-top: 40px;
-}
-#end-page .test-end {
-  text-align: center;
-  position: absolute;
-  top: 135px;
-  margin-left: 10px;
 }
 
 @media screen and (max-width: 1350px) {
