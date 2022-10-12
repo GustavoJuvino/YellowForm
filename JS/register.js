@@ -35,11 +35,27 @@ const inputsR = Array.from(allInputs).slice(2);
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
+// Register Section
+const register = document.querySelector("[data-register]");
+
+// Final page
+import {end_page} from "./end-page.js"
+
 class errorsRegister{
     constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
-    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : (this.removeError(index), inputsR[index].classList.add("true"));
+    checkInputs = (index) => {
+        // !inputsR[index].checkValidity() ? this.addError(index) :
+        //  (this.removeError(index), inputsR[index].classList.add("true"));
+
+        if(!inputsR[index].checkValidity()){
+            this.addError(index);
+        } else {
+            this.removeError(index),
+            inputsR[index].classList.add("true");
+        }
+    }
 
     // Add error msg
     addError = (index) => {
@@ -55,6 +71,12 @@ class errorsRegister{
         // Transform an object into an array.
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
+    }
+
+    // Final page
+    final(){
+        register.style.display = "none";
+        end_page.style.display = "block";
     }
 
     // It will show the error message to the user in the Login Form. We can also set other language error messages.
@@ -109,21 +131,15 @@ allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
 
 // Final Button |  It will check if the inputs from Register form are true or not.
 const btn2 = document.querySelector("[data-btn='2']");
-const register = document.querySelector("[data-register]");
-import {end_page} from "./end-page.js"
 
 btn2.addEventListener("click", () => {
     inputsR.forEach((i) => {
         if(!i.checkValidity()){
             i.nextElementSibling.classList.add("error-actived");
-        } else {
-            i.nextElementSibling.classList.remove("error-actived"),
-            i.classList.add("true");
+        } else if(inputsR[0,1,2,3,4].checkValidity()){
+            errors.final();
         }
     })
-    // register.style.display = "none";
-    // end_page.style.display = "block";
-    console.log(test)
 })
 
 
