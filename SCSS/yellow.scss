@@ -446,6 +446,7 @@ body{
 
 // End Page
 #end-page{
+    display: none;
     text-align: center;
     margin-top: 55px;
 
@@ -474,9 +475,15 @@ body{
 
     // IMAGES
     .end-img{
-        width: 400px;
         max-width: 100%;
         margin-top: 40px;
+    }
+
+    // RESPONSIVE
+    @include desktop-responsive(mobile){
+        h1, h2, p{
+            font-size: 18px;
+        }
     }
 }
 

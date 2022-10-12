@@ -527,6 +527,7 @@ body {
 }
 
 #end-page {
+  display: none;
   text-align: center;
   margin-top: 55px;
 }
@@ -561,9 +562,13 @@ body {
   color: #FBBC05;
 }
 #end-page .end-img {
-  width: 400px;
   max-width: 100%;
   margin-top: 40px;
+}
+@media screen and (max-width: 800px) {
+  #end-page h1, #end-page h2, #end-page p {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1350px) {

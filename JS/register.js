@@ -29,10 +29,6 @@ function registerLanguage(...p){
     allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
-
-// Errors in REGISTER FORM.
-const dataError = document.querySelectorAll("[data-error='register']");
-
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
@@ -43,7 +39,7 @@ class errorsRegister{
     constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
-    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError(index);
+    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : (this.removeError(index), inputsR[index].classList.add("true"));
 
     // Add error msg
     addError = (index) => {
@@ -113,6 +109,8 @@ allInputs[6].addEventListener("change", () => checking.checkConfirmPass());
 
 // Final Button |  It will check if the inputs from Register form are true or not.
 const btn2 = document.querySelector("[data-btn='2']");
+const register = document.querySelector("[data-register]");
+import {end_page} from "./end-page.js"
 
 btn2.addEventListener("click", () => {
     inputsR.forEach((i) => {
@@ -120,9 +118,12 @@ btn2.addEventListener("click", () => {
             i.nextElementSibling.classList.add("error-actived");
         } else {
             i.nextElementSibling.classList.remove("error-actived"),
-            i.classList.add("true")
+            i.classList.add("true");
         }
     })
+    // register.style.display = "none";
+    // end_page.style.display = "block";
+    console.log(test)
 })
 
 
