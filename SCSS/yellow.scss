@@ -446,7 +446,7 @@ body{
 
 // End Page
 #end-page{
-    display: none;
+    // display: none;
     text-align: center;
     margin-top: 55px;
 
@@ -454,16 +454,19 @@ body{
     h1{
         @include headings(40px);
     }
+
     h2{
         @include headings(30px);
         margin-top: 40px;
     }
-    p{
+
+    p, span{
         @include texts(700);
         font-size: 24px;
         color: $gray-color3;
         margin-top: 40px;
     }
+
     [data-return]{
         color: white;
         cursor: pointer;
@@ -473,6 +476,14 @@ body{
         }
     }
 
+    .ReturnLogin{
+        display: flex;
+        justify-content: center;
+        span{
+            margin-right: 10px;
+        }
+    }
+    
     // IMAGES
     .end-img{
         max-width: 100%;
@@ -481,7 +492,7 @@ body{
 
     // RESPONSIVE
     @include desktop-responsive(mobile){
-        h1, h2, p{
+        h1, h2, p, span{
             font-size: 18px;
         }
     }

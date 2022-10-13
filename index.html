@@ -34,7 +34,7 @@
 
         <!-- LOGIN -->
         <!-- class="login-activated" -->
-        <section data-login class="login-activated">
+        <section data-login>
             <div class="form-texts">
                 <h1>Login</h1>
                 <form action=''>
@@ -113,11 +113,14 @@
             </div>
         </section>
 
+        <!-- FINAL PAGE -->
         <section id="end-page">
-            <h1>Account created successfully</h1>      
+            <h1 data-end="h1">Account created successfully</h1>      
             <img class="end-img" src="./Imgs/team.svg">
-            <h2>Thanks for being part of our team :)</h2>
-            <p>Click <span data-return>Here</span> to return to login page</p>
+            <h2 data-end="h2">Thanks for being part of our team :)</h2>
+            <div class="ReturnLogin">
+                <span data-return>Click Here</span><p data-end="P">to return to login page</p>
+            </div>
         </section>
     </section>
 

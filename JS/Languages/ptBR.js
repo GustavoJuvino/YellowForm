@@ -33,6 +33,9 @@ const RegisterBR = new Portuguese("[data-h1]", "[data-btn='2']", ".p-signIN", "[
 import {errors} from "../register.js";
 import {errorsMsg} from "./languages.js";
 
+// End Page Language method:
+import {endLanguage} from "../end-page.js"
+
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "pt" || userLang === "pt-BR") storageBR();
 
@@ -43,6 +46,8 @@ function storageBR(){
     // Change the language page into Portuguese.
     LoginBR.login();
     RegisterBR.register();
+    endLanguage("Conta criada com sucesso", "Agradeçemos por se juntar ao nosso time :)",
+    "Clique aqui", "para retornar a página de login");
 
     // Change the error language in Login / Register Form.
     errors.changeRegister(errorsMsg.pt),

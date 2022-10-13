@@ -527,7 +527,6 @@ body {
 }
 
 #end-page {
-  display: none;
   text-align: center;
   margin-top: 55px;
 }
@@ -544,7 +543,7 @@ body {
   color: #FFFFFF;
   margin-top: 40px;
 }
-#end-page p {
+#end-page p, #end-page span {
   font-family: "Nunito", sans-serif;
   font-size: 20px;
   color: #FFFFFF;
@@ -561,12 +560,19 @@ body {
 #end-page [data-return]:hover {
   color: #FBBC05;
 }
+#end-page .ReturnLogin {
+  display: flex;
+  justify-content: center;
+}
+#end-page .ReturnLogin span {
+  margin-right: 10px;
+}
 #end-page .end-img {
   max-width: 100%;
   margin-top: 40px;
 }
 @media screen and (max-width: 800px) {
-  #end-page h1, #end-page h2, #end-page p {
+  #end-page h1, #end-page h2, #end-page p, #end-page span {
     font-size: 18px;
   }
 }

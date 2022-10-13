@@ -146,6 +146,9 @@ btn2.addEventListener("click", () => {
 // Applying English Language in Register Form.
 import {errorsMsg} from "./Languages/languages.js";
 
+// End Page Language method:
+import {endLanguage} from "./end-page.js"
+
 // Language page will be English if the browser's language is English or
 // if the user clicks on the language menu to set another language.
 var userLang = navigator.language || navigator.userLanguage;
@@ -155,8 +158,11 @@ en.addEventListener("click", () => storage());
 
 // Methods Storage
 function storage(){ 
-    // Changing the language in Register Form into ENGLISH
+    // Changing the language into ENGLISH
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+
+    endLanguage("Account created successfully", "Thanks for being part of our team :)",
+    "Click Here", "to return to login page");
 
     // Change the error language in Login / Register Form.
     errors.changeRegister(errorsMsg.en),
