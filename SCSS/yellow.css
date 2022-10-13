@@ -88,8 +88,10 @@ body {
   cursor: pointer;
   margin-bottom: 2px;
   margin-left: 10px;
+  -webkit-animation: leaveMenu 0.3s forwards;
+          animation: leaveMenu 0.3s forwards;
 }
-#main .floating-menu img {
+#main .floating-menu .ArrowDown {
   -webkit-animation: enterMenu 0.3s forwards;
           animation: enterMenu 0.3s forwards;
 }
@@ -119,10 +121,6 @@ body {
   padding-left: 10px;
   margin-top: 12px;
   border-bottom: 2px solid black;
-}
-#main img {
-  -webkit-animation: leaveMenu 0.3s forwards;
-          animation: leaveMenu 0.3s forwards;
 }
 
 @-webkit-keyframes enterMenu {
@@ -526,6 +524,58 @@ body {
 }
 .register-activated span:hover {
   color: #FBBC05;
+}
+
+#end-page {
+  display: none;
+  text-align: center;
+  margin-top: 55px;
+}
+#end-page h1 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #FFFFFF;
+}
+#end-page h2 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  color: #FFFFFF;
+  margin-top: 40px;
+}
+#end-page p, #end-page span {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 24px;
+  color: #9B9B97;
+  margin-top: 40px;
+}
+#end-page [data-return] {
+  color: white;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#end-page [data-return]:hover {
+  color: #FBBC05;
+}
+#end-page .ReturnLogin {
+  display: flex;
+  justify-content: center;
+}
+#end-page .ReturnLogin span {
+  margin-right: 10px;
+}
+#end-page .end-img {
+  max-width: 100%;
+  margin-top: 40px;
+}
+@media screen and (max-width: 800px) {
+  #end-page h1, #end-page h2, #end-page p, #end-page span {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1350px) {

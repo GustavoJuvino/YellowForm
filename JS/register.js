@@ -29,21 +29,33 @@ function registerLanguage(...p){
     allInputs[4].placeholder = "(XXX) XXXX XXXX";
 }
 
-
-// Errors in REGISTER FORM.
-const dataError = document.querySelectorAll("[data-error='register']");
-
 // Inputs from REGISTER FORM.
 const inputsR = Array.from(allInputs).slice(2);
 
 // Inputs from LOGIN FORM.
 const inputsL = Array.from(allInputs).slice(0, 2);
 
+// Register Section
+const register = document.querySelector("[data-register]");
+
+// Final page
+import {end_page} from "./end-page.js"
+
 class errorsRegister{
     constructor(){ inputsR.forEach((label, index) => label.addEventListener("change", () => this.checkInputs(index))) };
 
     // Checking if the inputs are true or not.
-    checkInputs = (index) => !inputsR[index].checkValidity() ? this.addError(index) : this.removeError(index);
+    checkInputs = (index) => {
+        // !inputsR[index].checkValidity() ? this.addError(index) :
+        //  (this.removeError(index), inputsR[index].classList.add("true"));
+
+        if(!inputsR[index].checkValidity()){
+            this.addError(index);
+        } else {
+            this.removeError(index),
+            inputsR[index].classList.add("true");
+        }
+    }
 
     // Add error msg
     addError = (index) => {
@@ -59,6 +71,12 @@ class errorsRegister{
         // Transform an object into an array.
         const languages = Object.values(value);
         inputsR.forEach((input) => input.nextElementSibling.innerText = languages.shift());
+    }
+
+    // Final page
+    final(){
+        register.style.display = "none";
+        end_page.style.display = "block";
     }
 
     // It will show the error message to the user in the Login Form. We can also set other language error messages.
@@ -118,9 +136,8 @@ btn2.addEventListener("click", () => {
     inputsR.forEach((i) => {
         if(!i.checkValidity()){
             i.nextElementSibling.classList.add("error-actived");
-        } else {
-            i.nextElementSibling.classList.remove("error-actived"),
-            i.classList.add("true")
+        } else if(inputsR[0,1,2,3,4].checkValidity()){
+            errors.final();
         }
     })
 })
@@ -128,6 +145,9 @@ btn2.addEventListener("click", () => {
 
 // Applying English Language in Register Form.
 import {errorsMsg} from "./Languages/languages.js";
+
+// End Page Language method:
+import {endLanguage} from "./end-page.js"
 
 // Language page will be English if the browser's language is English or
 // if the user clicks on the language menu to set another language.
@@ -138,8 +158,11 @@ en.addEventListener("click", () => storage());
 
 // Methods Storage
 function storage(){ 
-    // Changing the language in Register Form into ENGLISH
+    // Changing the language into ENGLISH
     registerLanguage("[data-h1]", "[data-btn='2']", ".p-signIN", "[data-span='login']"),
+
+    endLanguage("Account created successfully", "Thanks for being part of our team :)",
+    "Click Here", "to return to login page");
 
     // Change the error language in Login / Register Form.
     errors.changeRegister(errorsMsg.en),

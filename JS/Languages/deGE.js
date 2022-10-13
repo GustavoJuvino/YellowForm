@@ -33,6 +33,9 @@ const registerDE = new German("[data-h1]", "[data-btn='2']", ".p-signIN", "[data
 import {errors} from "../register.js";
 import {errorsMsg} from "./languages.js";
 
+// End Page Language method:
+import {endLanguage} from "../end-page.js"
+
 // Navigator user language
 var userLang = navigator.language || navigator.userLanguage;
 if(userLang === "de") storageDE();
@@ -43,6 +46,8 @@ function storageDE(){
     // Change the language page into Portuguese.
     loginDE.login();
     registerDE.register();
+    endLanguage("Konto erfolgreich erstellt", "Danke, dass du unserem Team beigetreten bist :)",
+    "Klick hier", "um zur Anmeldeseite zurückzukehren");
 
     // Change the error language in Login / Register Form.
     errors.changeRegister(errorsMsg.de),

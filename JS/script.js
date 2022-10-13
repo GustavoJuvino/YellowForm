@@ -1,4 +1,3 @@
-
 // Login And Register Navigation
 class Selecting{
     // Register, Login , Section Login, Section Register
@@ -29,7 +28,7 @@ class Selecting{
     activate2(){ this.login.addEventListener("click", () => this.addRegister()) };
 }
 
-const selecting = new Selecting("[data-span='register']", "[data-span='login']", "[data-login]", "[data-register]");
+export const selecting = new Selecting("[data-span='register']", "[data-span='login']", "[data-login]", "[data-register]");
 selecting.activate1();
 selecting.activate2();
 

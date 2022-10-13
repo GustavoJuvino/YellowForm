@@ -70,14 +70,14 @@ body{
             cursor: pointer;
             margin-bottom: 2px;
             margin-left: 10px;
+            animation: leaveMenu .3s forwards;
         }
     }
 
     .floating-menu {
-        img {
+        .ArrowDown{
             animation: enterMenu .3s forwards;
         }
-
         .l-menu {
             animation: anime2 .3s forwards;
             display: block;
@@ -102,11 +102,7 @@ body{
                 border-bottom: 2px solid black;
             }
         }
-    }
-
-    img {
-        animation: leaveMenu .3s forwards;
-    }
+    }           
 }
 
 // Floating Menu Animation
@@ -447,8 +443,63 @@ body{
     }
 }
 
-// Responsive
 
+// End Page
+#end-page{
+    display: none;
+    text-align: center;
+    margin-top: 55px;
+
+    // TEXTS
+    h1{
+        @include headings(40px);
+    }
+
+    h2{
+        @include headings(30px);
+        margin-top: 40px;
+    }
+
+    p, span{
+        @include texts(700);
+        font-size: 24px;
+        color: $gray-color3;
+        margin-top: 40px;
+    }
+
+    [data-return]{
+        color: white;
+        cursor: pointer;
+        transition: 0.4s;
+        &:hover{
+            color: $main-color2;
+        }
+    }
+
+    .ReturnLogin{
+        display: flex;
+        justify-content: center;
+        span{
+            margin-right: 10px;
+        }
+    }
+
+    // IMAGES
+    .end-img{
+        max-width: 100%;
+        margin-top: 40px;
+    }
+
+    // RESPONSIVE
+    @include desktop-responsive(mobile){
+        h1, h2, p, span{
+            font-size: 18px;
+        }
+    }
+}
+
+
+// Responsive
 // Login Form
 .login-activated {
     @include desktop-responsive(large) {
