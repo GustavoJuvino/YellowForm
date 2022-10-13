@@ -527,6 +527,7 @@ body {
 }
 
 #end-page {
+  display: none;
   text-align: center;
   margin-top: 55px;
 }
