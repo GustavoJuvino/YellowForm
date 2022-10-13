@@ -46,6 +46,8 @@ function storageDE(){
     // Change the language page into Portuguese.
     loginDE.login();
     registerDE.register();
+    endLanguage("Konto erfolgreich erstellt", "Danke, dass du unserem Team beigetreten bist :)",
+    "Klick hier", "um zur Anmeldeseite zurückzukehren");
 
     // Change the error language in Login / Register Form.
     errors.changeRegister(errorsMsg.de),
