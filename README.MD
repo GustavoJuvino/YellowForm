@@ -27,13 +27,13 @@
 
 <!-- Desktop -->
 <h2 align="center">Desktop Version 🖥️</h2>
-<img src="./Prints/Desktop1.png" title="login1">
-<img src="./Prints/Desktop2.png" title="login2">
-<img src="./Prints/Desktop3.png" title="login3">
-<img src="./Prints/Register1.png" title="Register1">
-<img src="./Prints/Register2.png" title="Register2">
-<img src="./Prints/Register3.png" title="Register3">
-<img src="./Prints/Register4.png" title="Register4">
+<img src="./Prints/Desktop/Desktop1.png" title="login1">
+<img src="./Prints/Desktop/Desktop2.png" title="login2">
+<img src="./Prints/Desktop/Desktop3.png" title="login3">
+<img src="./Prints/Desktop/Register1.png" title="Register1">
+<img src="./Prints/Desktop/Register2.png" title="Register2">
+<img src="./Prints/Desktop/Register3.png" title="Register3">
+<img src="./Prints/Desktop/Register4.png" title="Register4">
 
 <br><br>
 
