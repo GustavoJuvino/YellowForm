@@ -9,7 +9,7 @@
 <br>
 
 <h4 align = "center">
-    <a align="center" href="https://www.frontendmentor.io/solutions/responsive-landing-page-with-html-sass-js-3bxKOMxrxW">Front-end mentor challenge.</a>
+    <a align="center" href="https://www.frontendmentor.io/solutions/responsive-landing-page-with-html-sass-js-3bxKOMxrxW">Yellow Form.</a>
 </h4>
 
 <br>
